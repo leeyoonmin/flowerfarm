@@ -296,7 +296,7 @@ class mypage extends CI_Controller
       $postData = $this->input->post();
       $postData['USER_ID'] = $this->session->userdata('user_id');
       $this->admin_model->updateUserGrade($this->session->userdata('user_id'),'06');
-      $this->session->set_userdata('user_level','1');
+      $this->session->set_userdata('user_level','6');
       $this->admin_model->insertUserCertiInfo($postData);
       $this->load->view('module/alert', array('text'=>'신청이 완료되었습니다.\n승인이 완료되면 [사업자회원]의\n혜택을 받으실 수 있습니다.'));
       $this->load->view('module/redirect', array('url'=>'/mypage'));

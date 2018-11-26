@@ -325,3 +325,9 @@
 </div>
 
 <div class="divPopupProductBG"></div>
+
+<div class="divPopupImgViewer">
+  <img class="closeBtn" src="/static/img/icon/ic_close_white.png">
+  <img class="product_img" src="">
+</div>
+<div class="divPopupImgViewerBG"></div>

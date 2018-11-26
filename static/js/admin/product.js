@@ -286,3 +286,20 @@ $(window).scroll(function() {
 $('#viewCnt').change(function(e){
   search('productList');
 })
+
+/***********************************************************
+   이미지 클릭 이벤트
+***********************************************************/
+$('.productList .divGrid .productImg img').click(function(e){
+  var img_path = $(this).attr('src');
+  console.log(img_path);
+  $('.divPopupImgViewer .product_img').attr('src',img_path);
+  $('.divPopupImgViewer').fadeIn('fast');
+  $('.divPopupImgViewerBG').fadeIn('fast');
+  $('.divPopupImgViewer .closeBtn').css('left',Number($('.divPopupImgViewer').css('width').replace(/[^0-9]/g,''))-50+'px');
+});
+
+$('.divPopupImgViewerBG, .divPopupImgViewer .closeBtn, .divPopupImgViewer img').click(function(e){
+  $('.divPopupImgViewerBG').fadeOut('fast');
+  $('.divPopupImgViewer').fadeOut('fast');
+});

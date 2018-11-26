@@ -121,6 +121,11 @@
       <input class="submit_mode" type="hidden" name="mode" value="">
     </form>
     </div>
+    <div class="divPopupImgViewer">
+      <img class="closeBtn" src="/static/img/icon/ic_close_white.png">
+      <img class="product_img" src="">
+    </div>
+    <div class="divPopupImgViewerBG"></div>
     <?php
       $getData="";
       foreach($dataArray as $id){
@@ -204,6 +209,20 @@
 
       $(document).ready(function(){
         checkTotalPurchasePrice();
+      });
+
+      $('.grid .body img').click(function(e){
+        var img_path = $(this).attr('src');
+        console.log(img_path);
+        $('.divPopupImgViewer .product_img').attr('src',img_path);
+        $('.divPopupImgViewer').fadeIn('fast');
+        $('.divPopupImgViewerBG').fadeIn('fast');
+        $('.divPopupImgViewer .closeBtn').css('left',Number($('.divPopupImgViewer').css('width').replace(/[^0-9]/g,''))-50+'px');
+      });
+
+      $('.divPopupImgViewerBG, .divPopupImgViewer .closeBtn, .divPopupImgViewer img').click(function(e){
+        $('.divPopupImgViewerBG').fadeOut('fast');
+        $('.divPopupImgViewer').fadeOut('fast');
       });
     </script>
   </body>

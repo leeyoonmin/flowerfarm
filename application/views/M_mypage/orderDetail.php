@@ -31,7 +31,7 @@
       </tr>
     </table>
   </div>
-  
+
   <div class="divOrderInfo divTable">
     <div class="divTitle">
       주문정보
@@ -74,9 +74,9 @@
         echo "
         <tr>";
         if(empty($item->IMG_EXTENSION)){
-          echo "<td class=\"imgTD\"><img class=\"materialboxed\" src=\"/static/uploads/product/noImage.png\"></td>";
+          echo "<td class=\"imgTD\"><img src=\"/static/uploads/product/noImage.png\"></td>";
         }else{
-          echo "<td class=\"imgTD\"><img class=\"materialboxed\" src=\"/static/uploads/product/".$item->PRODUCT_ID.".$item->IMG_EXTENSION\"></td>";
+          echo "<td class=\"imgTD\"><img src=\"/static/uploads/product/".$item->PRODUCT_ID.".$item->IMG_EXTENSION\"></td>";
         }
         echo "
           <td class=\"nameTD\">".$item->PRODUCT_NAME."</td>
@@ -90,3 +90,9 @@
   </div>
 
 </div>
+
+<div class="divPopupImgViewer">
+  <img class="closeBtn" src="/static/img/icon/ic_close_white.png">
+  <img class="product_img" src="">
+</div>
+<div class="divPopupImgViewerBG"></div>

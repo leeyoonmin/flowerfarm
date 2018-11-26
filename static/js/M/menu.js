@@ -102,7 +102,7 @@ function loadMoreList(){
             forCount++;
             var item = res['data'][key];
             var imageName = "";
-            if(item['IMG_EXTENSION'] == null){
+            if(item['IMG_EXTENSION'] == null || item['IMG_EXTENSION']==''){
               imageName = "/static/uploads/product/noImage.png";
               item['IMG_EXTENSION'] = "";
             }else{

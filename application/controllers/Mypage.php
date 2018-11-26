@@ -43,8 +43,10 @@ class mypage extends CI_Controller
         $this->load->view('M_layout/page_title',array('page_title'=>'mypage'));
 
         $this->load->model('user_model');
-    		$userData = $this->user_model->getUserDataByID($this->session->userdata('user_id'));
-    		$this->session->set_userdata('user_level', $userData->user_type);
+        if(!empty($this->session->userdata('user_id'))){
+    			$userData = $this->user_model->getUserDataByID($this->session->userdata('user_id'));
+    			$this->session->set_userdata('user_level', $userData->user_type);
+    		}
         $monthPrice = $this->mypage_model->getThisMonthOrder($this->session->userdata('user_id'));
         $weekPrice = $this->mypage_model->getThisWeekOrder($this->session->userdata('user_id'));
         $userData = $this->user_model->getUserDataByID($this->session->userdata('user_id'));

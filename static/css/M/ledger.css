@@ -1,0 +1,261 @@
+.divLedgerLayout::-webkit-scrollbar{width:8px;}
+.divLedgerLayout::-webkit-scrollbar-track{background:#f5f5f5}
+.divLedgerLayout::-webkit-scrollbar-thumb{background-color:#de7200; border-radius:2px;}
+.divLedgerLayout::-webkit-scrollbar-thumb:hover{transition:300ms; background:#de7200;}
+
+.divPopupLedgerDetail .divList::-webkit-scrollbar{width:8px;}
+.divPopupLedgerDetail .divList::-webkit-scrollbar-track{background:#f5f5f5}
+.divPopupLedgerDetail .divList::-webkit-scrollbar-thumb{background-color:#de7200; border-radius:2px;}
+.divPopupLedgerDetail .divList::-webkit-scrollbar-thumb:hover{transition:300ms; background:#de7200;}
+
+.editCate .divTypeList::-webkit-scrollbar{width:6px;}
+.editCate .divTypeList::-webkit-scrollbar-track{background:#f5f5f5}
+.editCate .divTypeList::-webkit-scrollbar-thumb{background-color:#de7200; border-radius:2px;}
+.editCate .divTypeList::-webkit-scrollbar-thumb:hover{transition:300ms; background:#de7200;}
+
+.divLedgerControlBox{width:900px; margin:auto}
+.month .divLedgerControlBox{width:900px;}
+.divLedgerControlBox table{width:100px; display:inline-block;}
+.divLedgerControlBox td img{width:20px;}
+.divLedgerControlBox td a{display:block; padding:8px 16px}
+.divLedgerControlBox td{text-align:center; border-right:1px solid #fff;cursor:pointer; background:#FE8200; border-radius:4px 4px 0px 0px;}
+.divLedgerControlBox td:last-of-type {border-right:0;}
+.divLedgerControlBox .addLedger{float:right;width:200px;}
+.divLedgerControlBox .addLedger td{border-radius:0px; width:50%;border:0;}
+.divLedgerControlBox .addLedger td:nth-of-type(1){width:50px; border-radius:5px 0px 0px 5px;}
+.divLedgerControlBox .addLedger td:nth-of-type(1) img{border:1px solid #fff; border-radius:100%; width:20px;}
+.divLedgerControlBox .addLedger td:nth-of-type(2){width:150px; color:#fff; border-radius:0px 5px 5px 0px;}
+.wrap{padding-bottom:32px;}
+.divLedgerCalendarButton{margin:auto; width:196px;}
+.divLedgerCalendarButton input[type="text"]{border:0; padding:8px; width:120px; text-align:center; font-size:18px; font-weight:bold; background-color:#f5f5f5; color:#262525}
+.divLedgerCalendarButton input[type="button"]{padding:4px 8px 8px 8px; border:1px solid #eee; border-radius:4px; background-color:#ccc; color:#fff; font-weight:400;}
+.divLedgerLayout{width:900px; min-width:900px; margin:auto; overflow-y:hidden; font-size:0;}
+.divLedger{width:3000px;margin-bottom:8px; background-color:#fff}
+.divLedger .divMonth{display:inline-block; width:250px;min-height:250px; border:1px solid #ccc; border-right:0; border-top:2px solid #FE8200; padding-bottom:8px;}
+.divLedger .divMonth:last-of-type{margin-right:0; border-right:1px solid #ccc;}
+.divLedger .divMonth .divTitle{padding:16px; border-bottom:1px solid #ccc; background-color:#f5f5f5; cursor:pointer;}
+.divLedger .divMonth .divTitle:hover{transition:200ms; border-top:4px solid #FE8200; padding-top:12px;}
+.divLedger .divMonth .divTitle .title{font-size:16px; text-align:center; color:#666; font-weight:700;}
+.divLedger .divMonth td{background-color:#fff;}
+.divLedger .divMonth .box{border:1px solid #eee; border-radius:2px; padding:16px; width:234px; margin:8px; margin-bottom:0px; font-size:16px; color:#fff; font-weight:400; text-align:right; cursor:pointer}
+.divLedger .divMonth .box.plus{border:1px solid #79ace2; background:#fff}
+.divLedger .divMonth .box.minus{border:1px solid #e27979; background:#fff}
+.divLedger .divMonth .box.sum{border:1px solid #d9e279; background:#fff}
+.divLedger .divMonth .box.sum p{color:#654e14}
+.divLedger .divMonth .box.plus p{color:#1b4f85}
+.divLedger .divMonth .box.minus p{color:#7a1c1c}
+.divLedger .divMonth .box p{display:inline-block;}
+.divLedger .divMonth .box .static{width:100px; text-align:left;}
+.divLedger .divMonth .box .number{width:100px;}
+.divLedger .divMonth .box .number span{font-weight:bold;}
+
+.divPopup{position:fixed; width:400px; background-color:#ddd; left:50%; top:50%; transform:translate(-50%,-50%); z-index:999; display:none; padding:8px 0px; color:#fff; border-radius:5px 5px 2px 2px}
+.divPopup .popupTitle{text-align:center; font-size:14px; margin-bottom:8px; color:#4c4c4c; font-weight:bold}
+.divPopup .divList{background:#eee; border:0px; padding:8px; overflow-y:scroll; max-height:500px; min-height:200px;}
+.divPopup .divList .divItem{border-top:4px solid #eee; border-radius:4px; margin-bottom:8px; background:#fff;}
+.divPopup .divList .divItem:last-of-type{margin-bottom:0px;}
+.divPopup .divList .divItem.type01{border-top-color:#1f65ad;}
+.divPopup .divList .divItem.type02{border-top-color:#af1e1e;}
+.divPopup .divList .divItem.type01 .itemTitle p span{color:#1f65ad;}
+.divPopup .divList .divItem.type02 .itemTitle p span{color:#af1e1e;}
+.divPopup .divList .divItem .itemTitle{padding:4px;}
+.divPopup .divList .divItem .itemTitle p{font-size:14px; color:#4c4c4c;text-align:right; border-bottom:1px solid #eee; padding:0px 8px 4px 8px;}
+.divPopup .divList .divItem .itemTitle p span{font-size:16px; font-weight:bold; float:left;}
+.divPopup.ledgerDitail .cate, .divPopup.ledgerDitail .text, .divPopup.ledgerDitail .price{width:80%; text-align:right; padding:4px 8px;}
+.divPopup .divItem.type01 .price{color:#1f65ad}
+.divPopup .divItem.type02 .price{color:#af1e1e}
+.divPopup .price span{font-size:18px; font-weight:bold;}
+.divPopup .flower{padding:0px; text-align:center;}
+.divPopup .flower img{width:40px; display:none;}
+.divPopup .button img{width:16px; cursor:pointer; margin-left:8px;}
+.divPopup.ledgerAdd{padding-bottom:0px;}
+.divPopup.ledgerAdd .divForm table{margin-bottom:0px;}
+.divPopup.ledgerAdd .divForm table td{padding:8px; font-size:16px; background:#fff; margin:auto; border-bottom:1px solid #eee;}
+.divPopup.ledgerAdd .divForm table td:first-of-type{border-right:1px solid #eee; width:80px; text-align:center;}
+.divPopup.ledgerAdd .divForm table td input{background-color:#fff;}
+.divPopup.ledgerAdd .divForm table td input[type="text"]{width:100%; padding:4px 8px; border:0;}
+.divPopup.ledgerAdd .divForm table td input[type="date"]{border:0; height:26px;}
+.divPopup.ledgerAdd .divForm table td select{border:0; background-color:#fff; height:26px;}
+.divPopup.ledgerAdd .editCate{float:right; vertical-align:bottom; line-height:22px; text-decoration:underline; color:#FE8200; cursor:pointer;}
+.divPopup.ledgerAdd input[type="submit"]{border-radius:0px 0px 2px 2px}
+.divPopupBG{position:fixed; background-color:rgba(0,0,0,0.6); width:100%; height:100%; top:0; left:0; display:none;}
+
+.divPopup.CateMng{display:}
+
+.calendar .divLedgerCalendar{border-top:2px solid #FE8200; width:900px; margin:auto; border-bottom:0;}
+.calendar .divLedgerCalendar .calendarBox table{border-bottom:0;}
+.calendar .divLedgerCalendar .divCalendarContext{width:100%; border-bottom:0;}
+.calendar .divLedgerCalendar .divCalendarContext td{border:1px solid #ccc; text-align:left; width:14.28%}
+.calendar .divLedgerCalendar .divCalendarContext tr:first-of-type td{height:50px; text-align:center; border-top:0;}
+.calendar .divLedgerCalendar .divCalendarContext tr:last-of-type td{border-top:0;}
+.calendar .divLedgerCalendar .divCalendarContext tr:first-of-type td:first-of-type{color:#af1e1e}
+.calendar .divLedgerCalendar .divCalendarContext tr:first-of-type td:last-of-type{color:#1f65ad}
+.calendar .divLedgerCalendar .divCalendarContext td:first-of-type a{color:#af1e1e}
+.calendar .divLedgerCalendar .divCalendarContext td:last-of-type a{color:#1f65ad}
+.calendar .divLedgerCalendar .divCalendarContext td.is_day{padding:0; min-width:100px; text-align:left; background-color:#fff;}
+.calendar .divLedgerCalendar .divCalendarContext td.is_day a{padding:0; text-align:left; margin:8px; display:inline-block;}
+.calendar .divLedgerCalendar .divCalendarContext td p{padding:2px 8px 3px 8px; font-size:14px; color:#fff; margin-bottom:0px; text-align:right;}
+.calendar .divLedgerCalendar .divCalendarContext td p span{float:right;}
+.calendar .divLedgerCalendar .divCalendarContext td p.staticPlus{color:#4792df;}
+.calendar .divLedgerCalendar .divCalendarContext td p.staticMinus{color:#cb4242;}
+.calendar .divLedgerCalendar .divCalendarContext td p.staticSum{color:#000;}
+.todayLabel{background-color:#FE8200; color:#fff; padding:0px 28px; font-size:14px;}
+.calendar .divLedgerCalendar .divCalendarContext td.today a{border:0;}
+
+.daily .divLedgerLayout{width:900px; min-width:900px; border-top:2px solid #FE8200;}
+.daily .divLedgerLayout .divTotal table td{padding:16px; font-size:16px; border:1px solid #eee; text-align:center; background:#fff;}
+.daily .divLedgerLayout .divTotal table td:nth-of-type(2){color:#4792df}
+.daily .divLedgerLayout .divTotal table td:nth-of-type(4){color:#cb4242;}
+.daily .divLedgerLayout .divLedgerDailyList table{margin-top:16px;}
+.daily .divLedgerLayout .divLedgerDailyList table td{font-size:16px; padding:16px; background:#fff; border:1px solid #eee; text-align:center;}
+.daily .divLedgerLayout .divLedgerDailyList table td.amount{text-align:right;}
+.daily .divLedgerLayout .divLedgerDailyList table td.plus{color:#4792df}
+.daily .divLedgerLayout .divLedgerDailyList table td.minus{color:#cb4242}
+.daily .divLedgerLayout .divLedgerDailyList table td img{height:20px; cursor:pointer;}
+.daily .divLedgerLayout .divLedgerDailyList table td img:first-of-type{margin-right:16px}
+.daily .divLedgerLayout .divLedgerDailyList table td:nth-of-type(1){width:80px}
+.daily .divLedgerLayout .divLedgerDailyList table td:nth-of-type(2){width:200px}
+.daily .divLedgerLayout .divLedgerDailyList table td:nth-of-type(4){width:120px}
+.daily .divLedgerLayout .divLedgerDailyList table td:nth-of-type(5){width:100px}
+
+.write .divLedgerLayout{width:900px; min-width:900px; border-top:2px solid #FE8200;}
+.write .divWriteForm table td{font-size:16px; border:1px solid #ddd; padding:16px; background:#fff;}
+.write .divWriteForm table td:first-of-type{text-align:center; width:90px}
+.write .divWriteForm table td input{padding:16px; margin:-16px; width:100%; border:0;}
+.write .divWriteForm table td input[type="date"]{width:200px; background-color:#fff;}
+.write .divWriteForm table td select{margin:-16px; height:50px; border:0; padding-left:16px; background-color:#fff;}
+.write .divWriteForm table td .editCate{
+  position:absolute; float:right; color:#fff; cursor:pointer; transform:translate(70%,-15%);
+  border:1px solid #FE8200; padding:4px 8px 6px 8px; border-radius:4px; background-color:#FE8200; font-size:14px;
+}
+.write .divWriteForm input[type="submit"]{display:block; width:200px; margin:auto; margin-top:16px; border-radius:4px;}
+
+.editCate{padding-top:32px;}
+.editCate .divLedgerLayout .divTypeList{background-color:#fff; width:50%; display:inline-block; border:1px solid #ddd; min-height:500px; max-height:500px; border-top:2px solid #FE8200; padding:16px; font-size:16px; overflow-y:scroll;}
+.editCate .divLedgerLayout .divType1List{border-right:0; }
+.editCate .divLedgerLayout .divTypeList tr{border:1px solid #ddd;}
+.editCate .divLedgerLayout .divTypeList h1{text-align:center; margin-bottom:16px; font-size:18px; font-weight:400;}
+.editCate .divLedgerLayout .divTypeList td{background-color:#fff;}
+.editCate .divLedgerLayout .divTypeList td:last-of-type{text-align:right; width:80px; padding:16px;}
+.editCate .divLedgerLayout .divTypeList td img{height:18px; cursor:pointer;}
+.editCate .divLedgerLayout .divTypeList td img:last-of-type{margin-left:8px;}
+.editCate .divLedgerLayout .divTypeList td input{padding:16px;border:0; background-color:#fbf7d4; width:100%;}
+.editCate .divLedgerLayout .divTypeList td input[readonly]{background-color:#fff;}
+.editCate .divLedgerLayout .divTypeList .addBtn{width:40px; border:1px solid #eee; background-color:#eee; border-radius:100%; display:block; margin:auto; margin-top:16px; cursor:pointer;}
+.editCate input[type="submit"]{display:block; width:300px; margin:auto; margin-top:16px; font-size:16px; border-radius:4px;}
+
+.dashboard .divSearch{border:1px solid #ddd; border-top:2px solid #FE8200}
+.dashboard .divSearch td{font-size:16px; padding:16px; background-color:#fff;}
+.dashboard .divSearch td select{width:120px;height:32px; margin:-8px; border:0;}
+.dashboard .divSearch .typeBtn{padding:4px 16px 6px 16px; cursor:pointer; border:1px solid #666;}
+.dashboard .divSearch .typeBtn.plus{border-radius:4px 0px 0px 4px; border-right:0;}
+.dashboard .divSearch .typeBtn.minus{border-radius:0px 4px 4px 0px; border-left:0;}
+.dashboard .divSearch .typeBtn.plus.selected{transition:200ms; background:#4792df; border-color:#4792df; color:#fff}
+.dashboard .divSearch .typeBtn.minus.selected{transition:200ms; background:#cb4242; border-color:#cb4242; color:#fff}
+.dashboard .divSearch .calendarBtn{padding:3px 8px 6px 8px; border:1px solid #666; border-radius:4px; margin:0px 8px; color:#666; background-color:#fff;}
+.dashboard .divSearch .calendarDate{ border:0; padding:4px; width:120px; text-align:center; font-weight:bold;}
+.dashboard .divSearch td:nth-of-type(1){width:200px; text-align:left;}
+.dashboard .divSearch td:nth-of-type(2){text-align:center;}
+.dashboard .divSearch td:nth-of-type(3){width:200px; text-align:right;}
+.dashboard .divChartLayout .highcharts-credits{display:none;}
+.dashboard .divChartLayout{border:1px solid #ddd; border-top:0; background-color:#fff;}
+.dashboard .divChartLayout .divChart{min-width: 898px; max-width: 898px; height: 400px; margin: 0 auto; padding-top:16px;}
+.dashboard .divChartLayout .emptyChart{text-align:center; font-size:16px; height: auto; padding:64px 0px 0px 0px;}
+.dashboard .divChartLayout .chartMinus{display:none;}
+.dashboard .divChartLayout .gridMinus{display:none;}
+.dashboard .divChartLayout .gridPlus span{background:#d4f1ff; color:#4792df; border:1px solid #4792df}
+.dashboard .divChartLayout .gridMinus span{background:#ffeae6; color:#cb4242; border:1px solid #cb4242}
+.dashboard .divChartLayout .divGrid{width:500px; margin:auto; margin-top:32px; margin-bottom:32px;}
+.dashboard .divChartLayout .divGrid td{border:1px solid #ddd; padding:16px;}
+.dashboard .divChartLayout .divGrid td:nth-of-type(1){text-align:center; width:100px; padding-bottom:18px; border-right:0;}
+.dashboard .divChartLayout .divGrid td:nth-of-type(1) span{padding:4px 8px 6px 8px; border-radius:4px;}
+.dashboard .divChartLayout .divGrid td:nth-of-type(2){text-align:center; border-right:0; border-left:0}
+.dashboard .divChartLayout .divGrid td:nth-of-type(3){text-align:right; width:150px; border-left:0}
+.dashboard .divChartLayout .divGrid tr{cursor:pointer;}
+.dashboard .divChartLayout .divGrid tr:hover{background:#eee}
+.dashboard .divChartLayout .divGrid2{width:92%; margin:auto; margin-top:16px; margin-bottom:32px;}
+.dashboard .divChartLayout .divGrid2 td{border:1px solid #ddd; padding:16px; cursor:pointer}
+.dashboard .divChartLayout .divGrid2 td:nth-of-type(odd){width:80px; text-align:center; background-color:#f9f9f9}
+.dashboard .divChartLayout .divGrid2 td:nth-of-type(even){text-align:right; width:333px}
+@media screen and (max-width:1024px) {
+  .divLedgerControlBox .addLedger{float:right;width:120px;}
+  .divLedgerControlBox .addLedger td{border-radius:0px; width:50%;border:0;}
+  .divLedgerControlBox .addLedger td:nth-of-type(1){width:40px; border-radius:5px 0px 0px 5px;}
+  .divLedgerControlBox .addLedger td:nth-of-type(1) a{padding-left:8px; padding-right:8px;}
+  .divLedgerControlBox .addLedger td:nth-of-type(1) img{border:1px solid #fff; border-radius:100%; width:20px;}
+  .divLedgerControlBox .addLedger td:nth-of-type(2){width:80px; color:#fff; border-radius:0px 5px 5px 0px; padding-right:8px;}
+
+  .calendar .divLedgerCalendar .divCalendarContext tr:first-of-type td{height:30px; text-align:center;}
+  .divLedgerControlBox{width:100%; margin:auto;}
+  .month .divLedgerControlBox{width:100%;}
+  .divLedgerCalendarButton{padding:16px 0px 32px 0px;}
+  .divLedgerLayout{width:100%; min-width:100%;}
+  .calendar .divLedgerCalendar{width:100%;}
+  .calendar .divLedgerCalendar .divCalendarContext td.is_day{min-width:0px;}
+  .calendar .divLedgerCalendar .divCalendarContext td.is_day a{margin:4px;}
+  .calendar .divLedgerCalendar .divCalendarContext td p{padding:0px; font-size:8px; margin-bottom:2px; font-weight:400; margin-right:4px; text-align:right;}
+  .calendar .divLedgerCalendar .divCalendarContext td{border: 1px solid #eee; font-weight:400;}
+  .todayLabel{background-color:#FE8200; color:#fff; padding:0px 4px; font-size:8px;}
+  .divPopup{width:95%; min-height:200px;}
+  .divPopupLedgerDetail .divList{max-height:400px;}
+
+  .daily .divLedgerLayout{width:100%; min-width:100%;}
+  .daily .divLedgerLayout .divTotal table td{padding:8px 8px; font-size:12px; font-weight:400;}
+  .daily .divLedgerLayout .divTotal tr:first-of-type td{color:#262525; width:33.33%;}
+  .daily .divLedgerLayout .divTotal tr:last-of-type td:nth-of-type(1){color:#4792df}
+  .daily .divLedgerLayout .divTotal tr:last-of-type td:nth-of-type(2){color:#cb4242}
+  .daily .divLedgerLayout .divTotal tr:last-of-type td:nth-of-type(3){color:#262525}
+  .daily .divLedgerLayout .divLedgerDailyList table{margin-top:8px;}
+  .daily .divLedgerLayout .divLedgerDailyList table td{font-size:12px; padding:16px 8px; font-weight:400;}
+  .daily .divLedgerLayout .divLedgerDailyList table td img{height:16px; cursor:pointer;}
+  .daily .divLedgerLayout .divLedgerDailyList table td img:first-of-type{margin-right:16px}
+  .daily .divLedgerLayout .divLedgerDailyList table td:nth-of-type(1){width:60px}
+  .daily .divLedgerLayout .divLedgerDailyList table td:nth-of-type(2){width:60px}
+  .daily .divLedgerLayout .divLedgerDailyList table td:nth-of-type(4){width:90px}
+  .daily .divLedgerLayout .divLedgerDailyList table td:nth-of-type(5){width:80px}
+
+  .write{padding-top:32px;}
+  .write .divLedgerLayout{width:100%; min-width:100%; border-top:2px solid #FE8200;}
+  .write .divWriteForm table td{font-size:16px; border:1px solid #ddd; padding:16px; background:#fff;}
+  .write .divWriteForm table td:first-of-type{text-align:center;}
+  .write .divWriteForm table td input{padding:16px; margin:-16px; width:100%; border:0;}
+  .write .divWriteForm table td input[type="date"]{width:200px; height:50px;}
+  .write .divWriteForm table td select{margin:-16px; height:50px; border:0; padding-left:16px;}
+  .write .divWriteForm table td .editCate{
+    position:absolute; float:right; color:#fff; cursor:pointer; transform:translate(70%,-15%);
+    border:1px solid #FE8200; padding:4px 8px 6px 8px; border-radius:4px; background-color:#FE8200; font-size:14px;
+  }
+  .write .divWriteForm input[type="submit"]{display:block; width:200px; margin:auto; margin-top:16px; border-radius:4px;}
+
+  .editCate .divLedgerLayout .divTypeList{padding:16px 8px; display:block; width:100%; min-height:200px; max-height:300px;}
+
+
+  .dashboard .divLedgerControlBox{padding-top:32px;}
+  .dashboard .divSearch td{font-size:12px; padding:16px 8px; }
+  .dashboard .divSearch td select{width:50px;height:32px; margin:-4px; border:0; background:#fff;}
+  .dashboard .divSearch .typeBtn{padding:4px 12px 6px 12px;}
+  .dashboard .divSearch .calendarBtn{padding:6px 4px 6px 4px; margin:0px 2px;}
+  .dashboard .divSearch .calendarDate{ border:0; padding:4px; width:90px; text-align:center; font-weight:bold; font-size:16px}
+  .dashboard .divSearch td:nth-of-type(1){width:112px; text-align:left;}
+  .dashboard .divSearch td:nth-of-type(3){width:60px; text-align:right;}
+
+  .dashboard .divChartLayout{border:1px solid #ddd; border-top:0; background-color:#fff;}
+  .dashboard .divChartLayout .divChart{min-width: 90%; max-width: 90%; height: auto; margin: 0 auto; padding-top:16px;}
+  .dashboard .divChartLayout .emptyChart{text-align:center; font-size:16px; height: auto; padding:64px 0px 0px 0px;}
+  .dashboard .divChartLayout .chartMinus{display:none;}
+  .dashboard .divChartLayout .gridMinus{display:none;}
+  .dashboard .divChartLayout .gridPlus span{background:#d4f1ff; color:#4792df; border:1px solid #4792df}
+  .dashboard .divChartLayout .gridMinus span{background:#ffeae6; color:#cb4242; border:1px solid #cb4242}
+  .dashboard .divChartLayout .divGrid{width:100%; margin:auto; margin-top:32px; margin-bottom:32px; font-size:14px;}
+  .dashboard .divChartLayout .divGrid td{border:1px solid #ddd; padding:16px;}
+  .dashboard .divChartLayout .divGrid td:nth-of-type(1){text-align:center; width:100px; padding-bottom:18px; border-right:0;}
+  .dashboard .divChartLayout .divGrid td:nth-of-type(1) span{padding:4px 8px 6px 8px; border-radius:4px;}
+  .dashboard .divChartLayout .divGrid td:nth-of-type(2){text-align:center; border-right:0; border-left:0}
+  .dashboard .divChartLayout .divGrid td:nth-of-type(3){text-align:right; width:150px; border-left:0}
+  .dashboard .divChartLayout .divGrid tr{cursor:pointer;}
+  .dashboard .divChartLayout .divGrid tr:hover{background:#eee}
+  .dashboard .divChartLayout .divGrid2{width:92%; margin:auto; margin-top:16px; margin-bottom:32px;}
+  .dashboard .divChartLayout .divGrid2 td{border:1px solid #ddd; padding:8px; cursor:pointer}
+  .dashboard .divChartLayout .divGrid2 td:nth-of-type(odd){width:60px; text-align:center; background-color:#f9f9f9}
+  .dashboard .divChartLayout .divGrid2 td:nth-of-type(even){width:105px; text-align:right}
+}

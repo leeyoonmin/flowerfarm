@@ -1,0 +1,186 @@
+body{background-color:#F8F9FD}
+table td{vertical-align:middle;}
+input{padding:8px; border:1px solid #eee; border-radius:4px; color:#666}
+input::placeholder{color:#ccc; text-align:center;}
+input:focus{outline-color:#9661E2}
+input[type="button"]:focus{outline:none}
+select:focus{outline:none}
+
+.lds-dual-ring {display: inline-block; width: 64px; height: 64px;}
+.lds-dual-ring:after {content: " "; display: block; width: 46px; height: 46px; margin: 1px; border-radius: 50%;
+  border: 5px solid #fff; border-color: #fff transparent #fff transparent; animation: lds-dual-ring 1.2s linear infinite; }
+@keyframes lds-dual-ring { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+
+.divTopNav{width:100%; height:50px; min-width:1200px; position:fixed; border-bottom:1px solid #eee; z-index:2; background:#F8F9FD; display:none;}
+.divTopNav table{width:100%;}
+.divTopNav .hamBtn{width:50px; height:50px;  cursor:pointer;}
+.divTopNav .hamBtn img{width:100%; height:auto;}
+.divTopNav .logo{text-align:right; padding-right:32px; font-size:16px; color:#666;}
+
+.divFixedLeftMenu{
+  width:200px; min-height:100%; height:auto; z-index:4; position:fixed; box-shadow:0px 1px 3px rgba(0,0,0,0.1);
+  background: #9661E2; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(90deg, #723DFD , #9661E2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(90deg, #723DFD , #9661E2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(90deg, #723DFD , #9661E2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to 90deg, #723DFD , #9661E2); /* Standard syntax */
+  /*border-radius:0px 8px 8px 0px;*/
+}
+.divFixedLeftMenuBG{width:100%;height:100%;position:fixed;top:0px;left:0px;z-index:3;background:rgba(0,0,0,0.5);display:none;}
+.divFixedLeftMenu .divLeftMenuTopHeader{width:100%; height:50px;}
+.divFixedLeftMenu .divLeftMenuTopHeader td:first-of-type{width:200px;}
+.divFixedLeftMenu .divLeftMenuTopHeader .closeBtn{width:50px;height:50px; display:none;}
+.divFixedLeftMenu .divLeftMenuTopHeader .closeBtn img{width:100%;height:auto;padding:18px;}
+.divFixedLeftMenu .divLeftMenuTopContents{width:100%; height:100px; border-bottom:1px solid #a585d4; text-align:center; vertical-align:middle;}
+.divFixedLeftMenu .divLeftMenuTopContents img{height:60px; width:auto;}
+.divFixedLeftMenu .divMenu{height:auto;}
+.divFixedLeftMenu .divMenu li.mainMenu{padding:18px 24px; cursor:pointer;}
+.divFixedLeftMenu .divMenu li.mainMenu.selected span{color:#fff;}
+.divFixedLeftMenu .divMenu li.mainMenu:hover span{transition:300ms;color:#fff;}
+.divFixedLeftMenu .divMenu li.mainMenu img{transition:300ms; height:20px; vertical-align:middle; margin-right:24px;}
+.divFixedLeftMenu .divMenu li.mainMenu span{display:inline-block; color:#C7A2FE; font-size:14px; line-height:20px;}
+.divFixedLeftMenu .divMenu .subMenu{display:none;}
+.divFixedLeftMenu .divMenu ul ul{
+  background: #F8F9FD;
+}
+.divFixedLeftMenu .divMenu li.sub{padding:16px; padding-left:32px; vertical-align:middle; color:#a585d4;}
+.divFixedLeftMenu .divMenu li.sub:hover{transition:300ms; color:#9661E2; border-right:8px solid #78ECBD;}
+.divFixedLeftMenu .divMenu li.sub.selected{transition:300ms; color:#9661E2; border-right:8px solid #78ECBD;}
+.divFixedLeftMenu .divMenu li.sub img{height:20px; vertical-align:middle; margin-right:16px; line-height:18px;}
+.divFixedLeftMenu .divMenu li.sub span{display:inline-block;font-size:14px; line-height:20px;}
+
+.wrap{min-height:100%; background-color:#F8F9FD; padding-top:114px; color:#4c4c4c; padding-bottom:32px;}
+.divPageTitle{width:1200px; min-width:1200px; margin:auto; margin-bottom:32px;}
+.divPageTitle .engTitle{font-size:32px; font-weight:bold; padding-bottom:16px; padding-right:8px;}
+.divPageTitle .hanTitle{font-size:14px; font-weight:bold; color:#999;}
+
+.box{width:1200px; min-width:1200px; margin:auto; padding:16px; background-color:#fff; border-radius:5px;}
+.box td{padding:4px 8px;}
+
+.btn{border:1px solid #9661E2; background-color:#fff; color:#9661E2; font-weight:bold; min-width:80px;}
+.btn:hover{transition:300ms; border-color:#764bb4; color:#764bb4;}
+.btn.gray{border:0px; background-color:#999; color:#fff; padding:9px}
+.btn.gray:hover{transition:300ms; background: #666;}
+.btn.purple{border:0px; background-color:#9661E2; color:#fff; padding:9px}
+.btn.purple:hover{transition:300ms; background: #764bb4;}
+.btn.red{border:0px; background-color:#FF5B6C; color:#fff; padding:9px}
+.btn.red:hover{transition:300ms; background: #8f323c;}
+.btn.blue{border:0px; background-color:#74A0F1; color:#fff; padding:9px}
+.btn.blue:hover{transition:300ms; background: #456093;}
+.btn.green{border:0px; background-color:#78ECBD; color:#fff; padding:9px}
+.btn.green:hover{transition:300ms; background: #478e71;}
+.btn.orange{border:0px; background-color:#f2891c; color:#fff; padding:9px}
+.btn.orange:hover{transition:300ms; background: #985511;}
+.btn.yellow{border:0px; background-color:#f9f739; color:#fff; padding:9px}
+.btn.yellow:hover{transition:300ms; background: #c7b834;}
+.btn.pink{border:0px; background-color:#ea8bec; color:#fff; padding:9px}
+.btn.pink:hover{transition:300ms; background: #c466c6;}
+
+.division{width:100%; height:1px; background-color:#f5f0fc; margin:4px 0px;}
+
+.divSearch{border:1px solid #f0f0f0;}
+.divSearch .trText{color:#666;}
+.divSearch .tdDatePicker{color:#ccc}
+.divSearch .inputDatePicker{width:100px; text-align:center; border-radius:4px 0px 0px 4px; border-right:0px;}
+.divSearch .btnDatePicker{width:34px; text-align:center; border-radius:0px 4px 4px 0px; color:#fff; font-weight:bold; background-color:#bea1e9; border-color:#bea1e9;}
+.divSearch .btnDatePicker:hover{transition:300ms; background-color:#9661E2; border-color:#9661E2;}
+.divSearch .selectBox{height:34px; width:80px; border-radius:5px; border-color:#eee; color:#666; text-align:center;}
+.divSearch .selectBox.left{width:80px; border-radius:5px 0px 0px 5px; border-right:0px;}
+.divSearch .selectInput{border-radius:0px 5px 5px 0px;}
+
+.divButton{padding:0px; background-color:#F8F9FD; margin-top:4px; margin-bottom:4px;}
+.divButton td{padding:0px; padding-left:8px;}
+.divButton table td:first-of-type{width:100%;}
+.divButton .help{color:#ff0000}
+.divGrid{background-color:#F8F9FD; padding:0px;}
+.divGrid table{width:100%;}
+.divGrid table td{text-align:center;}
+.divGrid .table .tr.head{color:#999}
+.divGrid .table .tr.body{color:#666; margin-bottom:4px; border-radius:4px; background-color:#fff; border:1px solid #f0f0f0; cursor:pointer}
+.divGrid .table .tr.body:hover{transition:300ms; box-shadow:0px 1px 5px rgba(0,0,0,0.2);}
+.divGrid .table .tr .td{display:inline-block; padding:12px 8px; text-align:center;}
+.divGrid .table .tr .td.wd50{width:50px;}
+.divGrid .table .tr .td.wd80{width:80px;}
+.divGrid .table .tr .td.wd100{width:100px;}
+.divGrid .table .tr .td.wd150{width:150px;}
+.divGrid .table .tr .td.wd200{width:200px;}
+.divGrid .table .tr .td.wd250{width:250px;}
+.divGrid .table .tr .td.wd300{width:300px;}
+.divGrid .table .tr .td.wd400{width:400px;}
+.divGrid .table .tr .td.wd500{width:500px;}
+.divGrid .table .tr .td.wd600{width:600px;}
+.divGrid .table .tr .td.wd700{width:700px;}
+.divGrid .table .tr .td.wd800{width:800px;}
+.divGrid .emptyGrid{width:100%; background-color:#fff; padding:16px; text-align:center;}
+
+.divPagenation{width:1200px; min-width:1200px; margin:auto; text-align:center; font-size:0px;}
+.divPagenation .Pagenation{text-align:center;display:inline-block;}
+.divPagenation .Pagenation li{font-size:14px; float:left; padding:4px 12px; border:1px solid #eee; border-right:0px; background-color:#fff; cursor:pointer;}
+.divPagenation .Pagenation li.firstBtn{border-radius:4px 0px 0px 4px}
+.divPagenation .Pagenation li.lastBtn{border-right:1px solid #eee; border-radius:0px 4px 4px 0px}
+.divPagenation .Pagenation li.prevBtn{font-size:12px;}
+.divPagenation .Pagenation li.nextBtn{font-size:12px;}
+.divPagenation .Pagenation a{color:#4c4c4c;}
+.divPagenation .Pagenation a li.selected{color:#ff0000;}
+.divPagenation .Pagenation a li.unvisible{display:none;}
+
+
+
+.divCalendar{display:inline-block; width:300px; border:1px solid #eee; border-radius:5px; position:absolute; background:#fff; display:none;}
+.divCalendar .calendar{background-color:rgba(255,255,255,0.3); border:1px solid #fff; border-radius:5px; padding:8px;}
+.divCalendar .calendar table tr td{width:50px; height:35px; text-align:center;}
+.divCalendar .calendar .buttonBox{border-bottom:1px solid #eee; padding-bottom:8px;}
+.divCalendar .calendar .buttonBox input{padding:0px; background-color:#fff; border:0}
+.divCalendar .calendar .is_day{background-color:rgba(255,255,255,0.0);}
+.divCalendar .calendar .dateNow{width:80px; text-align:center; border:0px; background-color:rgba(255,255,255,0.0); font-size:16px;}
+.divCalendar .calendar .calendarBox .unable a{color:#666}
+.divCalendar .calendar .calendarBox .able a{color:#4c4c4c}
+.divCalendar .calendar .calendarBox td a{display:inline-block; width:100%; line-height:35px; cursor:pointer}
+.divCalendar .calendar .calendarBox td:nth-of-type(1) a{color:#FF5B6C}
+.divCalendar .calendar .calendarBox td:nth-of-type(7) a{color:#74A0F1}
+.divCalendar .calendar .calendarBox td:nth-of-type(1){color:#FF5B6C}
+.divCalendar .calendar .calendarBox td:nth-of-type(7){color:#74A0F1}
+.divCalendar .calendar .today a{background-color:#9661E2; color:#fff}
+
+input[type=checkbox] {
+    display: none;
+}
+input[type=checkbox] + label{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-top:0px;
+    padding-left: 0px;
+    margin-right: 0;
+    color:#4b4e56;
+}
+.divButton input[type=checkbox]+ label:before{top:2px}
+input[type=checkbox]+ label:before {
+    content: "";
+    display: inline-block;
+
+    width: 16px;
+    height: 16px;
+
+    margin-right: 0;
+    position: absolute;
+    left: -8px;
+    bottom: -2px;
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+input[type=checkbox]:checked + label:before {
+
+    content: "\2713";  /* 체크모양 */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 16px;
+    font-weight:800;
+    color: #9661E2;
+    text-align: center;
+    line-height: 16px;
+
+}
+.divPopupProduct input[type=checkbox]+ label:before{margin-left:-16px; margin-bottom:2px;}
+.divPopupProduct input[type=checkbox] + label{margin-left:40px;}

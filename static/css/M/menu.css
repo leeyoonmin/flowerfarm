@@ -1,0 +1,223 @@
+@media screen and (max-width:1024px) {
+
+  .divNewStickerContainer{width:100%; background-color:#f5f5f5; margin-bottom:16px;}
+  .divNewStickerBox{width:100%; margin:auto; border:1px solid #ccc; border-top:0;padding:8px; background-color:#fff}
+  .divNewStickerBox .divNewSticker li{color:#262525; line-height:28px; font-size:16px;}
+  .divNewStickerBox .divNewSticker li span{font-weight:bold; margin-right:8px; color:#FE8200;}
+  .divNewSticker ul{width:100%; margin:auto;}
+
+  #materialbox-overlay{position:fixed; width:100%; height:100%; top:0; left:0; background-color:rgba(0,0,0,0.8); z-index:999;}
+  .materialbox-caption{position:fixed; top:50%; left:50%; transform:translate(-50%,-800%); background-color:#666; width:90%; text-align:center; color:#fff; padding:4px; z-index:999;}
+  .divSearch{position:fixed; width:100%;top:-163px; z-index:995}
+  .divSearch td{border-bottom:1px solid #eee; padding:4px; font-size:14px; background-color:#fff;}
+  .divSearch td:first-of-type{border-right:1px solid #eee; text-align:center; width:60px;}
+  .divSearch input{width:100%; border:1px solid #eee; font-size:14px; padding:8px;}
+  .divSearch img{height:30px; cursor:pointer;}
+  .divSearch select{width:100%; border:1px solid #eee; background-color:#fff; font-size:14px; height:34px; color:#262525;}
+  .divSearch tr:last-of-type td:last-of-type{width:38px;}
+  .divSearch .colorSelector{display:inline-block; padding:13px; margin-right:4px; border:1px solid #eee; border-radius:100%;}
+  .divSearch .colorSelector:last-of-type{margin-right:0;}
+  .divSearch .colorSelector.all{background-image:url('/static/img/icon/ic_color_select_bg.png'); background-size:cover;}
+  .divSearch .colorSelector.selected{box-shadow:0px 2px 5px rgba(0,0,0,0.5)}
+  .divControlbox{text-align:center; background-color:#FE8200; padding:4px; border-radius:0px 0px 8px 8px; box-shadow:1px 1px 5px rgba(0,0,0,0.1)}
+  .divControlbox img{height:20px; width:15px;}
+  .divSearchBG{position:fixed; width:100%; height:100%; top:0; left:0; background-color:rgba(0,0,0,0.5); z-index:994; display:none;}
+  .divSearchBG2{width:100%; height:26px}
+  .divOrder{font-weight:400; font-size:14px; padding-top:8px;}
+  .divOrder .orderSelect{border:0; background:#f5f5f5; float:right; margin-right:8px}
+  .divOrder .orderSelect:focus{outline:0;}
+  .divOrder .totalCnt{padding-left:8px}
+  .divProductList{margin-top:8px; font-size:0;}
+  .divProductList .divItem{width:100%; background-color:#fff; border-bottom:1px solid #eee;}
+  .divProductList .divItem .imgTD{width:25%; padding:8px;}
+  .divProductList .divItem .infoTD{width:50%; padding:8px;}
+  .divProductList .divItem .cartTD{width:25%; padding:8px; text-align:center;}
+  .divProductList .imgTD img{width:70px; height:70px;}
+  .divProductList .imgTD .importLabel{position:absolute; font-size:16px;}
+  .divProductList .cartTD img{width:60%;}
+  .divProductList .divItem .infoTD{padding:8px;}
+  .divProductList .divItem table table td{}
+  .divProductList .divItem .cate{font-size:12px;}
+  .divProductList .divItem .name{font-size:14px; font-weight:400; padding:8px 0px; font-weight:bold; color:#262525}
+  .divProductList .divItem .price{font-size:14px; font-weight:400; }
+  .divProductList .divItem.cateHidden{display:none;}
+
+  .wrap.main{padding-bottom:32px;}
+  .divSlideBanner .swiper-container img{width:100%;}
+  .divSlideBanner .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .divSlideBanner .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #f5f5f5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .divProductBanner{padding-top:32px; padding-bottom:32px;}
+  .divNewProduct{width:100%; margin:auto; padding-top:32px;}
+  .divNewProduct .title{font-size:18px; color:#262525; margin-bottom:8px; margin-left:8px}
+  .divNewProduct .title span{margin-left:8px;font-size:14px; color:#FE8200;}
+  .divNewProduct .divItem{display:inline-block; width:20%;}
+  .divNewProduct .divItem img{width:100%; height:20vw;cursor:pointer;}
+  .divNewProduct .divItem .divInfo{position:absolute; background-color:rgba(0,0,0,0.7); width:20vw; transform:translateY(-100%); padding:8px; color:#fff; display:none;}
+
+  .divMainVideoBanner{width:100%; background:#F2F1F2; padding:0px 0px;}
+  .divMainVideoBanner .divVideo{width:100%; margin:auto; border-radius:8px;background:#F2F1F2;}
+  .divMainVideoBanner .divVideo table td video{width:100%;}
+
+  .divMainBanner{padding:96px 0px; padding-bottom:32px;}
+  .divMainBanner .title{text-align:center; padding-bottom:96px;}
+  .divMainBanner .title h1{font-size:24px; text-align:center; font-weight:400; display:inline-block; margin:0px 16px;}
+  .divMainBanner .title span{font-size:48px; text-align:center; color:#FE8200; font-weight:bold; line-height:96px; margin:0px 32px}
+  .divMainBanner .title img{width:16px; margin-bottom:16px;}
+  .divMainBanner .bannerSection{width:100%; margin:auto; display:flex; flex-direction:column;}
+  .divMainBanner .bannerSection .divItem{text-align:center; border-top:1px solid #eee; padding:64px 0px;}
+  .divMainBanner .bannerSection .divItem:last-of-type{margin-right:0; border-bottom:1px solid #eee;}
+  .divMainBanner .bannerSection .divItem img{height:128px;}
+  .divMainBanner .bannerSection .item2 img, .divMainBanner .bannerSection .item3 img{padding:16px;}
+  .divMainBanner .bannerSection .divItem h2{font-size:24px; margin-top:16px; margin-bottom:16px;}
+  .divMainBanner .bannerSection .divItem p{font-size:17.5px; color:#666; line-height:28px; font-weight:400;}
+  .divMainBannerButton{
+    width:200px; background-color:#FE8200; color:#fff; padding:8px 16px; font-size:20px; line-height:32px; vertical-align:baseline;
+    margin:auto; text-align:center; cursor:pointer; border-radius:4px; box-shadow:5px 5px 5px rgba(0,0,0,0.05);
+  }
+  .divMainBannerButton img{height:24px;  vertical-align:middle; float:left; margin-top:4px;}
+
+  .divPopupImgViewer{position:fixed; z-index:999; background-color:#fff; top:50%; left:50%; transform:translate(-50%, -50%); display:none;}
+  .divPopupImgViewer .product_img{width:90vw; height:90vw;}
+  .divPopupImgViewer .closeBtn{position:absolute; width:50px; height:50px; padding:8px; background-color:#d53030; float:right; cursor:pointer;}
+  .divPopupImgViewerBG{position:fixed; z-index:998; background-color:rgba(0,0,0,0.6); width:100vw; height:100vh; top:0; left:0; display:none;}
+}
+@media all and (min-width: 1025px) {
+  .divMainVideo{position:fixed; top:0; left:0; width:100%; height:100%; z-index:999; background:#fff; padding:118px 0px; text-align:center; display:none;}
+  video {
+  	top : 0;
+  	left : 0;
+  	width : 100%;
+    margin : auto;
+  	z-index : 1;
+  }
+  .wrap.productList{padding-top:16px;}
+  .divNewStickerContainer{width:100%; background-color:#f5f5f5; margin-bottom:16px;}
+  .divNewStickerBox{width:1200px; margin:auto; border:1px solid #ccc; padding:8px; background-color:#fff}
+  .divNewStickerBox .divNewSticker li{color:#262525; line-height:28px; font-size:16px;}
+  .divNewStickerBox .divNewSticker li span{font-weight:bold; margin-right:8px; color:#FE8200;}
+  .divNewSticker ul{width:1200px; margin:auto;}
+  .ui.active.dimmer.divLoader.productList{transition:300ms; position:fixed;}
+  .divSearch{width:1200px; min-width:1200px; background:#fff; margin:auto; margin}
+  .divSearch td{border:1px solid #ccc; padding:4px; font-size:16px;}
+  .divSearch td.title{width:100px; text-align:center; background:#eee; color:#000; font-weight:400;}
+  .divSearch td.body{text-align:center;}
+  .divSearch tr:nth-of-type(1) td:nth-of-type(2){width:150px;}
+  .divSearch tr:nth-of-type(1) td:nth-of-type(4){width:150px;}
+  .divSearch tr:nth-of-type(1) td:nth-of-type(6){width:150px;}
+  .divSearch tr:nth-of-type(2) td:last-of-type{border-left:0; text-align:right;}
+  .divSearch tr:nth-of-type(2) td:nth-of-type(2){border-right:0;}
+
+  .divSearch input{width:100%; border:0; font-size:16px; padding:8px;}
+  .divSearch img{height:30px; padding:0px; cursor:pointer; margin:-8px; margin-right:0px;}
+  .divSearch select{width:100%; border:0px; background-color:#fff; font-size:16px; height:34px; color:#262525;}
+  .divSearch .colorSelector{display:inline-block; padding:13px; margin-right:4px; border:1px solid #eee; border-radius:2px;}
+  .divSearch .colorSelector:last-of-type{margin-right:0;}
+  .divSearch .colorSelector.all{background-image:url('/static/img/icon/ic_color_select_bg.png'); background-size:cover;}
+  .divSearch .colorSelector.selected{box-shadow:0px 2px 5px rgba(0,0,0,0.5)}
+
+  .divControlbox{text-align:center; background-color:#ccc; padding:4px;}
+  .divControlbox img{height:20px; width:15px;}
+  .divSearchBG{position:fixed; width:100%; height:100%; top:0; left:0; background-color:rgba(0,0,0,0.5); z-index:994; display:none;}
+  .divOrder{margin:32px 0px; font-weight:400; font-size:14px; width:1200px; margin:auto; margin-bottom:16px; margin-top:16px; color:#262525}
+  .divOrder .orderSelect{border:0; background:#f5f5f5; float:right; margin-right:8px; font-size:16px;}
+  .divOrder .orderSelect:focus{outline:0;}
+  .divOrder .totalCnt{padding-left:8px; font-size:16px; width:400px;}
+
+  .divProductList{margin-top:8px; font-size:0; width:1200px; margin:auto;}
+  .divProductList .divItem{transition:300ms; width:228px; background-color:#fff; border-bottom:1px solid #eee; display:inline-block; margin-right:12px; margin-bottom:12px; border-radius:4px;}
+  .divProductList .divItem:hover{transition:300ms; transform:scale(1.02);}
+  .divProductList .divItem.lastItem{margin-right:0;}
+  .divProductList .divItem .imgTD{width:25%;border-bottom:1px solid #eee;}
+  .divProductList .imgTD .importLabel{position:absolute; font-size:0px; margin-left:175px; padding:24px 16px; background-color:#bfae66; color:#fff; display:none;}
+  .divProductList .divItem .infoTD{width:50%; padding:16px;}
+  .divProductList .divItem .cartTD{width:20%; padding:0px; text-align:center;}
+  .divProductList .imgTD img{width:228px; height:228px; border-radius:4px 4px 0px 0px}
+  .divProductList .cartTD img{padding:8px; width:50px; position:absolute; border-radius:100%; background-color:#FE8200; -ms-transform:translate(150px,-250%);  -webkit-transform:translate(40px,-250%); cursor:pointer; padding:0px; box-shadow:0px 1px 5px rgba(0,0,0,0.2);}
+  .divProductList .divItem table table td{color:#262525}
+  .divProductList .divItem .cate{font-size:14px; font-weight:300; height:20px;}
+  .divProductList .divItem .cate span{}
+  .divProductList .infoTD .importLabel{display:inline-block; margin-right:8px; background-color:#2789d9; color:#fff; padding:4px 6px 5px 6px ; border-radius:4px; box-shadow:5px 10px 10px rgba(0,0,0,.01)}
+  .divProductList .divItem .name{font-size:16px; padding:8px 0px; font-weight:700;}
+  .divProductList .divItem .price{font-size:14px; font-weight:400;}
+  .divProductList .divItem .price span{font-size:16px;}
+  .divProductList .divItem.cateHidden{display:none;}
+
+  .wrap.main{padding:0px; padding-bottom:128px;}
+  .divSlideBanner .swiper-container img{width:100%;}
+  .divSlideBanner .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .divSlideBanner .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #f5f5f5;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .divProductBanner{padding-top:96px; padding-bottom:96px;}
+  .divNewProduct{width:900px; margin:auto; padding-top:32px;}
+  .divNewProduct .title{font-size:22px; color:#262525; margin-bottom:8px;}
+  .divNewProduct .title span{margin-left:8px;font-size:14px; color:#FE8200;}
+  .divNewProduct .divItem{display:inline-block; width:20%;}
+  .divNewProduct .divItem img{width:180px; height:180px; cursor:pointer;}
+  .divNewProduct .divItem .divInfo{position:absolute; background-color:rgba(0,0,0,0.7); width:180px; transform:translateY(-100%); padding:8px; color:#fff; display:none;}
+
+  .divMainVideoBanner{width:100%; background:#F2F1F2;}
+  .divMainVideoBanner .divVideo{width:1200px; margin:auto; border-radius:8px;background:#F2F1F2;}
+  .divMainVideoBanner .divVideo table td video{width:100%;}
+
+  .divMainBanner{padding:96px 0px}
+  .divMainBanner .title{text-align:center;}
+  .divMainBanner .title h1{font-size:40px; text-align:center; font-weight:400; display:inline-block; margin:0px 64px;}
+  .divMainBanner .title h1 span{font-size:48px; text-align:center; color:#FE8200; font-weight:bold;}
+  .divMainBanner .title img{width:40px;}
+  .divMainBanner .bannerSection{width:1200px; margin:auto; display:flex; margin-top:128px;}
+  .divMainBanner .bannerSection .divItem{width:32%; display:inline-block; margin-right:2%; text-align:center; }
+  .divMainBanner .bannerSection .divItem:last-of-type{margin-right:0;}
+  .divMainBanner .bannerSection .divItem img{height:128px;}
+  .divMainBanner .bannerSection .item2 img, .divMainBanner .bannerSection .item3 img{padding:16px;}
+  .divMainBanner .bannerSection .divItem h2{font-size:24px; margin-top:32px; margin-bottom:16px;}
+  .divMainBanner .bannerSection .divItem p{font-size:17.5px; color:#666; line-height:28px;}
+  .divMainBannerButton{
+    width:200px; background-color:#FE8200; color:#fff; padding:16px; font-size:20px; line-height:32px; vertical-align:baseline;
+    margin:auto; text-align:center; cursor:pointer; border-radius:4px; box-shadow:5px 5px 5px rgba(0,0,0,0.05);
+  }
+  .divMainBannerButton img{height:24px;  vertical-align:baseline; float:left; margin-top:4px;}
+
+  .divPopupImgViewer{position:fixed; z-index:999; background-color:#fff; top:50%; left:50%; transform:translate(-50%, -50%); display:none;}
+  .divPopupImgViewer .product_img{width:90vh; height:90vh;}
+  .divPopupImgViewer .closeBtn{position:absolute; width:50px; height:50px; padding:8px; background-color:#d53030; float:right; cursor:pointer;}
+  .divPopupImgViewerBG{position:fixed; z-index:998; background-color:rgba(0,0,0,0.6); width:100vw; height:100vh; top:0; left:0; display:none;}
+}

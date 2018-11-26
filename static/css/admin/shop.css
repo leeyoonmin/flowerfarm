@@ -1,0 +1,19 @@
+.divButton{width:1200px; margin:auto; border-bottom:2px solid #9661E2;}
+.divButton input{font-size:16px; padding:16px; background-color:#fff; color:#9661E2; border-radius:5px 5px 0px 0px; border:1px solid #9661E2; cursor:pointer; border-bottom:0;}
+.divButton input.selected{background-color:#9661E2; color:#fff;}
+.slideBanner .divGrid{width:1200px; margin:auto;}
+.slideBanner .divGrid .desktop td img{height:120px;}
+.slideBanner .divGrid .mobile td img{height:200px;}
+.slideBanner .divGrid .mobile{display:none;}
+.slideBanner .divGrid td{padding:16px;}
+.slideBanner .divGrid .desktop td:nth-of-type(1){width:650px; text-align:right;}
+.slideBanner .divGrid .mobile td:nth-of-type(1){width:232px; text-align:right;}
+.slideBanner .divGrid td:nth-of-type(2){width:112px; text-align:left;}
+.slideBanner .divGrid td:nth-of-type(3) img{width:200px; height:200px; border:16px solid #fff; padding:0px; border-radius:100%; cursor:pointer;}
+
+.divImageViewer{position:fixed; background-color:#fff; top:50%; left:50%; transform:translate(-50%,-50%); z-index:999; display:none;}
+.divImageViewer img{width:70%}
+.divImageViewer input[type="file"]{border:0; margin-right:16px; width:90px;}
+.divImageViewer input[type="file"] input{padding:8px; width:200px;}
+.divImageViewer input[type="submit"]{padding:8px 16px; margin:8px; background:#9661E2; color:#fff;}
+.divImageViewerBG{position:fixed; background-color:rgba(0,0,0,0.5); width:100%; height:100%; top:0; left:0; z-index:998; display:none;}

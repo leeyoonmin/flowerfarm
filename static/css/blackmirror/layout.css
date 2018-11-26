@@ -1,0 +1,56 @@
+html{
+   min-height:100vh;
+   background: radial-gradient(ellipse at 15% 15%, #FCE1D8,  #F9CBBD, #e7e0bb);
+   background-attachment:fixed;
+   color:#7D6C66;
+   font-weight:300;
+}
+
+a{color:#7D6C66;}
+a:active{color:#7D6C66;}
+
+table{width:100%;}
+
+.btn{border:1px solid #7D6C66; background-color:rgba(0,0,0,0); color:#7D6C66; padding:8px 0px; cursor:pointer;}
+.btn:hover{transition:200ms; background-color:#7D6C66; color:#fff;}
+.wd100{width:100%;}
+
+.body{min-height:100vh; max-height:100vh; min-width:99.99vw; max-width:99.99vw;}
+.divContainerLeft .divContents{overflow-y:scroll; max-height:100vh;}
+.divContainerLeft .divContents::-webkit-scrollbar{width:0px;}
+.divContainerLeft .divTopHeaderBox{width:100%; min-height:32px;}
+.divContainerLeft .divTopHeaderBox .divTopHeader{width:1200px; margin:auto;}
+.divContainerLeft .divTopHeaderBox .divTopHeader ul li{float:right; margin:8px 0px; padding:0px 8px; cursor:pointer}
+
+.divContainerLeft .divLogoBox{width:95%; margin:auto;padding:32px 0px 64px 0px;}
+.divContainerLeft .divLogo{min-width:1200px;}
+.divContainerLeft .divLogo h1{text-align:center; font-size:32px; cursor:pointer; display:inline-block; font-weight:300;}
+
+.divMainMenuBox{width:95%; min-width:1200px; margin:auto; border-bottom:1px solid #7D6C66}
+.divMainMenu{width:800px; min-width:800px;}
+.divMainMenu table{width:100%;}
+.divMainMenu td{font-size:20px; padding-bottom:16px; font-weight:300;}
+
+
+.divContainerRight{width:300px; min-width:300px; max-width:300px; border-left:0px solid #7D6C66; min-height:100vh; vertical-align:top;}
+.divContainerRight .divHeader{font-size:16px; color:#7D6C66; padding:16px; text-align:center; width:269px; top:0; margin-bottom:16px;}
+.divContainerRight .divHeader h1{font-weight:300;}
+.divContainerRight .divHeader h1 span{font-weight:400}
+
+.divContainerRight .divItemList{min-height:100px; max-height:100px; overflow-y:scroll;}
+.divContainerRight .divItemList::-webkit-scrollbar{width:0px;}
+.divContainerRight .divItemList td{vertical-align:middle; padding:8px 8px; text-align:center;}
+.divContainerRight .divItemList .item{}
+.divContainerRight .divItemList .item .img{width:50px; padding-left:16px;}
+.divContainerRight .divItemList .item .img img{height:50px; width:50px; border-radius:100%;}
+.divContainerRight .divItemList .item .info p{text-align:left;}
+.divContainerRight .divItemList .item .info .name{margin-bottom:12px}
+.divContainerRight .divItemList .item .control{width:90px; text-align:left;}
+.divContainerRight .divItemList .item .control a{border:1px solid #7D6C66; font-size:12px; padding:2px 6px 3px 5px; border-radius:100%;}
+.divContainerRight .divItemList .item .control a:hover{transition:200ms; background-color:#7D6C66; color:#fff;}
+.divContainerRight .divItemList .item .control span{display:inline-block; width:20px; font-size:14px; text-align:center;}
+
+.divContainerRight .divTotal{padding:16px 16px; border-top:0px dashed #7D6C66;}
+.divContainerRight .divTotal td{padding:8px;}
+.divContainerRight .divTotal td:last-of-type{text-align:right}
+.divContainerRight .divTotal input{margin-top:16px;}

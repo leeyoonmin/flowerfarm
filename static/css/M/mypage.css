@@ -1,0 +1,245 @@
+
+.wrap{background-color:#f5f5f5;}
+/*마이페이지 메인*/
+.divBaseInfo{background-color:#fff; color:#262525; border-bottom:2px solid #FE8200; }
+.divBaseInfo td{color:#262525}
+.divBaseInfo td.userImg{color:#262525}
+.divBaseInfo td.userImg img{}
+
+.divBaseInfo table:nth-of-type(2) td{border-top:1px solid #eee; background-color:#eee;}
+.divBaseInfo table:nth-of-type(2) td:first-of-type{border-right:0px solid #eee;}
+.divBaseInfo table:nth-of-type(2) td span{color:#FE8200;}
+
+.divMenuList{border-top:1px solid #FE8200; border-bottom:1px solid #FE8200;}
+.divMenuList li{background-color:#fff; border-bottom:1px solid #eee; color:#262525}
+.divMenuList li:hover{background:#FE8200; color:#fff;}
+.divMenuList li img{border:1px solid #666;}
+/*마이페이지 내정보관리*/
+.divTitle a.link{color:#046fd1}
+.divUserInfo{background-color:#f5f5f5; border-top:2px solid #FE8200; border-bottom:1px solid #ccc;}
+.divUserInfo td{border:1px solid #ccc; background-color:#fff;}
+.divUserInfo td:nth-of-type(1){background:#eee; color:#262525}
+#sel_tel1{background-color:#fff; border:1px solid #eee; }
+
+.divPasswordModify{background-color:#f5f5f5; border-top:2px solid #FE8200; border-bottom:1px solid #ccc; }
+.divPasswordModify td{border:1px solid #ccc; background-color:#fff;}
+.divPasswordModify td:nth-of-type(1){background:#eee; color:#262525}
+
+.divUserDefaultAddr{background-color:#fff; border-top:2px solid #FE8200; border-bottom:1px solid #ccc;}
+.divUserDefaultAddr td{border:1px solid #ccc; font-size:16px; background:#fff;}
+.divUserDefaultAddr td:nth-of-type(1){background:#eee; color:#262525}
+
+.divLogin{background-color:#fff; border-top:1px solid #FE8200; border-bottom:1px solid #ccc; background-color:#f5f5f5}
+.divLogin td{border:1px solid #ccc; background:#fff;}
+.divLogin td:nth-of-type(1){text-align:center;background:#eee; color:#262525}
+.divLogin td input{border:0px solid #ccc;}
+
+.myOrderList .divSearch input{border:1px solid #ccc; background-color:#fff; color2625250e3025;}
+.myOrderList .divSearch input:last-of-type{border-right:1px solid #ccc}
+.myOrderList .divSearch input.selected{background-color:#FE8200; color:#fff; border-color:#FE8200;}
+
+.myOrderList .divOrderList .divOrderItem{background-color:#fff; border:1px solid #ccc;}
+.myOrderList .divOrderList .divOrderItem td{color:#262525;}
+.myOrderList .divOrderList .divEmpty{background-color:#fff; border-top:1px solid #ccc;}
+.myOrderList .divButton{background-color:#fff; border:1px solid #ccc;}
+.myOrderList .divButton input{color:#FE8200; border:1px solid #FE8200;}
+.myOrderList .divButton .orderCancelBtn{background-color:#fff;}
+.myOrderList .divButton .orderDetailBtn{background-color:#FE8200; color:#fff;}
+
+
+.orderDetail{color:#262525;}
+.orderDetail table{border-top:2px solid #FE8200}
+.orderDetail td{color:#262525;}
+.orderDetail .divTitle{color:#262525; font-size:18px;}
+.orderDetail .divTable td{border:1px solid #ccc; background-color:#fff;}
+.orderDetail .divTable td:first-of-type{background:#eee}
+
+.orderDetail .divList{color:#262525;}
+.orderDetail .divList tr:first-of-type td{background:#eee;}
+.orderDetail .divList td{background-color:#fff; border:1px solid #ccc;}
+
+@media screen and (max-width:1024px){
+  .wrap{padding:0;}
+  .breadcrumb{padding:8px; width:100%; }
+  #materialbox-overlay{position:fixed; width:100%; height:100%; top:0; left:0; background-color:rgba(0,0,0,0.5); z-index:999;}
+
+  /*마이페이지 메인*/
+  .divBaseInfo{font-size:0px; margin-bottom:16px;}
+  .divBaseInfo td{padding:8px; font-size:14px;}
+  .divBaseInfo td.userImg{width:20%; text-align:right; border-right:0px;}
+  .divBaseInfo td.userImg img{width:50%; border-radius:100%; padding:2px;}
+  .divBaseInfo td.nameCard{width:55%; text-align:left; border-right:0px; font-size:16px; font-weight:400}
+  .divBaseInfo td.userSettings{width:30%; text-align:center; font-size:10px;}
+  .divBaseInfo td.userSettings img{width:40%; margin-bottom:-4px;}
+
+  .divBaseInfo table:nth-of-type(2) td{width:33.33%; text-align:center;  font-size:12px; padding:12px 8px}
+  .divBaseInfo table:nth-of-type(2) td span{font-size:14px; font-weight:400}
+
+  .divMenuList{width:100%;}
+  .divMenuList li{font-size:14px; padding:16px 8px;  font-weight:400;}
+  .divMenuList a:last-of-type li{border-bottom:0px;}
+  .divMenuList li img{border-radius:100%; width:20px; position:absolute; left:90%; transform:translateY(-4px);}
+  .divMenuList li:hover{transition:0ms; background:#FE8200; color:#fff;}
+  /*마이페이지 내정보관리*/
+  .divTitle .title{padding:8px; display:inline-block; font-weight:700;}
+  .divTitle a.link{position:absolute; right:8px; transform:translateY(12px); text-decoration:underline;}
+  .divTitle a.page{padding:8px}
+  .divUserInfo{margin-bottom:16px}
+  .divUserInfo table{margin-bottom:16px;}
+  .divUserInfo td{padding:8px; font-size:14px; font-weight:400;}
+  .divUserInfo td:nth-of-type(1){width:80px; text-align:center;}
+  .divUserInfo td input{padding:0px 4px;}
+  .divUserInfo td input[type="text"]{margin:-8px; padding:8px; width:100%; border:0;}
+  #sex2{margin-left:16px; }
+  #sel_tel1{height:36px; margin:-8px 0px; width:26.9%; border:0;}
+  #tel2{width:30%; padding:8px; margin:-8px 0px; border:0; text-align:center;}
+  #tel3{width:30%; padding:8px; margin:-8px 0px; border:0; text-align:center;}
+
+  .divPasswordModify{margin-bottom:16px}
+  .divPasswordModify table{margin-bottom:16px;}
+  .divPasswordModify td{padding:8px;font-size:14px}
+  .divPasswordModify td:nth-of-type(1){width:120px; text-align:center;}
+  .divPasswordModify td input{padding:8px 8px; margin:-8px; width:100%; border:0;}
+
+  .divUserDefaultAddr td{padding:8px; font-size:14px;  font-weight:400;}
+  .divUserDefaultAddr td:nth-of-type(1){width:80px; text-align:center;}
+
+  .divItle.myInfoLogin{margin-top:16px; margin-left:8px;}
+  .divLogin{margin-top: 16px; border; }
+  .divLogin td{padding:8px; height:50px;}
+  .divLogin td:nth-of-type(1){width:80px;}
+  .divLogin td input{width:100%; padding:8px;}
+  .divLogin table{margin-bottom:16px;}
+
+  .myOrderList .divSearch{margin-top:8px;}
+  .myOrderList .divSearch input{width:25%; border-left:0; padding:8px; font-size:14px; margin-bottom:8px;}
+  .myOrderList .divSearch input:focus{outline:0;}
+  .myOrderList .divSearch input:last-of-type{border-right:0;}
+  .myOrderList .divOrderList .divOrderItem{width:100%; border-bottom:0;}
+  .myOrderList .divOrderList .divOrderItem td{padding:8px;}
+  .myOrderList .divOrderList .divOrderItem td.orderDate{font-size:12px; padding-bottom:8px;}
+  .myOrderList .divOrderList .divOrderItem td.productName{font-size:14px; text-align:center; font-weight:400; padding:0px 4px 4px 0px}
+  .myOrderList .divOrderList .divOrderItem td.price{font-size:14px; text-align:center; font-weight:bold; padding:4px 0px 4px 0px}
+  .myOrderList .divOrderList .divEmpty{width:100%; padding:50px; text-align:center;}
+  .myOrderList .divButton{text-align: right; margin-bottom:16px; padding:8px; border-top:0;}
+  .myOrderList .divButton input{margin-left:4px; border:0px; font-size:12px; padding:8px 16px;}
+
+  .loader{z-index:999; width:100%; height:100%; top:0; left:0;}
+
+  .orderDetail{font-weight:400;}
+  .orderDetail .divTable{margin-bottom:16px;}
+  .orderDetail .divTable .divTitle{padding:8px; font-weight:bold;}
+  .orderDetail .divTable td{padding:8px; font-size:12px; line-height:20px;}
+  .orderDetail .divTable td:first-of-type{text-align:center; width:100px; font-weight:400;}
+
+  .orderDetail .divList{margin-bottom:16px;}
+  .orderDetail .divList .divTitle{padding:8px; font-weight:bold;}
+  .orderDetail .divList td{padding:8px; font-size:12px; line-height:20px; text-align:center;}
+  .orderDetail .divList td:last-of-type{border-right:0;}
+  .orderDetail .divList tr:first-of-type td{font-weight:400;}
+  .orderDetail .divList .imgTD{width:80px}
+  .orderDetail .divList .imgTD img{width:80px; height:80px; margin-bottom:-5px;}
+
+  .transBiz form{width:100%; margin:auto; padding:32px 0px;}
+  .transBiz form table{background-color:#fff;}
+  .transBiz form table td{padding:16px;  border: 1px solid #ccc;}
+  .transBiz form table td:nth-of-type(1){width:100px;}
+  .transBiz form table td input{width:100%; margin:-8px; padding:8px; border:1px solid #eee;}
+  .transBiz form input[type="submit"]{margin-top:8px;}
+}
+@media all and (min-width: 1025px) {
+  body{}
+  .wrap{padding-top:16px; padding-bottom:32px}
+  .ui.breadcrumb{display:none;}
+  #materialbox-overlay{position:fixed; width:100%; height:100%; top:0; left:0; background-color:rgba(0,0,0,0.5); z-index:999;}
+
+  /*마이페이지 메인*/
+  .divBaseInfo{font-size:0px; width:600px; margin:auto; margin-bottom:16px;}
+  .divBaseInfo td{padding:8px; font-size:14px;}
+  .divBaseInfo td.userImg{width:20%; text-align:right; border-right:0px; }
+  .divBaseInfo td.userImg img{width:60px;  border-radius:100%; padding:8px;}
+  .divBaseInfo td.nameCard{width:55%; text-align:left; border-right:0px; font-size:18px; font-weight:400}
+  .divBaseInfo td.userSettings{width:25%; text-align:center; font-size:14px; padding-bottom:16px;}
+  .divBaseInfo td.userSettings img{width:60px; margin-bottom:-4px; cursor:pointer;}
+
+  .divBaseInfo table:nth-of-type(2) td{width:33.33%; text-align:center;  font-size:16px; padding:12px 8px;}
+  .divBaseInfo table:nth-of-type(2) td{color:#  `inherit;`;}
+  .divBaseInfo table:nth-of-type(2) td span{font-size:18px; font-weight:700; }
+
+  .divMenuList{width:100%; display:block; width:600px; margin:auto;}
+  .divMenuList li{font-size:16px; padding:16px 8px;  font-weight:400;}
+  .divMenuList li:hover{transition:100ms;}
+  .divMenuList a:last-of-type li{border-bottom:0px;}
+  .divMenuList li img{border-radius:100%; width:20px; float:right; transform:translateY(-3px); margin-right:16px;}
+  /*마이페이지 내정보관리*/
+  .divTitle{width:600px; margin:auto;}
+  .divTitle .title{padding:8px; display:inline-block; font-weight:700; font-size:16px;}
+  .divTitle a.link{right:8px; transform:translateY(12px); text-decoration:underline; cursor:pointer; float:right;}
+  .divTitle a.page{padding:8px}
+  .divUserInfo{width:600px; margin:auto;  margin-bottom:32px;}
+  .divUserInfo td{padding:16px; font-size:16px; font-weight:400;}
+  .divUserInfo td:nth-of-type(1){width:100px; text-align:center;}
+  .divUserInfo td input[type="text"]{padding:16px; margin:-16px; width:100%; border:0;}
+  .divUserInfo input[type="submit"]{margin-top:16px;}
+  #sex2{margin-left:16px;}
+  #sel_tel1{width:20%; height:54px; margin:-16px 0; padding-left:32px; border:0}
+  #tel2{width:30%; padding:16px; margin:-16px 0; text-align:center; border:0}
+  #tel3{width:30%; padding:16px; margin:-16px 0; text-align:center; border:0}
+
+  .ui.breadcrumb{display:block; width:600px; margin:auto;}
+  .divPasswordModify{width:600px; margin:auto; margin-bottom:16px}
+  .divPasswordModify td{padding:16px; font-size:16px}
+  .divPasswordModify td:nth-of-type(1){width:150px; text-align:center;}
+  .divPasswordModify td input{width:100%; padding:16px; margin:-16px; border:0;}
+  .divPasswordModify input[type="submit"]{margin-top:16px;}
+
+  .divUserDefaultAddr{width:600px; margin:auto;}
+  .divUserDefaultAddr td{padding:16px; font-size:16px;  font-weight:400;}
+  .divUserDefaultAddr td:nth-of-type(1){width:100px; text-align:center;}
+
+  .divItle.myInfoLogin{width:600px; margin:auto; font-size:16px;}
+  .divLogin{width:600px; margin:auto; margin-top: 16px; font-size:16px;}
+  .divLogin td{padding:16px; height:50px;}
+  .divLogin td:nth-of-type(1){width:120px; text-align:center;}
+  .divLogin td input{width:100%; padding:16px; margin:-16px;}
+  .divLogin table{margin-bottom:16px;}
+
+  .wrap.myOrderList{padding-top:1px;}
+  .myOrderList .divSearch{width:600px; margin:auto; font-size:16px; margin-top:16px; border-radius:4px; box-shadow:1px 1px 5px rgba(0,0,0,0.1); margin-bottom:16px;}
+  .myOrderList .divSearch input{width:25%; padding:12px; font-size:16px; border-right:0;}
+  .myOrderList .divSearch input:first-of-type{border-radius:4px 0px 0px 4px;}
+  .myOrderList .divSearch input:last-of-type{border-radius:0px 4px 4px 0px;}
+  .myOrderList .divSearch input:focus{outline:0;}
+
+  .myOrderList .divOrderList .divOrderItem{width:600px; border-bottom:0; margin:auto; border-radius:4px 4px 0px 0px;}
+  .myOrderList .divOrderList .divOrderItem td{padding:8px;}
+  .myOrderList .divOrderList .divOrderItem td.orderDate{font-size:14px; padding:8px}
+  .myOrderList .divOrderList .divOrderItem td.productName{font-size:16px; text-align:center; font-weight:400; padding:0px 0px 4px 0px}
+  .myOrderList .divOrderList .divOrderItem td.price{font-size:16px; text-align:center; font-weight:bold; padding:4px 0px 0px 0px}
+  .myOrderList .divOrderList .divEmpty{width:100%; padding:50px; text-align:center;}
+  .myOrderList .divButton{text-align: right; padding:8px; border-top:0; width:600px; margin:auto; margin-bottom:16px; border-radius:0px 0px 4px 4px; box-shadow:1px 1px 5px rgba(0,0,0,0.1)}
+  .myOrderList .divButton input{margin-left:4px; font-size:12px; padding:8px 16px; border-radius:16px;}
+
+  .loader{z-index:999; width:100%; height:100%; top:0; left:0;}
+
+  .orderDetail{font-weight:400;}
+  .orderDetail .divTable{margin-bottom:16px; width:600px; margin:auto; margin-bottom:32px;}
+  .orderDetail .divTable .divTitle{padding:8px; font-weight:bold;}
+  .orderDetail .divTable td{padding:8px; font-size:16px; line-height:20px;}
+  .orderDetail .divTable td:first-of-type{ text-align:center; width:120px;}
+
+  .orderDetail .divList{margin-bottom:16px; width:600px; margin:auto; margin-bottom:32px;}
+  .orderDetail .divList .divTitle{padding:8px; font-weight:bold;}
+  .orderDetail .divList td{padding:8px; font-size:16px; line-height:20px; text-align:center;}
+  .orderDetail .divList .imgTD{width:80px}
+  .orderDetail .divList .imgTD img{width:80px; height:80px; margin-bottom:-5px;}
+
+  .transBiz form{width:900px; margin:auto; padding:32px;}
+  .transBiz form table{background-color:#fff;}
+  .transBiz form table td{padding:16px;  border: 1px solid #ccc;}
+  .transBiz form table td:nth-of-type(1){width:150px;}
+  .transBiz form table td input{width:100%; margin:-8px; padding:8px; border:1px solid #eee;}
+  .transBiz form input[type="submit"]{margin-top:8px;}
+
+
+}

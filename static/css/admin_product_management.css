@@ -1,0 +1,224 @@
+.sidemenu_wrap{
+    width: 250px;
+    height: 500px;
+    float: left;
+    background: #ffdddd;
+
+}
+.sidemenu_wrap a{
+    margin: 40px;
+    display: block;
+    font-size: 16px;
+}
+.product_manage_wrap{
+    width: 970px;
+    height: auto;
+    margin: 50px auto;
+    box-sizing: border-box;
+}
+.product_manage_wrap h1{
+    text-align: center;
+    font-size: 20px;
+}
+
+.product_manage_wrap table{
+    font-size: 13px;
+}
+.product_manage_wrap .product_manage_title{
+    width: 970px;
+    height: 50px;
+    border: 1px solid #cad2d3;
+    background: #cad2d3;
+    line-height: 50px;
+    padding-left: 50px;
+
+}
+.product_manage_wrap table td{
+      width: 200px;
+      height: 50px;
+      border: 1px solid gainsboro;
+      box-sizing: border-box;
+      text-align: center;
+  }
+.product_manage_wrap table td input[type=text]{
+    width: 400px;
+    height: 20px;
+}
+
+.product_manage_wrap table td input[type=button]{
+    width: 80px;
+    height: 20px;
+    background: #cb3532;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+.product_manage_wrap table td img{
+    margin-top: 30px;
+    width: 90%;
+    height: 130px;
+}
+.product_manage_wrap table td select{
+    width: 300px;
+    height: 20px;
+}
+.product_manage_wrap table td div{
+    vertical-align: center;
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+    height: 250px;
+}
+
+.product_manage_wrap table td:nth-child(2) {
+    width: 770px;
+    height: 50px;
+    border: 1px solid gainsboro;
+    text-align: center;
+}
+.product_manage_wrap table tr:nth-child(8) {
+    height: 250px;
+    text-align: center;
+}
+.product_manage_wrap .submit_wrap{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+.product_manage_wrap .submit_btn{
+    margin-top: 50px;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    background: #cb3532;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+/*상품 등록*/
+.product_list_wrap{
+    width: 970px;
+    height: auto;
+    margin: 50px auto;
+    box-sizing: border-box;
+}
+.product_list_wrap h1{
+    text-align: center;
+    font-size: 20px;
+}
+.product_list_wrap table{
+    font-size: 10px;
+}
+.product_list_wrap table td{
+    width: 50px;
+    height: 70px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    text-align: center;
+}
+.product_list_wrap table tr:first-child{
+    width: 50px;
+    height: 70px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    text-align: center;
+    background: #f1f1f1;
+}
+.product_list_wrap table td:first-child{
+    width: 30px;
+    height: 70px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    text-align: center;
+}
+.product_list_wrap table td:nth-child(3){
+    width: 150px;
+    height: 70px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    text-align: center;
+}
+.product_list_wrap table td:nth-child(8){
+    width: 100px;
+    height: 70px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    text-align: center;
+}
+.product_list_wrap table td:nth-child(9){
+    width: 100px;
+    height: 70px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    text-align: center;
+}
+.product_list_wrap table td:nth-child(10){
+    width: 100px;
+    height: 70px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    text-align: center;
+}
+.product_list_wrap table td:nth-child(11){
+    width: 100px;
+    height: 70px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    text-align: center;
+}
+.product_list_wrap table td:nth-child(11) img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.product_list_wrap .product_list_btn_wrap{
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+}
+.product_list_wrap .product_list_btn_wrap .product_list_back{
+    width: 50px;
+    border: 1px solid #cb3532;
+    height: 30px;
+}
+.product_list_wrap .product_list_btn_wrap .product_list_next{
+    width: 50px;
+    border: 1px solid #cb3532;
+    height: 30px;
+}
+.product_list_wrap .product_list_delete_wrap{
+    width: 100%;
+    height: 80px;
+}
+.product_list_wrap .product_list_delete_wrap .product_list_delete_btn{
+    margin-top: 30px;
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
+    background: #cb3532;
+    color: white;
+    border-radius: 5px;
+
+    border: 0;
+}
+.product_list_wrap table td .product_list_name{
+    cursor: pointer;
+
+}
+.product_list_wrap table tr:nth-child(n+2) td:hover{
+    cursor: pointer;
+    text-decoration: underline;
+
+}
+/*상품 목록*/
+.modify_product_wrap{
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    left: 0;
+    top: 0;
+}
+
+
+/*수정팝업*/

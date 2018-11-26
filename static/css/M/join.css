@@ -1,0 +1,243 @@
+.findID .identifyFrm{display:none;}
+.findID .pwResetBtn{display:none;}
+@media screen and (max-width:1024px) {
+  .divSection{margin-bottom:8px;}
+
+  .divSection .box .boxTitle{text-align:center;}
+  .divSection .box input[type="button"]{width:100%; margin-top:8px; font-size:12px; border:1px solid #666; background-color:#fff; height:40px;}
+  .divSection .box input[type="button"].width3{width:33%; margin-right:0.5%;}
+  .divSection .box input[type="button"].width3.last{margin-right:0;}
+  .divSection .box input[type="button"].width3:hover{transition:300ms; background-color:#666; color:#fff;}
+  .divSection .box input[type="button"].width3.selected{transition:300ms; background-color:#666; color:#fff;}
+  .divSection .box input[type="button"].width3:focus{outline:0;}
+  .divSection .box input[type="button"].width2{width:49%; margin-right:2%;}
+  .divSection .box input[type="button"].width2.last{margin-right:0; background-color:#666; color:#fff;}
+  .divSection .box .agreeBox{border:1px solid #eee; padding:8px; font-size:10px; margin-top:8px; line-height:14px;}
+  .divSection .box .agreeBox a{text-decoration:underline; font-weight:300;}
+  .divSection .box .formBox .inputID.duplicate{border:1px solid red; background-color:#fff3f1}
+  .divSection .box .formBox .inputID.non_duplicate{border:1px solid green; background-color:#f5fff1}
+
+  .divSection .box .formBox{margin-top:0px;}
+  .divSection.login .box input[type="submit"]{margin-top:8px;}
+  .divSection.login .subMenuBox{border-top:1px solid #eee; border-bottom:1px solid #eee; padding:16px 0px;}
+  .divSection.login .subMenuBox td{text-align:center; font-size:12px; width:33.33%; border-right:1px solid #eee;}
+  .divSection.login .subMenuBox td:last-of-type{border-right:0px;}
+
+  .divSection.findID .resultBox p{text-align:center; font-weight:400; padding-top:16px; font-size:12px;}
+  .divSection.findID .resultBox p span{font-size:14px;}
+
+  #sel_tel1{border:1px solid #ccc; background:#fff; height:35px; width:26.9%;}
+  #tel2{width:30%}
+  #tel3{width:30%}
+
+  .wrap.join{background-color:#fff;}
+
+  .spinner {
+    margin:auto;
+    margin-bottom:16px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+  }
+
+  .dot1, .dot2, .dot3, .dot4 {
+    width: 40%;
+    height: 40%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(180deg, #ff3838, #c8649a);
+    border-radius: 100%;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+
+  .dot2 {
+    background: linear-gradient(180deg, #f0e836, #f9ff81);
+    top: auto;
+    bottom: 15px;
+    -webkit-animation-delay: -1.5s;
+    animation-delay: -1.5s;
+  }
+
+  .dot3 {
+    background: linear-gradient(180deg, #ebff00, #00ff0a);
+    top: auto;
+    bottom: 30px;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+
+  .dot4 {
+    background: linear-gradient(180deg, #04ffff, #007dff);
+    top: 15px;
+    bottom:45px;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+  }
+
+  @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+  @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+
+  @keyframes sk-bounce {
+    0%, 100% {
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
+  .wrap.join{background: linear-gradient(180deg, #f4fcff, #fff, #fff, #fff, #fff, #fff) fixed;}
+  .divJoin{padding-top:32px;}
+  .divJoin .divText{text-align:center; vertical-align:middle;}
+  .divJoin .divText h1{font-size:24px; line-height:40px; display:none;}
+  .divJoin .divText .static.name{color:#007dff}
+  .divJoin .divInput{text-align:center;  display:none; padding-top:24px;}
+  .divJoin .divInput .input.text{border:1px solid #eee; padding:16px; width:75%; border-radius:5px; text-align:center; font-size:18px; display:none; margin:auto; margin-bottom:16px}
+  .divJoin .divInput .button{border:0; padding:8px; width:20%; border-radius:5px; text-align:center; font-size:14px; background-color:#666; color:#fff; margin:auto;}
+  .divJoin .divInput input:focus{outline:0;}
+
+  .divJoin .divInput .input.name{display:block;}
+  .divJoin .divInput .button.name{}
+  .divJoin .divInput .divTel{width:75%; margin:auto; border:1px solid #eee; border-radius:5px; margin-bottom:16px; display:none;}
+  .divJoin .divInput .divTel select{height:54px; width:25%; border:0; padding-left:16px; background-color:#fff;}
+  .divJoin .divInput .divTel select:focus{outline:0;}
+  .divJoin .divInput .divTel input{padding:16px; width:30%; border:0; text-align:center;}
+}
+@media all and (min-width: 1025px) {
+  .divSection{margin-bottom:8px;}
+
+  .divSection .box .boxTitle{text-align:center; font-size:16px; margin-bottom:16px;}
+  .divSection .box input[type="button"]{width:100%; margin-top:8px; font-size:16px; border:1px solid #ccc; background-color:#fff; height:48px;}
+  .divSection .box input[type="button"].width3{width:33%; margin-right:0.5%;}
+  .divSection .box input[type="button"].width3.last{margin-right:0;}
+  .divSection .box input[type="button"].width3:hover{transition:300ms; background-color:#FE8200; border:1px solid #FE8200; color:#fff;}
+  .divSection .box input[type="button"].width3.selected{transition:300ms; background-color:#FE8200; border:1px solid #FE8200; color:#fff;}
+  .divSection .box input[type="button"].width3:focus{outline:0;}
+  .divSection .box input[type="button"].width2{width:49%; margin-right:2%;}
+  .divSection .box input[type="button"].width2.last{margin-right:0; background-color:#FE8200; color:#fff;}
+  .divSection .box .agreeBox{border:1px solid #eee; padding:8px; font-size:14px; margin-top:8px; line-height:18px;}
+  .divSection .box .agreeBox a{text-decoration:underline; font-weight:300; cursor:pointer;}
+  .divSection .box .formBox .inputID.duplicate{border:1px solid red; background-color:#fff3f1}
+  .divSection .box .formBox .inputID.non_duplicate{border:1px solid green; background-color:#f5fff1}
+  .divSection .box .formBox p{font-size:16px;}
+  .divSection .box .formBox span{font-size:18px; color:#528dfe}
+
+  .divSection .box .formBox{margin-top:0px; padding:16px;}
+  .divSection.login .box input[type="submit"]{margin-top:8px;}
+  .divSection.login .subMenuBox{border-top:1px solid #eee; border-bottom:1px solid #eee; padding:16px 0px;}
+  .divSection.login .subMenuBox td{text-align:center; font-size:12px; width:33.33%; border-right:1px solid #eee;}
+  .divSection.login .subMenuBox td:last-of-type{border-right:0px;}
+
+  .divSection.findID .resultBox p{text-align:center; font-weight:400; padding-top:16px; font-size:12px;}
+  .divSection.findID .resultBox p span{font-size:14px;}
+
+  #sel_tel1{border:1px solid #ccc; background:#fff; height:46px; width:27.0%; padding-left:16px;}
+  #tel2{width:30%; text-align:center;}
+  #tel3{width:30%; text-align:center;}
+
+  .wrap.join{background-color:#fff;}
+
+  .spinner {
+    margin:auto;
+    margin-bottom:16px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+  }
+
+  .dot1, .dot2, .dot3, .dot4 {
+    width: 40%;
+    height: 40%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(180deg, #ff3838, #c8649a);
+    border-radius: 100%;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+
+  .dot2 {
+    background: linear-gradient(180deg, #f0e836, #f9ff81);
+    top: auto;
+    bottom: 15px;
+    -webkit-animation-delay: -1.5s;
+    animation-delay: -1.5s;
+  }
+
+  .dot3 {
+    background: linear-gradient(180deg, #ebff00, #00ff0a);
+    top: auto;
+    bottom: 30px;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+
+  .dot4 {
+    background: linear-gradient(180deg, #04ffff, #007dff);
+    top: 15px;
+    bottom:45px;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+  }
+
+  @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+  @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+
+  @keyframes sk-bounce {
+    0%, 100% {
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
+  .wrap.join{background: linear-gradient(180deg, #f4fcff, #fff, #fff, #fff, #fff, #fff) fixed;}
+  .divJoin{padding-top:32px;}
+  .divJoin .divText{text-align:center; vertical-align:middle;}
+  .divJoin .divText h1{font-size:24px; line-height:40px; display:none;}
+  .divJoin .divText .static.name{color:#007dff}
+  .divJoin .divInput{text-align:center;  display:none; padding-top:24px;}
+  .divJoin .divInput .input.text{border:1px solid #eee; padding:16px; width:75%; border-radius:5px; text-align:center; font-size:18px; display:none; margin:auto; margin-bottom:16px}
+  .divJoin .divInput .button{border:0; padding:8px; width:20%; border-radius:5px; text-align:center; font-size:14px; background-color:#666; color:#fff; margin:auto;}
+  .divJoin .divInput input:focus{outline:0;}
+
+  .divJoin .divInput .input.name{display:block;}
+  .divJoin .divInput .button.name{}
+  .divJoin .divInput .divTel{width:75%; margin:auto; border:1px solid #eee; border-radius:5px; margin-bottom:16px; display:none;}
+  .divJoin .divInput .divTel select{height:54px; width:25%; border:0; padding-left:16px; background-color:#fff;}
+  .divJoin .divInput .divTel select:focus{outline:0;}
+  .divJoin .divInput .divTel input{padding:16px; width:30%; border:0; text-align:center;}
+
+  .findID #tel2{margin-bottom:0;}
+  .findID #tel3{margin-bottom:0;}
+  .findID .getIdentifyCodeBtn{margin-bottom:8px;}
+  .findID .resendBtn{margin-bottom:8px;}
+  .findID .inputCount{width:30%;}
+  .findID.divSection .box .formBox input.inputIdentifyCode{width:70%; border-right:0px; margin-bottom:0;}
+  .findID.divSection .box .formBox input.inputCount{width:30%; border-left:0px; margin-bottom:0; text-align:right; font-size:18px;}
+
+}

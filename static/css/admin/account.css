@@ -1,0 +1,7 @@
+.accountList .divGrid{width:1200px; margin:auto;}
+.accountList .divGrid table{background-color:#fff;}
+.accountList .divGrid td{padding:2px 4px; border:1px solid #4c4c4c; color:#262525; font-size:12px;}
+.accountList .divGrid tr:first-of-type td{background-color:#f0e0ff; padding:6px 4px;}
+.accountList .divGrid tr:hover td[rowspan="1"]{transition:100ms; background-color:#f8fbdd;}
+#grid1{margin-bottom:16px;}
+#grid1 tr:nth-of-type(2) td{font-size:14px; padding:6px}

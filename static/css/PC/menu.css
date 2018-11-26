@@ -1,0 +1,46 @@
+.wrap{width:1200px; margin:auto; margin-top:16px; }
+
+.wrap .divCategory{margin-bottom:16px;}
+.wrap .divCategory td span{padding-left:24px; font-size:14px;}
+.wrap .divCategory td span::before{width:15px; height:15px; margin-top:5px;}
+.wrap .divCategory td label{margin-right:16px; color:#666; font-weight:300; font-size:14px;}
+.wrap .divCategory td:nth-of-type(1){padding-bottom:4px; width:80px; text-align:center; border-right:1px solid #ddd;}
+.wrap .divCategory tr{border-bottom:1px solid #ddd; border-top:1px solid #ddd;}
+.wrap .divCategory td{padding:8px; font-size:14px;}
+
+.wrap .divSearch{width:1200px; z-index:999; background-color:#fff;}
+.wrap .divSearch table{width:100%; vertical-align:center;}
+.wrap .divSearch table tr td{background-color:#ddd; border:2px solid #ddd;}
+.wrap .divSearch table tr td:nth-of-type(2){width:32px;}
+.wrap .divSearch table tr td input{width:100%;}
+.wrap .divSearch .inputSearch{padding:8px; border:2px solid #ddd; font-size:14px;}
+.wrap .divSearch .searchIcon{height:30px; width:30px; margin-bottom:-10px; padding:4px; border:1px solid #ddd;}
+.wrap .divSearch.fixed{position:fixed; display:none; top:0px; width:1200px;}
+
+.wrap .divGrid{margin-top:16px; font-size:0px; }
+.wrap .divGrid .divItem{display:inline-block; margin-right:8px; margin-bottom:6px; width:193.33px; border-radius:2px; border:1px solid #ddd;}
+.wrap .divGrid .divItem.lastItem{margin-right:0px;}
+.wrap .divGrid .divItem .divImg{display:inline-block;}
+.wrap .divGrid .divItem .divImg img{width:60px;height:60px; border-radius:1px 0px 0px 0px; border-right:1px solid #ddd;}
+.wrap .divGrid .divItem .itemInfo{display:inline-block; margin:2px; width:123px;}
+.wrap .divGrid .divItem .itemInfo table td{height:18px; vertical-align:middle; padding-left:8px;}
+.wrap .divGrid .divItem .itemInfo table tr:nth-of-type(1) td{}
+.wrap .divGrid .divItem .itemInfo table tr:nth-of-type(1) td{}
+.wrap .divGrid .divItem .itemInfo table tr:nth-of-type(1) td{}
+.wrap .divGrid .divItem .itemInfo .cate{font-size:10px;}
+.wrap .divGrid .divItem .itemInfo .name{font-size:14px;}
+.wrap .divGrid .divItem .itemInfo .price{font-size:14px; float:right; font-weight:bold;}
+.wrap .divGrid .divItem.z-depth-1{transition:200ms;}
+.wrap .divGrid .divItem.z-depth-4{transition:200ms;}
+.wrap .divGrid .divItem input[type="button"]{transition:300ms; width:25px; height:25px; position:absolute; background-color:#666; border:0px; color:#fff; display:none;}
+.wrap .divGrid .divItem .plusBtn{font-size:12px;}
+.wrap .divGrid .divItem .minusBtn{font-size:14px;}
+.wrap .divGrid .divItem input[type="button"]:focus{outline:0;}
+.wrap .divGrid .divItem .ratingBox{padding:4px; border-top:1px solid #ddd; font-size:12px; background-color:#fff; width:191.33px; border-radius:0px 0px 2px 2px;}
+.wrap .divGrid .divItem .ratingBox .reviewCnt{display:inline-block;}
+.wrap .divGrid .divItem .ratingBox .divStock{display:inline-block; width:100px; text-align:right;}
+
+.wrap .divGrid .divItem.keywordHidden{display:none;}
+.wrap .divGrid .divItem.colordHidden{display:none;}
+.wrap .divGrid .divItem.shapedHidden{display:none;}
+.wrap .divGrid .divItem.kinddHidden{display:none;}

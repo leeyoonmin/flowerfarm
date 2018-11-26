@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+ RewriteBase /
+ RewriteCond $1 !^(index\.php|static|www|phpmyadmin|robots\.txt)
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteRule ^(.*)$ /index.php/$1 [L]
+ PHP_VALUE max_input_vars 50000
+</IfModule>

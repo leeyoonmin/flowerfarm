@@ -1,0 +1,23 @@
+.productList .divSearch .trText td span{margin-left:16px;}
+
+.productList .divGrid td{padding:8px;}
+.productList .divGrid .body td{background-color:#fff; border-bottom:1px solid #eee;}
+.productList .divGrid .body td.productImg img{height:50px; width:50px;}
+.productList .divGrid .wd50{width:50px;}
+.productList .divGrid .wd100{width:100px;}
+.productList .divGrid .wd150{width:150px;}
+.productList .divGrid .wd300{width:300px;}
+
+.divPopupProduct{position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:998; width:900px; font-size:0; border-radius:5px; display:none;}
+.divPopupProduct table{width:100%;}
+.divPopupProduct td{border:1px solid #eee; background-color:#fff; padding:16px; font-size:16px;}
+.divPopupProduct td img{width:450px; height:450px;}
+.divPopupProduct td input{width:100%;}
+.divPopupProduct td input[type="file"]{border:0;}
+.divPopupProduct td select{width:100%; height:36px; background-color:#fff; border-radius:5px; border:1px solid #eee;}
+.divPopupProduct td lable::before{margin-left:16px;}
+.divPopupProduct td.imgTD{width:450px}
+.divPopupProduct td.headTD{width:150px; text-align:center; background-color:#F8F9FD}
+.divPopupProduct td.bodyTD{width:300px}
+.divPopupProductBG{position:fixed; width:100%; height:100%; background:rgba(0,0,0,0.5); top:0; left:0; z-index:997; display:none;}
+.divPopupProduct .divLoader{position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.8); top:0; padding:240px 425px; display:none;}

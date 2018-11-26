@@ -1,0 +1,25 @@
+table td{vertical-align:middle;}
+.header{width:100%; text-align:right;}
+.header button{padding:4px 8px;}
+.popup{width:100%; padding:32px; color:#4c4c4c; background-color:#F8F9FD; }
+.popup .divTitle{margin-bottom:32px; font-weight:bold}
+.popup .divTitle td:first-of-type{padding-right:16px;}
+.popup .divTitle .engTitle{font-size:32px; padding-bottom:16px;}
+.popup .divTitle .hanTitle{font-size:14px; color:#999;}
+
+.popup .box table{width:100%; color:#666; margin-bottom:32px;}
+.popup .box.orderInfo table td:nth-of-type(1){border-right:1px solid #eee;}
+.popup .box.orderInfo table tr:first-of-type td:first-of-type{text-align:left; border-right:0px;}
+.popup .box.orderInfo table tr:first-of-type td:last-of-type{text-align:right;}
+.popup .box table td{padding:8px; border-bottom:1px solid #eee;}
+.popup .box table tr.body{background-color:#fff;}
+.popup .box.orderInfo table tr:nth-of-type(2){border-radius:5px 5px 0px 0px; border:1px solid #eee; border-bottom:0px;}
+.popup .box.orderInfo table tr:nth-of-type(3){border-left:1px solid #eee; border-right:1px solid #eee;}
+.popup .box.orderInfo table tr:last-of-type{border-radius:0px 0px 5px 5px; border:1px solid #eee; border-top  :0px;}
+
+.popup .box.productInfo table img{height:50px; width:auto;}
+.popup .box.productInfo table td{text-align:center;}
+.popup .box.productInfo table tr:first-of-type td{text-align:left;}
+.popup .box.productInfo table tr.head td{background-color:#fafafa;}
+
+.popup .box.paymentInfo table tr.body td{background-color:#fff; border:1px solid #eee;}

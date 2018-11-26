@@ -1,0 +1,98 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+/*시스템 속성 */
+
+.selectZone{
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+.contents{
+    width: 970px;
+    margin: 50px auto;
+}
+
+.inputBtn{
+    width: 200px;
+}
+table{
+
+    border-collapse: collapse;
+}
+th {
+    width: 150px;
+    height: 40px;
+    border: 1px solid #bcbcbc;
+    vertical-align: middle;
+}
+td {
+    width: 100px;
+    border: 0;
+}
+.inputBox{
+    border: 0;
+    text-align: center;
+}
+
+.deleteBtn{
+    border: 0;
+    width: 35px;
+    height: 17px;
+}
+.reciept_select_year{
+    width: 20%;
+    height: 30px;
+    font-size: 15px;
+    border: 1px solid #cb3532;
+}
+.reciept_select_month{
+    width: 20%;
+    height: 30px;
+    font-size: 15px;
+    border: 1px solid #cb3532;
+}
+.submit_reciept{
+    width: 5%;
+    height: 25px;
+    background: #cb3532;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+.reciept_content{
+    display: none;
+}
+.reciept_seller_select_year{
+    width: 20%;
+    height: 30px;
+    font-size: 15px;
+    border: 1px solid #cb3532;
+}
+.reciept_seller_select_month{
+    width: 20%;
+    height: 30px;
+    font-size: 15px;
+    border: 1px solid #cb3532;
+}
+.submit_reciept_seller{
+    width: 5%;
+    height: 25px;
+    background: #cb3532;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+.reciept_seller_content{
+    display: none;
+}

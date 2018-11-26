@@ -1,0 +1,47 @@
+.wrap{padding:32px 0px; padding-bottom:66px; font-weight:400;}
+.divTitle{width:500px; margin:auto; font-size:18px; margin-bottom:8px;}
+.divTitle .title{margin-left:8px; margin-bottom:8px; display:inline-block; font-weight:bold;}
+.divTitle .link{margin-right:8px; margin-bottom:8px; display:inline-block; float:right; text-decoration:underline; cursor:pointer;}
+
+.divWriteOrderInfo{background:#fff; border-top:2px solid #FE8200; border-bottom:1px solid #eee; width:500px; margin:auto; margin-bottom:32px;}
+.divWriteOrderInfo td{border-bottom:1px solid #ccc; font-size:16px;}
+.divWriteOrderInfo tr:last-of-type td{border-bottom:0px;}
+.divWriteOrderInfo td.head{width:80px; text-align:center; border-right:1px solid #ccc; background:#eee; color:#262525;}
+.divWriteOrderInfo input{padding:4px; border:0px; width:100%; font-size:16px; padding:16px;}
+.divWriteOrderInfo input:focus{outline:0;}
+.divWriteOrderInfo select{width:25%; border:0; background:#fff; padding-left:32px; text-align:center;}
+.divWriteOrderInfo select:focus{outline:0;}
+#postcode{width:80%; }
+#postcode_btn{width:20%; background-color:#FE8200; color:#fff;}
+#tel2,#tel3{width:30%; text-align:center;}
+.divPaymentInfo{width:500px; margin:auto; background:#fff; border-top:2px solid #FE8200; border-bottom:1px solid #eee; font-size:14px; margin-bottom:32px;}
+.divPaymentInfo td{border-bottom:1px solid #ddd; padding:16px 8px; font-size:16px;}
+.divPaymentInfo tr:last-of-type td{border-bottom:0px;}
+.divPaymentInfo td.head{width:80px; text-align:center; border-right:1px solid #ddd; background:#eee; color:#262525;}
+.orderBtn{border-radius:20px;
+}
+.divOrderAddrPopup{position:fixed; width:500px; height:500px; left:50%; top:50%; transform:translate(-50%,-50%); background-color:#fff; padding:8px;z-index:999; display:none; font-weight:400;}
+.divOrderAddrPopupBG{position:fixed; width:100%; height:100%; left:0; top:0;background-color:rgba(0,0,0,0.5); z-index:998; display:none;}
+.divOrderAddrPopup .divAddrList{width:100%; height:443px; border:1px solid #ccc; margin-bottom:8px; overflow-x:hidden; padding:8px; background-color:#f5f5f5;}
+.divOrderAddrPopup .divAddrList .divAddrBox{width:100%; margin-bottom:8px; background-color:#fff; border-radius:4px; box-shadow:1px 1px 5px rgba(0,0,0,0.1); border:1px solid #fff}
+.divOrderAddrPopup .divAddrList .divAddrBox td{padding:8px; font-size:14px; line-height:20px; color:#262525; padding-bottom:0;}
+.divOrderAddrPopup .divAddrList .divAddrBox td:first-of-type{width:100px; text-align:center;}
+.divOrderAddrPopup .divAddrList .divAddrBox tr:last-of-type td{padding-bottom:8px;}
+.divOrderAddrPopup .divAddrList .divAddrBox.default{transition:200ms; background-color:#fff;border:1px solid #FE8200}
+.divOrderAddrPopup .divAddrList .divEmptyBox{text-align:center; padding:50px; color:#262525;}
+.divOrderAddrPopup .submitBtn{width:100%; padding:8px; font-size:16px; background:#FE8200; color:#fff; border:0; border-radius:17px;}
+
+.divAddrList::-webkit-scrollbar{width:8px;}
+.divAddrList::-webkit-scrollbar-track{background:#f5f5f5}
+.divAddrList::-webkit-scrollbar-thumb{background-color:#de7200; border-radius:2px;}
+.divAddrList::-webkit-scrollbar-thumb:hover{transition:300ms; background:#de7200;}
+
+.orderFrm .orderBtn{display:block; width:500px; margin:auto;}
+
+@media screen and (max-width:1024px){
+.divTitle{width:100%;}
+.divWriteOrderInfo{width:100%;}
+.divOrderAddrPopup{width:80%;}
+.divPaymentInfo{width:100%;}
+.orderFrm .orderBtn{width:90%;}
+}

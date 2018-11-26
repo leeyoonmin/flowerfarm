@@ -1,0 +1,189 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+/*시스템 속성 */
+table{
+
+    border-collapse: collapse;
+    margin: 50px auto;
+}
+th {
+    width: 180px;
+    height: 40px;
+    border: 1px solid #cb3532;
+    vertical-align: middle;
+}
+td {
+    width: 180px;
+    height: 40px;
+    border: 1px solid #cb3532;
+    vertical-align: middle;
+    background: #ffdddd;
+    text-align: center;
+}
+
+
+
+.contents{
+    width: 970px;
+    margin: 50px auto;
+}
+.graphWrap{
+    width: 100%;
+    height: auto;
+}
+.auctionChart{
+     text-align: center;
+     font-size: 25px;
+     margin-top: 30px;
+     margin-bottom: 20px;
+ }
+.selectZone_busan{
+    margin-top: 40px;
+    width: 100%;
+    height: 80px;
+    display: inherit;
+
+}
+.gongpanzone_busan{
+    width: 40%;
+    height: 80px;
+    float: left;
+
+}
+.gongpanSelect_busan{
+    width: 100%;
+    height: 35px;
+    font-size: 17px;
+    border: 1px solid #cb3532;
+}
+.mclasszone_busan{
+    width: 30%;
+    height: 80px;
+    float: left;
+
+}
+.mclassSelect_busan{
+    width: 100%;
+    height: 35px;
+    font-size: 17px;
+    border: 1px solid #cb3532;
+}
+.sclasszone_busan{
+    width: 25%;
+    height: 80px;
+    float: left;
+
+}
+.sclassSelect_busan{
+    width: 100%;
+    height: 35px;
+    font-size: 17px;
+    border: 1px solid #cb3532;
+}
+.submitDatas_busan{
+    width: 5%;
+    height: 35px;
+    background: #cb3532;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+#graphdiv_busan{
+    width: 970px;
+    margin: 50px auto;
+    height: 400px;
+
+}
+/*부산차트 표출*/
+.selectZone_other{
+    width: 970px;
+    margin: 50px auto;
+}
+.gongpanzone_other{
+    width: 40%;
+    height: 80px;
+    float: left;
+}
+.gongpanSelect_other{
+    width: 100%;
+    height: 35px;
+    font-size: 17px;
+    border: 1px solid #cb3532;
+}
+
+.sclasszone_other{
+    width: 25%;
+    height: 80px;
+    float: left;
+}
+.sclassSelect_other{
+    width: 100%;
+    height: 35px;
+    font-size: 17px;
+    border: 1px solid #cb3532;
+}
+.submitDatas_other{
+    width: 5%;
+    height: 35px;
+    background: #cb3532;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+#graphdiv_other {
+    width: 970px;
+    margin: 50px auto;
+    height: 400px;
+}
+/*다른지역차트 표출*/
+.chartformwrap{
+    width: 100%;
+    height: 45px;
+
+}
+.buttonwrap{
+    width: 160px;
+    float: right;
+}
+.graphBtn{
+    width: 80px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    float: right;
+    border: 1px solid #cb3532;
+    background: #cb3532;
+    color: white;
+    border-radius: 5px 0 0 5px;
+
+}
+.chartBtn{
+    width: 80px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    float: right;
+    border: 1px solid #cb3532;
+    border-left: 0;
+    color: #cb3532;
+    border-radius: 0 5px 5px 0;
+}
+#chartdiv_busan{
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    display: none;
+}
+
+

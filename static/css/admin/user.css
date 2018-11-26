@@ -1,0 +1,11 @@
+.divPopupBG{position:fixed; width:100%; height:100%; top:0; left:0; background-color:rgba(0,0,0,0.5); z-index:998; display:none;}
+.divPopupChangeGrade{
+  position:fixed; width:100%; height:100%; top:40%; left:50%; z-index:999; width:200px; height:100px;
+  transform:translate(-50%,-50%); display:none;
+}
+.divPopupChangeGrade table{width:100%;}
+.divPopupChangeGrade td{padding:16px; text-align:center; border:1px solid #ccc; background:#fff;}
+.divPopupChangeGrade tr:first-of-type td:nth-of-type(1){width:60px; }
+.divPopupChangeGrade tr:first-of-type td:nth-of-type(2){padding:0; }
+.divPopupChangeGrade tr:last-of-type td:nth-of-type(1){ background-color:#d7729c; color:#fff; padding:8px 16px; border-color:#d7729c}
+.divPopupChangeGrade select{height:52px; width:100%; padding-left:16px; border:0;}

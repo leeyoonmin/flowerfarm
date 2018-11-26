@@ -1,0 +1,103 @@
+.static p{color:#666;}
+
+.divItemList{border-top:2px solid #FE8200; border-bottom:0}
+.divItemList .divEmptyItem{background-color:#fff;}
+.divItemList .divItem{border-bottom:1px solid #eee; background-color:#fff;}
+.divItemList .divItem td{color:#262525}
+.divItemList .divItem .infoTD .kind{color:#262525;}
+.divItemList .divItem .countTD a{border:1px solid #999; color:#999;}
+.divItemList .divItem .countTD a:hover{background:#FE8200; color:#fff; border:1px solid #FE8200;}
+.divItemList .divItem .countTD span{color:#262525;}
+.divItemList .divItem .totalTD p{color:#262525}
+.divItemList .divItem .deleteTD a{background-color:#ed4224; color:#fff;}
+
+.divSelectDeliveryDate{border-top:2px solid #FE8200; border-bottom:1px solid #eee; background-color:#fff; }
+
+.wrap .divSelectDeliveryMethod{border-top:2px solid #FE8200; border-bottom:1px solid #eee; background-color:#fff;}
+.wrap .divSelectDeliveryMethod td{border:1px solid #FE8200;color:#262525; font-weight:400;}
+.wrap .divSelectDeliveryMethod td.selected{background-color:#FE8200; color:#fff;}
+
+.wrap .divCartTotal{color:#fff; border-top:1px solid #f5f5f5}
+.wrap .divCartTotal td:nth-of-type(1){background-color:#fff; color:#FE8200;}
+.wrap .divCartTotal td:nth-of-type(2){background-color:#FE8200; color:#fff;}
+@media screen and (max-width:1024px) {
+  .wrap{padding:16px 0px 32px 0px;}
+  .static{margin-bottom:32px; margin-top:8px;}
+  .static p{font-size:12px; font-weight:400; line-height:20px; padding-left:8px;}
+  .divSelectDeliveryDate .static{margin-bottom:16px; padding-bottom:8px; padding-left:8px;margin-top:8px; border-bottom:1px solid #ccc;}
+
+  .divTitle .title{margin-left:8px; margin-bottom:8px; font-weight:bold;}
+  .divItemList{width:100%; margin-bottom:32px; border-bottom:0;}
+  .divItemList .divEmptyItem{padding:16px; text-align:center;}
+  .divItemList .divEmptyItem img{width:28px; margin:16px 0px;}
+  .divItemList .divItem{width:100%;}
+  .divItemList .divItem:last-of-type{border:0;}
+  .divItemList .divItem .imgTD{width:25%; padding:8px;}
+  .divItemList .divItem .imgTD img{width:60px; height:60px}
+  .divItemList .divItem .infoTD{width:40%;}
+  .divItemList .divItem .infoTD .kind{font-size:12px;}
+  .divItemList .divItem .infoTD .name{font-size:14px; font-weight:400;}
+  .divItemList .divItem .infoTD .price{font-size:14px; font-weight:bold;}
+  .divItemList .divItem .countTD{width:35%; text-align:center;}
+  .divItemList .divItem .countTD a{padding:6px 8px; font-size:8px; font-weight:bold;}
+  .divItemList .divItem .countTD span{display:inline-block; width:30px; font-weight:bold;}
+  .divItemList .divItem .deleteTD{text-align:center;}
+  .divItemList .divItem .deleteTD a{font-weight:bold; padding:3px 5px; border-radius:100%; font-size:8px; margin-right:16px}
+
+  .divCalendarContext .calendar .calendarBox td.today{border:1px solid #FE8200}
+  .divCalendarContext .calendar .calendarBox td.today a{border:0;}
+  .divSelectDeliveryDate{margin-bottom:32px;}
+
+  .divSelectDeliveryMethod{width:100%; margin-bottom:8px; padding:16px;}
+  .divSelectDeliveryMethod td{text-align:center; padding:8px; width:50%;}
+  .divSelectDeliveryMethod td p:nth-of-type(2){font-size:12px;}
+  .divSelectDeliveryMethod td.selected{transition:200ms;}
+
+  .divCartTotal{position:static; width:100%; bottom:0; font-size:12px;}
+  .divCartTotal td{padding:16px 0px;}
+  .divCartTotal td span{font-weight:400; font-size:14px;}
+  .divCartTotal td:nth-of-type(1){width:40%; text-align:center;}
+  .divCartTotal td:nth-of-type(2){width:60%; text-align:center; font-size:14px; font-weight:400;}
+}
+@media all and (min-width: 1025px) {
+  .wrap{padding:16px 0px; padding-bottom:66px;}
+  .static{width:900px; margin:auto; margin-top:16px; margin-bottom:44px;}
+  .static p{font-size:14px; font-weight:400; line-height:18px; padding-left:8px; margin-bottom:8px}
+  .divSelectDeliveryDate .static{margin-bottom:16px; padding-bottom:8px; padding-left:8px; border-bottom:1px solid #ccc}
+  .divTitle{width:900px; margin:auto;}
+  .divTitle .title{ margin-left:8px; margin-bottom:8px; font-weight:bold; font-size:18px;}
+  .divItemList{width:900px; margin:auto; margin-bottom:48px;}
+  .divItemList .divEmptyItem{padding:16px; text-align:center;}
+  .divItemList .divEmptyItem img{width:28px; margin:16px 0px;}
+  .divItemList .divItem{width:100%;}
+  .divItemList .divItem:last-of-type{border:0;}
+  .divItemList .divItem .imgTD{width:112px; padding:8px;}
+  .divItemList .divItem .imgTD img{width:80px; height:80px;}
+  .divItemList .divItem .infoTD{width:40%;}
+  .divItemList .divItem .infoTD p{display:inline-block;}
+  .divItemList .divItem .infoTD .kind{font-size:16px; width:110px;}
+  .divItemList .divItem .infoTD .name{font-size:17px; font-weight:bold; width:170px;}
+  .divItemList .divItem .infoTD .price{font-size:16px; font-weight:400; width:70px;}
+  .divItemList .divItem .countTD{width:130px; text-align:center;}
+  .divItemList .divItem .countTD a{padding:5px 8px; font-size:8px; font-weight:bold; cursor:pointer;}
+  .divItemList .divItem .countTD a:hover{transition:200ms;}
+  .divItemList .divItem .countTD span{display:inline-block; width:30px; font-weight:bold;}
+  .divItemList .divItem .totalTD{width:20%;}
+  .divItemList .divItem .totalTD p{font-size:16px; font-weight:bold;text-align:center;}
+  .divItemList .divItem .deleteTD{text-align:right; padding-right:32px}
+  .divItemList .divItem .deleteTD a{font-weight:bold; padding:6px 9px; border-radius:100%; font-size:14px; cursor:pointer;}
+
+  .divSelectDeliveryDate{margin-bottom:8px; width:900px; margin:auto; padding-bottom:16px; margin-bottom:32px;}
+
+  .wrap .divSelectDeliveryMethod{width:900px; margin:auto; margin-bottom:8px; padding:16px;}
+  .wrap .divSelectDeliveryMethod td{text-align:center; padding:8px; width:50%; cursor:pointer;}
+  .wrap .divSelectDeliveryMethod td p:nth-of-type(1){font-size:18px;}
+  .wrap .divSelectDeliveryMethod td p:nth-of-type(2){font-size:14px;}
+  .wrap .divSelectDeliveryMethod td.selected{transition:200ms;}
+
+  .wrap .divCartTotal{position:static; width:900px; bottom:0; font-size:18px; margin:auto;}
+  .wrap .divCartTotal td{padding:16px 0px;}
+  .wrap .divCartTotal td span{font-weight:700; font-size:18px; margin-left:8px}
+  .wrap .divCartTotal td:nth-of-type(1){width:40%; text-align:center; font-size:14px; background-color:#fff;}
+  .wrap .divCartTotal td:nth-of-type(2){width:60%; text-align:center; font-weight:700; cursor:pointer;}
+}

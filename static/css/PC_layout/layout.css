@@ -1,0 +1,50 @@
+input:focus{outline:0;}
+table td{vertical-align:middle;}
+.division_line{width:100%; height:1px; background-color:#666;}
+
+.divTopHeader{width:1200px; margin:auto; text-align:right;}
+.divTopHeader ul{display:inline-block; }
+.divTopHeader li{float:right; font-size:12px; padding:0px 8px; margin:12px 0px; border-right:1px solid #666;}
+.divTopHeader li:first-of-type {border-right:0px;}
+
+.divMainLogo{padding:72px 0px; text-align:center;}
+.divMainLogo a{position:relative; font-size:24px;}
+
+.divMainMenu{width:100%; border-top:1px solid #666; border-bottom:1px solid #666;}
+.divMainMenu .menu{width:1200px; margin:auto;}
+.divMainMenu .menu table{width:100%; }
+.divMainMenu .menu table td{width:25%; text-align:center; border-left:1px solid #666;}
+.divMainMenu .menu table td a{display:inline-block; width:100%; padding:12px; text-align:center;}
+
+.divHeader table td{text-align:center; background-color:#ccc; color:#fff; height:37px; vertical-align:middle; font-size:14px;}
+.divHeader{cursor:pointer; background-color:#ccc; position:fixed; left:0px; top:40%; width:40px; height:140px; padding:16px 12px; z-index:999;}
+.divHeader span{margin-bottom:4px; display:block;}
+.divHeader span:nth-of-type(4){margin-bottom:8px;}
+
+
+
+.divSlideCart{position:fixed; width:150px; height:100%; top:0px; left:0px; background-color:#fff; background-color:#f5f5f5; font-size:0px; display:none;}
+.divSlideCart .divHeaderBG{width:150px; height:37px; }
+.divSlideCart .divItemList{padding:16px; overflow-x:hidden; width:100%; height:auto;}
+.divSlideCart .divItemList .divItem{background:#fff; margin-bottom:16px; border:1px solid #f5f5f5;}
+.divSlideCart .divItemList .divItem td{border:1px solid #ddd; font-weight:300;}
+.divSlideCart .divItemList .divItem .divImg{width:104; height:104px;}
+.divSlideCart .divItemList .divItem .divImg img{width:100%; height:100%;}
+.divSlideCart .divItemList .divItem .divName{font-size:12px; padding:8px; text-align:center; color:#666;}
+.divSlideCart .divItemList .divItem .divQtyLabel{font-size:12px; color:#666; padding:8px;}
+.divSlideCart .divItemList .divItem .divQtyLabel span{float:right; font-size:12px; color:#4c4c4c}
+.divSlideCart .divItemList .divItem .divQtyBtn{font-size:10px; color:#666; text-align:center; cursor:pointer;}
+.divSlideCart .divItemList .divItem .divQtyBtn:hover{ }
+.divSlideCart .divItemList .divItem .divQtyBtn a{display:inline-block; width:100%; height:100%; padding:2px 0px; color:#666;}
+.divSlideCart .divItemList .divItem .divQtyBtn a:hover{transition:300ms; color:#4c4c4c;}
+.divSlideCart .divItemList .divItem .divPrice{color:#4c4c4c;  font-weight:bold; font-size:12px; text-align:center; padding:8px; background-color:#f5f5f5; border:1px solid #f5f5f5;}
+.divSlideCart .divItemList .divItem.empty{width:100%; height:162px; margin-bottom:45px;}
+.divSlideCart .divCartTotal{padding:8px; }
+.divSlideCart .divCartTotal table td{padding:8px; font-size:12px; color:#4c4c4c; font-weight:300;}
+.divSlideCart .divCartTotal table td:nth-of-type(2){text-align:right; color:#4c4c4c; font-weight:400;}
+.divSlideCart .divCartTotal .title{border-top:1px dashed #666; border-bottom:1px solid #aaa;}
+.divSlideCart .divCartTotal .title td{padding-top:16px;}
+.divSlideCart .divCartTotal .productPrice{border-bottom:1px solid #ddd;}
+.divSlideCart .divCartTotal .deliveryFee{border-bottom:1px solid #aaa;}
+.divSlideCart .divCartTotal .paymentPrice td{font-weight:400; font-size:13px;}
+.divSlideCart .cartSubmitBtn{display:block; width:134px; margin:auto; font-size:14px; height:30px; border:0; background:#666; color:#fff;}

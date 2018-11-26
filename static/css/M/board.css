@@ -1,0 +1,78 @@
+.supportList .divBoard{border-bottom:1px solid #FE8200;}
+.supportList .divBoard .divTabBox table td.selected{background-color:#FE8200;}
+.supportList .divBoard .divTabBox table td.selected a{color:#fff;}
+.supportList .divBoard .divTabBox{border-bottom:2px solid #FE8200;}
+.supportList .divBoard .divBoardBox table td{border-bottom:1px solid #ccc; border-top:1px solid #ccc; background-color:#fff;}
+.supportList .divBoard .divBoardBox table tr:first-of-type td{background-color:#eee; color:#262525}
+.supportList .divBoard .divCategory select{background-color:#fff; border:0; border-bottom:1px solid #FE8200;}
+.supportList .writeBtn{color:#fff; background:#FE8200;}
+
+.supportList .divWriteBoard tr:first-of-type td{border-bottom:1px solid #ccc;}
+.supportList .divWriteBoard input{border:1px solid #eee;}
+.supportList .divWriteBoard textarea{border:1px solid #eee;}
+
+.supportList .divNoLogin{background-color:#fff;}
+.supportList .divNoLogin a{border:1px solid #FE8200; background-color:#FE8200; color:#fff;}
+
+@media screen and (max-width:1024px) {
+  .supportList .divTitle{width:100%; padding:24px;}
+  .supportList .divTitle h1{text-align:center; font-size:15px;margin-bottom:8px;}
+  .supportList .divTitle p{text-align:center; font-size:11px;}
+  .supportList .divTitle{margin-bottom:16px;}
+  .supportList .divBoard{font-size:12px; font-weight:400;}
+  .supportList .divBoard .divTabBox table td{width:33.33%; text-align:center; border-radius:5px 5px 0px 0px;}
+  .supportList .divBoard .divTabBox table td a{display:block; padding:16px;}
+  .supportList .divBoard .divBoardBox table td{text-align:center; padding:12px 4px;}
+  .supportList .divBoard .divBoardBox table tr:first-of-type td{font-weight:bold;}
+  .supportList .divBoard .divBoardBox table tr:last-of-type td{border-bottom:0;}
+  .supportList .divBoard .divBoardBox table td:first-of-type{width:60px;}
+  .supportList .divBoard .divBoardBox table td:last-of-type{width:80px;}
+  .supportList .divBoard .divBoardBox .contents .title{margin-bottom:8px;}
+  .supportList .divBoard .divBoardBox .contents td{padding:8px; text-align:left; line-height:20px;}
+  .supportList .divBoard .divBoardBox .contents textarea{width:100%; border:0; margin-top:8px;}
+  .supportList .divBoard .divBoardBox .contents textarea:focus{outline:0;}
+  .supportList .divBoard .divCategory select{width:100%; height:34px;}
+  .supportList .divBoard .divCategory select:focus{outline:0;}
+  .supportList .writeBtn{display:block; width:90%; margin:auto; border:0; margin-top:8px; padding:8px;}
+  .supportList .divWriteBoard td{padding:8px;}
+  .supportList .divWriteBoard input{width:100%; padding:8px;}
+  .supportList .divWriteBoard textarea{width:100%; height:300px; padding:8px;}
+  .supportList .divWriteBoard tr:nth-of-type(3) td{padding-top:0px;}
+
+  .supportList .divNoLogin{text-align:center; padding:32px 0px 40px 0px;}
+  .supportList .divNoLogin p{ font-size:14px; margin-bottom:24px;}
+  .supportList .divNoLogin a{padding:6px 16px; font-size:14px;}
+
+  .supportList .divBoardBox .contents .divBoardButton{text-align:right;}
+  .supportList .divBoardBox .contents .boardBtn{width:20px;margin-left:8px; cursor:pointer;}
+}
+@media all and (min-width: 1025px) {
+  .supportList .divTitle{display:none;}
+  .supportList .divBoard{font-size:16px; font-weight:400;  width:700px; margin:auto; margin-top:32px;}
+  .supportList .divBoard .divTabBox table td{width:33.33%; text-align:center;}
+  .supportList .divBoard .divTabBox table td a{display:block; padding:16px;}
+  .supportList .divBoard .divTabBox table td.selected{border-radius:5px 5px 0px 0px}
+  .supportList .divBoard .divBoardBox table td{text-align:center; padding:12px 4px;}
+  .supportList .divBoard .divBoardBox table tr:last-of-type td{border-bottom:0;}
+  .supportList .divBoard .divBoardBox table td:first-of-type{width:80px;}
+  .supportList .divBoard .divBoardBox table td:last-of-type{width:120px;}
+  .supportList .divBoard .divBoardBox .contents .title{margin-bottom:8px;}
+  .supportList .divBoard .divBoardBox .contents td{padding:8px; text-align:left; line-height:20px;}
+  .supportList .divBoard .divBoardBox .contents textarea{width:100%; border:0; margin-top:8px;}
+  .supportList .divBoard .divBoardBox .contents textarea:focus{outline:0;}
+  .supportList .divBoard .divCategory select{width:100%; border:0; height:34px;}
+  .supportList .divBoard .divCategory select:focus{outline:0;}
+  .supportList .writeBtn{display:block; width:300px; margin:auto; border:0; margin-top:8px; padding:8px;}
+
+  .supportList .divWriteBoard td{padding:8px;}
+  .supportList .divWriteBoard input{width:100%; padding:8px;}
+  .supportList .divWriteBoard textarea{width:100%; height:300px; padding:8px;}
+  .supportList .divWriteBoard tr:nth-of-type(3) td{padding-top:0px;}
+
+  .supportList .divNoLogin{text-align:center; padding:32px 0px 40px 0px;}
+  .supportList .divNoLogin p{ font-size:14px; margin-bottom:24px;}
+  .supportList .divNoLogin a{ padding:6px 16px; font-size:14px;}
+
+  .supportList .divBoardBox .contents .divBoardButton{text-align:right;}
+  .supportList .divBoardBox .contents .boardBtn{width:20px;margin-left:8px; cursor:pointer;}
+}

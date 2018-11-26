@@ -79,7 +79,7 @@
     <div class="tr head">
       <div class="td wd50">
         <input type="checkbox" id="all_checked" class="checkbox-style"/><label for="all_checked"></label>
-      </div><div class="td wd150">주문일</div><div class="td wd150">주문번호</div><div class="td wd300">상품명</div>  <div class="td wd150">주문자</div><div class="td wd150">판매금액</div><div class="td wd100">입금여부</div><div class="td wd100">발주여부</div>
+      </div><div class="td wd150">주문일</div><div class="td wd150">배송희망일</div><div class="td wd300">상품명</div>  <div class="td wd150">주문자</div><div class="td wd150">판매금액</div><div class="td wd100">입금여부</div><div class="td wd100">발주여부</div>
     </div>
     <?php
     $rowCnt = 0;
@@ -95,7 +95,7 @@
           <div class=\"td isCheck wd50\">
             <input type=\"checkbox\" class=\"checkBox\" id=\"checkBox".$rowCnt."\" class=\"checkbox-style\"/><label for=\"checkBox".$rowCnt."\"></label>
           </div>
-          <div class=\"td wd150\">".date('Y-m-d H:i',strtotime($row->ORDER_TIME))."</div><div class=\"td wd150 orderID\">".$row->ORDER_ID."</div><div class=\"td wd300\">".$row->PRODUCT."</div><div class=\"td wd150\">".$row->USER_ID."</div><div class=\"td wd150\">".number_format($row->PAY_PRICE)." 원</div><div class=\"td wd100\">".$row->IS_PAID."</div><div class=\"td wd100\">".$row->IS_FORDER."</div>
+          <div class=\"td wd150\">".date('Y-m-d H:i',strtotime($row->ORDER_TIME))."</div><div class=\"td wd150 orderID\" style=\"display:none;\">".$row->ORDER_ID."</div><div class=\"td wd150\">".date('Y-m-d',strtotime($row->DELIVERY_DATE))."</div><div class=\"td wd300\">".$row->PRODUCT."</div><div class=\"td wd150\">".$row->USER_ID."</div><div class=\"td wd150\">".number_format($row->PAY_PRICE)." 원</div><div class=\"td wd100\">".$row->IS_PAID."</div><div class=\"td wd100\">".$row->IS_FORDER."</div>
         </div>";
         $rowCnt++;
       }

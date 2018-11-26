@@ -81,6 +81,9 @@
       <tr>
         <td></td>
         <td>
+          <input class="btn purple tradingStatementBtn" type="button" name="" value="거래명세서 출력">
+        </td>
+        <td>
           <input class="btn green searchBtn" type="button" name="" value="조회">
         </td>
       </tr>

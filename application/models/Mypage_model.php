@@ -245,6 +245,39 @@ class mypage_model extends CI_Model {
       ";
       return $this->db->query($sql);
     }
+
+    function getTradingStatement($ORDER_ID){
+      $sql = "
+      SELECT
+         CONCAT((SELECT CODE_NM FROM COMMON_CODE_TB WHERE CODE_DV = '상품상세구분코드' AND CODE = C.PRODUCT_CATE_KIND),'_',C.PRODUCT_NAME) AS PRODUCT_NAME
+      , (SELECT CODE_NM FROM COMMON_CODE_TB WHERE CODE_DV = '상품색상구분코드' AND CODE = C.PRODUCT_CATE_COLOR) AS COLOR
+      , B.ORDER_AMOUNT AS QTY
+      , B.ORDER_PRICE AS PRICE
+      , B.ORDER_AMOUNT * B.ORDER_PRICE AS TT_PRICE
+      , E.IS_PURCHASED
+      , CASE WHEN E.IS_PURCHASED = 'N' THEN '취소' END AS MEMO
+      , (SELECT CODE_NM FROM COMMON_CODE_TB WHERE CODE_DV = '배송방법' AND CODE = A.DELIVERY_TYPE) AS DELIVERY_TYPE
+      , A.ORDER_TIME
+      , (SELECT CODE FROM COMMON_CODE_TB WHERE CODE_DV = '배송비' AND CODE_NM = (SELECT CODE_NM FROM COMMON_CODE_TB WHERE CODE_DV = '배송방법' AND CODE = A.DELIVERY_TYPE)) AS DELIVERY_FEE
+      , A.USER_ID
+      , (SELECT USER_NAME FROM USER_TB WHERE USER_ID = A.USER_ID) AS USER_NM
+    	, (SELECT CERTI_NAME FROM CERTIFICATE_TB WHERE USER_ID = A.USER_ID) AS SHOP_NM
+      , A.FORDER_ID
+      , D.PROGRESS
+      FROM ORDER_TB A
+         , ORDER_ITEM_TB B
+         , PRODUCT_TB C
+         , FORDER_BASE_TB D
+         , FORDER_DETAIL_TB E
+      WHERE A.ORDER_ID = B.ORDER_ID
+       AND B.PRODUCT_ID = C.PRODUCT_ID
+       AND A.FORDER_ID = D.ID
+       AND E.ID = D.ID
+       AND E.PRODUCT_ID = B.PRODUCT_ID
+       AND A.ORDER_ID = '".$ORDER_ID."'
+      ";
+      return $this->db->query($sql)->result();
+    }
 }
 
 ?>

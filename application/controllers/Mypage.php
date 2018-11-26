@@ -43,6 +43,8 @@ class mypage extends CI_Controller
         $this->load->view('M_layout/page_title',array('page_title'=>'mypage'));
 
         $this->load->model('user_model');
+    		$userData = $this->user_model->getUserDataByID($this->session->userdata('user_id'));
+    		$this->session->set_userdata('user_level', $userData->user_type);
         $monthPrice = $this->mypage_model->getThisMonthOrder($this->session->userdata('user_id'));
         $weekPrice = $this->mypage_model->getThisWeekOrder($this->session->userdata('user_id'));
         $userData = $this->user_model->getUserDataByID($this->session->userdata('user_id'));
@@ -164,6 +166,16 @@ class mypage extends CI_Controller
       $this->load->view('M_mypage/orderList', array('orderList'=>$orderList, 'getData'=>$getDate));
 
       $this->importFooter(array('mypage'));//------------------ 레이아웃 종료
+    }
+
+    function popupTradingStatement($ORDER_ID){
+      $tradingStatement = $this->mypage_model->getTradingStatement($ORDER_ID);
+      if(empty($tradingStatement[0]->FORDER_ID)){
+        $this->load->view('module/alert', array('text'=>'거래명세서가 생성되지 않았습니다.'));
+        $this->load->view('module/self_close');
+      }else{
+        $this->load->view('M_mypage/popupTradingStatement', array('TRADING'=>$tradingStatement));
+      }
     }
 
     function orderDetail($id){

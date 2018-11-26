@@ -5,6 +5,33 @@
   }
 ?>
 <div class="wrap orderDetail">
+
+  <div class="divPayment divTable">
+    <div class="divTitle">
+      결제정보
+    </div>
+    <table>
+      <tr>
+        <td>결제방법</td><td><?=$orderInfo[0]->PAY_TYPE_NM?></td>
+      </tr>
+      <tr>
+        <td>입금은행</td><td>농협</td>
+      </tr>
+      <tr>
+        <td>예금주</td><td>김성수(플랑)</td>
+      </tr>
+      <tr>
+        <td>계좌번호</td><td>0365-3650-09</td>
+      </tr>
+      <tr>
+        <td>입금금액</td><td><?=number_format($TT_ORDER_PRICE+$orderInfo[0]->DELIVERY_FEE)?> 원</td>
+      </tr>
+      <tr>
+        <td>결제여부</td><td><?php if($orderInfo[0]->IS_PAID == "Y"){echo "입금완료";}else{echo "입금전";}?></td>
+      </tr>
+    </table>
+  </div>
+  
   <div class="divOrderInfo divTable">
     <div class="divTitle">
       주문정보
@@ -62,29 +89,4 @@
     </table>
   </div>
 
-  <div class="divPayment divTable">
-    <div class="divTitle">
-      결제정보
-    </div>
-    <table>
-      <tr>
-        <td>결제방법</td><td><?=$orderInfo[0]->PAY_TYPE_NM?></td>
-      </tr>
-      <tr>
-        <td>입금은행</td><td>농협</td>
-      </tr>
-      <tr>
-        <td>예금주</td><td>김성수(플랑)</td>
-      </tr>
-      <tr>
-        <td>계좌번호</td><td>0365-3650-09</td>
-      </tr>
-      <tr>
-        <td>입금금액</td><td><?=number_format($TT_ORDER_PRICE+$orderInfo[0]->DELIVERY_FEE)?> 원</td>
-      </tr>
-      <tr>
-        <td>결제여부</td><td><?php if($orderInfo[0]->IS_PAID == "Y"){echo "입금완료";}else{echo "입금전";}?></td>
-      </tr>
-    </table>
-  </div>
 </div>

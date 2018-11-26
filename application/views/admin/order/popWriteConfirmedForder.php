@@ -13,21 +13,18 @@
     <script src="/static/semantic/semantic.min.js"></script>
     <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <style type="text/css" media="print">
-       @page Section1
-        {size:11 8.5in;
-        margin:.5in 13.6pt 0in 13.6pt;
-        mso-header-margin:.5in;
-        mso-footer-margin:.5in;
-        mso-paper-source:4;}
-        body{page:Section1;}
+       @page{margin:0;}
+       .header button{display:none;}
     </style>
   </head>
   <body id="printBody">
-    <div class="popup">
+    <div class="popup writeConfirmedForder">
       <div class="header">
         <button class="printBtn" type="button" name="button">출력</button>
+        <?php if($MODIFY == 'true'){?>
         <button class="saveBtn" type="button" name="button">임시저장</button>
         <button class="completeBtn" type="button" name="button">작성완료</button>
+        <?php }?>
       </div>
       <table class="title">
         <tr>
@@ -47,7 +44,7 @@
 
       <form class="saveFrm" action="/admin/writeConfirmedForderSaveServ" method="post">
 
-      <table class="body">
+      <table class="grid">
         <tr class="header">
           <td>No</td><td>사진</td><td>상품명</td><td>구입</br>여부</td><td>요청수량</td><td>구입수량</td><td>단가</td><td>금액</td><td>구매처</td><td>비고</td>
         </tr>
@@ -57,7 +54,7 @@
           $TT_PRICE = 0;
           $TT_PURCHASE_CNT = 0;
           foreach($gridData as $item){
-            echo "<tr>
+            echo "<tr class=\"body\">
               <td>".$rowCnt."<input type=\"hidden\" name=\"".$rowCnt."_id\" value=\"".$item->ID."\"></td>
               ";
               if($item->IMG_EXTENSION==""){
@@ -83,37 +80,42 @@
             }
           }
         ?>
-      </table>
-      <table class="sum">
         <tr>
-          <td rowspan="3"><input type="hidden" name="FODID" value="<?=$FODID?>">소계</td>
+          <td colspan="11" style="border:0px;"></td>
+        </tr>
+        <tr class="sum">
+          <td rowspan="3" colspan="4"><input type="hidden" name="FODID" value="<?=$FODID?>">소계</td>
           <td class="totalCnt" rowspan="3"><?=$TT_CNT?></td>
-          <td class="totalPurchaseCnt" rowspan="3">$TT_PURCHASE_CNT</td>
-          <td class="td3" rowspan="3"></td>
+          <td class="totalPurchaseCnt" rowspan="3"><?=$TT_PURCHASE_CNT?></td>
+          <td class="td3" rowspan="3" colspan="2"></td>
           <td class="td4" style="text-align:left; padding-left:16px">구매금액</td>
-          <td class="price">￦</td>
-          <td class="td6 documentInput totalPrice" style="text-align:left; padding-left:16px">
+          <td class="td6 documentInput totalPrice" style="text-align:left; padding:4px; padding-left:16px">
             <input type="text" value="">
           </td>
         </tr>
-        <tr>
+        <tr class="sum">
           <td class="td4" style="text-align:left; padding-left:16px">운임비</td>
-          <td class="price">￦</td>
-          <td class="td6 documentInput" style="text-align:left; padding-left:16px;" >
+          <td class="td6 documentInput" style="text-align:left; padding:4px; padding-left:16px;" >
             <input class="deliveryFee" type="text" name="delivery_fee" value="<?=number_format($gridData[0]->DELIVERY_FEE)?>">
           </td>
         </tr>
-        <tr>
+        <tr class="sum">
           <td class="td4" style="text-align:left; padding-left:16px">총액</td>
-          <td class="price">￦</td>
-          <td class="td6 documentInput" style="text-align:left; padding-left:16px;" >
+          <td class="td6 documentInput" style="text-align:left; padding:4px; padding-left:16px;" >
             <input class="ForderTotalPrice" type="text" value="">
           </td>
         </tr>
-      </table>
-      <table class="memo">
         <tr>
-          <td>메모</td><td><textarea class="inputMemo" name="fmemo"><?=($gridData[0]->FMEMO)?></textarea></td>
+          <td colspan="11" style="border:0px;"></td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="2">메모</td>
+          <td>부산메모</td>
+          <td colspan="7"><textarea class="inputMemo" name="fmemo1"><?=($gridData[0]->FMEMO1)?></textarea></td>
+        </tr>
+        <tr>
+          <td>서울메모</td>
+          <td colspan="7"><textarea class="inputMemo" name="fmemo2"><?=($gridData[0]->FMEMO1)?></textarea></td>
         </tr>
       </table>
       <input class="submit_mode" type="hidden" name="mode" value="">

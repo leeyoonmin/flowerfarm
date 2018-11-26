@@ -60,7 +60,7 @@ class Order extends CI_Controller {
       $this->load->view('module/redirect',array('url'=>'/M_menu/cart'));
     }
     $this->cart->destroy();
-    $this->load->view('module/redirect', array('url'=>'/mypage/orderList'));
+    $this->load->view('module/redirect', array('url'=>'/mypage/orderDetail/'.$IDXKEY));
 	}
 
   function makeID($WORK_DV){//------------------------------------------------------------------------인덱스키 생성 SERVICE

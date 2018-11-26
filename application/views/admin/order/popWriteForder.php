@@ -12,16 +12,19 @@
     <link rel="stylesheet" href="/static/css/admin/popup/popForderWrite.css">
     <script src="/static/semantic/semantic.min.js"></script>
     <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <style type="text/css">
-
+    <style type="text/css" media="print">
+      @page{margin:0;}
+      .header button{display:none;}
     </style>
   </head>
-  <body id="printBody" class="writeModifiedForder">
+  <body id="printBody" class="writeForder">
     <div class="popup">
       <div class="header">
-        <button class="addProductBtn" type="button" name="button">상품추가</button>
         <button class="printBtn" type="button" name="button">출력</button>
+        <?php if($MODIFY=='true'){?>
+        <button class="addProductBtn" type="button" name="button">상품추가</button>
         <button class="completeForderBtn" type="button" name="button">발주서 작성완료</button>
+        <?php }?>
         <!--button class="saveBtn" type="button" name="button">임시저장</button>
         <button class="completeBtn" type="button" name="button">발주완료</button-->
       </div>
@@ -41,18 +44,18 @@
         </tr>
       </table>
 
-      <form class="saveFrm" action="/admin/writeOrderSaveServ" method="post">
+      <form class="saveFrm" action="/admin/completeForderServ" method="post">
 
-      <table class="body">
+      <table class="grid">
         <tr class="header">
-          <td>No</td><td>사진</td><td>상품명</td><td>구입</br>여부</td><td>요청수량</td><td>구입수량</td><td>단가</td><td>금액</td><td>구매처</td><td>비고</td>
+          <td>No</td><td>사진</td><td>상품명</td><td>구입</br>여부</td><td>요청<br>수량</td><td>구입<br>수량</td><td>단가</td><td>금액</td><td>구매처</td><td>비고</td>
         </tr>
         <?php
           $rowCnt = 1;
           $TT_CNT = 0;
           $TT_PRICE = 0;
           foreach($gridData as $item){
-            echo "<tr>
+            echo "<tr class=\"body\">
               <td>".$rowCnt."<input type=\"hidden\" name=\"".$rowCnt."_id\" value=\"".$item->ID."\"></td>
               ";
               if($item->IMG_EXTENSION==""){
@@ -60,8 +63,7 @@
               }else{
                 echo "<td><img src=\"/static/uploads/product/".$item->ID.".".$item->IMG_EXTENSION."\"></td>";
               }
-              echo "
-              <td>".$item->NAME."</td>
+              echo "<td>".$item->NAME."</td>
               <td class=\"checkBox\"><input type=\"checkbox\" onclick=\"return false;\"><input name=\"".$rowCnt."_isPurchased\" class=\"inputCheckBox\" type=\"hidden\" value=\"".$item->IS_PURCHASED."\" readonly></td>
               <td class=\"documentInput qty variable\"><input type=\"text\" name=\"".$rowCnt."_qty\" value=\"".$item->QTY."\"  readonly></td>
               <td class=\"documentInput qty variable\"><input type=\"text\" name=\"".$rowCnt."_qty\" value=\"\"  readonly></td>
@@ -75,38 +77,47 @@
             $TT_PRICE += ($item->PURCHASED_PRICE*$item->PURCHASED_AMOUNT);
           }
         ?>
-      </table>
-      <table class="sum">
         <tr>
-          <td rowspan="3"><input type="hidden" name="FODID" value="<?=$FODID?>">소계</td>
+          <td colspan="11" style="border:0px;"></td>
+        </tr>
+        <tr class="sum">
+          <td rowspan="3" colspan="4"><input type="hidden" name="FODID" value="<?=$FODID?>">소계</td>
           <td class="totalCnt" rowspan="3"><?=$TT_CNT?></td>
           <td class="totalPurchaseCnt" rowspan="3"></td>
-          <td class="td3" rowspan="3"></td>
+          <td rowspan="3" colspan="2"></td>
           <td class="td4" style="text-align:left; padding-left:16px">구매금액</td>
-          <td class="price">￦</td>
-          <td class="td6 documentInput totalPrice" style="text-align:left; padding-left:16px">
+          <td class="td6 documentInput totalPrice" colspan="2" style="text-align:left; padding:4px; padding-left:16px">
             <input type="text" value=""  readonly>
           </td>
         </tr>
-        <tr>
+        <tr class="sum">
           <td class="td4" style="text-align:left; padding-left:16px">운임비</td>
-          <td class="price">￦</td>
-          <td class="td6 documentInput" style="text-align:left; padding-left:16px;" >
+          <td class="td6 documentInput" style="text-align:left; padding:4px; padding-left:16px;" >
             <input class="deliveryFee" type="text" name="delivery_fee" value=""  readonly>
           </td>
         </tr>
-        <tr>
+        <tr class="sum">
           <td class="td4" style="text-align:left; padding-left:16px">총액</td>
-          <td class="price">￦</td>
-          <td class="td6 documentInput" style="text-align:left; padding-left:16px;" >
+          <td class="td6 documentInput" style="text-align:left; padding:4px; padding-left:16px;" >
             <input class="ForderTotalPrice" type="text" value="" readonly>
           </td>
         </tr>
-      </table>
-      <table class="memo">
         <tr>
-          <td>메모</td><td><textarea class="inputMemo" name="fmemo"></textarea></td>
+          <td colspan="11" style="border:0px;"></td>
         </tr>
+        <tr>
+          <td rowspan="2" colspan="2">메모</td>
+          <td>부산메모</td>
+          <td colspan="7"><textarea class="inputMemo" name="fmemo1"></textarea></td>
+        </tr>
+        <tr>
+          <td>서울메모</td>
+          <td colspan="7"><textarea class="inputMemo" name="fmemo2"></textarea></td>
+        </tr>
+      </table>
+
+      <table class="memo">
+
       </table>
       <input class="submit_mode" type="hidden" name="mode" value="">
     </form>
@@ -125,8 +136,7 @@
         location.href="/admin/addProductToForder?FODID=<?=$FODID?>";
       });
       $('.completeForderBtn').click(function(){
-        window.opener.location.href="/admin/completeForderServ?FODID=<?=$FODID?>";
-        window.close();
+        $('.saveFrm').submit();
       });
     </script>
   </body>

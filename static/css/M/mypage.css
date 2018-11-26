@@ -38,15 +38,6 @@
 .myOrderList .divSearch input:last-of-type{border-right:1px solid #ccc}
 .myOrderList .divSearch input.selected{background-color:#FE8200; color:#fff; border-color:#FE8200;}
 
-.myOrderList .divOrderList .divOrderItem{background-color:#fff; border:1px solid #ccc;}
-.myOrderList .divOrderList .divOrderItem td{color:#262525;}
-.myOrderList .divOrderList .divEmpty{background-color:#fff; border-top:1px solid #ccc;}
-.myOrderList .divButton{background-color:#fff; border:1px solid #ccc;}
-.myOrderList .divButton input{color:#FE8200; border:1px solid #FE8200;}
-.myOrderList .divButton .orderCancelBtn{background-color:#fff;}
-.myOrderList .divButton .orderDetailBtn{background-color:#FE8200; color:#fff;}
-
-
 .orderDetail{color:#262525;}
 .orderDetail table{border-top:2px solid #FE8200}
 .orderDetail td{color:#262525;}
@@ -115,14 +106,13 @@
   .myOrderList .divSearch input{width:25%; border-left:0; padding:8px; font-size:14px; margin-bottom:8px;}
   .myOrderList .divSearch input:focus{outline:0;}
   .myOrderList .divSearch input:last-of-type{border-right:0;}
-  .myOrderList .divOrderList .divOrderItem{width:100%; border-bottom:0;}
-  .myOrderList .divOrderList .divOrderItem td{padding:8px;}
-  .myOrderList .divOrderList .divOrderItem td.orderDate{font-size:12px; padding-bottom:8px;}
-  .myOrderList .divOrderList .divOrderItem td.productName{font-size:14px; text-align:center; font-weight:400; padding:0px 4px 4px 0px}
-  .myOrderList .divOrderList .divOrderItem td.price{font-size:14px; text-align:center; font-weight:bold; padding:4px 0px 4px 0px}
-  .myOrderList .divOrderList .divEmpty{width:100%; padding:50px; text-align:center;}
-  .myOrderList .divButton{text-align: right; margin-bottom:16px; padding:8px; border-top:0;}
-  .myOrderList .divButton input{margin-left:4px; border:0px; font-size:12px; padding:8px 16px;}
+
+  .myOrderList .divOrderList{width:100%; margin:auto;}
+  .myOrderList .divOrderList table{ margin-bottom:8px;}
+  .myOrderList .divOrderList tr:first-of-type td{background-color:#fff; padding:18px 8px; border:1px solid #ccc; text-align:center; font-weight:400;}
+  .myOrderList .divOrderList tr:last-of-type td{background-color:#fff; padding:8px 8px; border:1px solid #ccc; text-align:right;}
+  .myOrderList .divOrderList td input{padding:8px; border:1px solid #252626; background-color:#fff; color:#252626}
+  .myOrderList .divOrderList td input.orderDetailBtn{background-color:#FE8200; color:#fff;border-color:#FE8200;}
 
   .loader{z-index:999; width:100%; height:100%; top:0; left:0;}
 
@@ -211,14 +201,12 @@
   .myOrderList .divSearch input:last-of-type{border-radius:0px 4px 4px 0px;}
   .myOrderList .divSearch input:focus{outline:0;}
 
-  .myOrderList .divOrderList .divOrderItem{width:600px; border-bottom:0; margin:auto; border-radius:4px 4px 0px 0px;}
-  .myOrderList .divOrderList .divOrderItem td{padding:8px;}
-  .myOrderList .divOrderList .divOrderItem td.orderDate{font-size:14px; padding:8px}
-  .myOrderList .divOrderList .divOrderItem td.productName{font-size:16px; text-align:center; font-weight:400; padding:0px 0px 4px 0px}
-  .myOrderList .divOrderList .divOrderItem td.price{font-size:16px; text-align:center; font-weight:bold; padding:4px 0px 0px 0px}
-  .myOrderList .divOrderList .divEmpty{width:100%; padding:50px; text-align:center;}
-  .myOrderList .divButton{text-align: right; padding:8px; border-top:0; width:600px; margin:auto; margin-bottom:16px; border-radius:0px 0px 4px 4px; box-shadow:1px 1px 5px rgba(0,0,0,0.1)}
-  .myOrderList .divButton input{margin-left:4px; font-size:12px; padding:8px 16px; border-radius:16px;}
+  .myOrderList .divOrderList{width:600px; margin:auto;}
+  .myOrderList .divOrderList table{ margin-bottom:16px;}
+  .myOrderList .divOrderList tr:first-of-type td{background-color:#fff; padding:18px 8px; border:1px solid #ccc; text-align:center; font-weight:400;}
+  .myOrderList .divOrderList tr:last-of-type td{background-color:#fff; padding:8px 8px; border:1px solid #ccc; text-align:right;}
+  .myOrderList .divOrderList td input{padding:8px; border:1px solid #252626; background-color:#fff; color:#252626}
+  .myOrderList .divOrderList td input.orderDetailBtn{background-color:#FE8200; color:#fff;border-color:#FE8200;}
 
   .loader{z-index:999; width:100%; height:100%; top:0; left:0;}
 

@@ -90,7 +90,7 @@ $('.divOrderAddrPopup .submitBtn').click(function(e){
           if(res['result'] == true){
             $('#postcode').val($('.divOrderAddrPopup .default .postcode').text());
             $('#address').val($('.divOrderAddrPopup .default .addr').text());
-            $('#detail_address').val($('.divOrderAddrPopup .default .detail_addr').text());
+            $('#detail_addr').val($('.divOrderAddrPopup .default .detail_addr').text());
             $('#tel1').val($('.divOrderAddrPopup .default .tel_h').text());
             $('#tel2').val($('.divOrderAddrPopup .default .tel_b').text());
             $('#tel3').val($('.divOrderAddrPopup .default .tel_t').text());

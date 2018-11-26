@@ -41,18 +41,26 @@ $('.passwordModifyFrm input[type="submit"]').click(function(){
 /****************************************************
   마이페이지 - 주문조회 - 버튼 클릭
 ****************************************************/
-$('.myOrderList .divButton input').click(function(e){
+$('.myOrderList .divOrderItem input').click(function(e){
   var orderID = $(this).parents().children('.orderID').val();
+  console.log(orderID);
   if($(this).hasClass('orderCancelBtn')){
-    console.log('주문취소',orderID);
     orderCancel(orderID);
-  }else if($(this).hasClass('orderReturnBtn')){
-    console.log('반품신청',orderID);
   }else if($(this).hasClass('orderDetailBtn')){
-    console.log('주문상세',orderID);
     location.href = "/mypage/orderDetail/"+orderID+"?prev="+location.pathname.substring(8);
+  }else if($(this).hasClass('tradingStatementBtn')){
+    popup(orderID);
   }
 });
+
+function popup(orderID){
+  var windowW = 675;  // 창의 가로 길이
+  var windowH = 900;  // 창의 세로 길이
+  var left = Math.ceil((window.screen.width - windowW)/2);
+  var top = Math.ceil((window.screen.height - windowH)/2-50);
+  var popUrl = "/mypage/popupTradingStatement/"+orderID;
+  window.open(popUrl,"","height="+windowH+", width="+windowW);
+}
 
 /****************************************************
   마이페이지 - 주문취소 - 버튼 클릭

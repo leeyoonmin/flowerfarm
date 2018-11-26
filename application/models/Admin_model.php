@@ -543,6 +543,7 @@ class Admin_model extends CI_Model {
         , A.IS_FORDER
         , A.ORDER_STAT
         , SUM(B.order_price * B.order_amount) AS PAY_PRICE
+        , A.DELIVERY_DATE
         FROM ORDER_TB A
            , ORDER_ITEM_TB B
            , PRODUCT_TB C
@@ -564,6 +565,7 @@ class Admin_model extends CI_Model {
         WHERE A.ORDER_ID = B.ORDER_ID
          AND B.product_id = C.PRODUCT_ID
          AND B.PRODUCT_ID = D.PRODUCT_ID
+         AND A.ORDER_STAT <> '99'
          AND A.USER_ID = E.USER_ID";
       if(!empty($param['ODID'])){
         $sql = $sql."
@@ -973,7 +975,8 @@ class Admin_model extends CI_Model {
         , E.PURCHASED_PRICE
         , E.PURCHASED_SHOP
         , E.MEMO
-        , F.MEMO AS FMEMO
+        , F.MEMO1 AS FMEMO1
+        , F.MEMO2 AS FMEMO2
         , F.DELIVERY_FEE
         FROM ORDER_TB A
            , ORDER_ITEM_TB B
@@ -1239,6 +1242,17 @@ class Admin_model extends CI_Model {
       return $this->db->query($sql);
     }
 
+    function updateForderMemo($param){
+      $sql = "
+        UPDATE FORDER_BASE_TB
+        SET MEMO1 = '".$param['MEMO1']."'
+          , MEMO2 = '".$param['MEMO2']."'
+        WHERE ID = '".$param['FODID']."'
+      ";
+      custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+      return $this->db->query($sql);
+    }
+
     function getForderRequestList($param,$mode,$url){
       $sql = "
       SELECT
@@ -1468,7 +1482,7 @@ class Admin_model extends CI_Model {
       return $this->db->query($sql);
     }
 
-    function updateFORDER_BASE1($FODID,$deliveryFee,$submitMode,$memo){
+    function updateFORDER_BASE1($FODID,$deliveryFee,$submitMode,$memo1, $memo2){
       $sql = "
         SELECT PROGRESS FROM FORDER_BASE_TB WHERE ID = '".$FODID."'
       ";
@@ -1482,7 +1496,8 @@ class Admin_model extends CI_Model {
       $sql = "
         UPDATE FORDER_BASE_TB
         SET DELIVERY_FEE = '".$deliveryFee."'
-          , MEMO = '".$memo."'
+          , MEMO1 = '".$memo1."'
+          , MEMO2 = '".$memo2."'
         ";
       if($submitMode==2){
         $sql = $sql."

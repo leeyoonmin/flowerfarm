@@ -37,7 +37,10 @@ class M_menu extends CI_Controller {
 		if(empty($getData['is_img'])){
 			$getData['is_img'] = false;
 		}
-    $this->load->model('product_model');
+		$this->load->model('product_model');
+    $this->load->model('user_model');
+		$userData = $this->user_model->getUserDataByID($this->session->userdata('user_id'));
+		$this->session->set_userdata('user_level', $userData->user_type);
 		$cateKind = $this->product_model->getProductCate('상품상세구분코드');
 		$cateColor = $this->product_model->getProductCate('상품색상구분코드');
 		$cateShape = $this->product_model->getProductCate('상품형태구분코드');

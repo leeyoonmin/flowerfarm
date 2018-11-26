@@ -64,6 +64,9 @@
       <tr>
         <td></td>
         <td>
+          <input class="btn purple tradingStatementBtn" type="button" name="" value="거래명세서 출력">
+        </td>
+        <td>
           <input class="btn blue onDeliveryBtn" type="button" name="" value="배송중처리">
         </td>
         <td>

@@ -48,13 +48,16 @@
           <input class="btn purple writeForderListBtn" type="button" name="" value="발주서작성">
         </td-->
         <td>
-          <input class="btn blue completeFordertBtn" type="button" name="" value="발주서 보기">
+          <input class="btn blue initFordertBtn" type="button" name="" value="발주서 보기">
         </td>
         <td>
-          <input class="btn pink modifyFordertBtn" type="button" name="" value="수정발주서 보기">
+          <input class="btn pink modifiedFordertBtn" type="button" name="" value="수정발주서 보기">
         </td>
         <td>
-          <input class="btn orange modifyFordertBtn" type="button" name="" value="확정발주서 보기">
+          <input class="btn orange confirmedFordertBtn" type="button" name="" value="확정발주서 보기">
+        </td>
+        <td>
+          <input class="btn red forderReturnBtn" type="button" name="" value="발주서 되돌리기">
         </td>
         <td>
           <input class="btn green searchBtn" type="button" name="" value="조회">

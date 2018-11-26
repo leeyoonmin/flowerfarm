@@ -143,6 +143,32 @@ $('.readyProduct .onDeliveryBtn').click(function(e){
 });
 
 /*********************************************************
+    (상품준비중 관리) 거래명세서 출력 버튼 클릭이벤트
+**********************************************************/
+$('.readyProduct .tradingStatementBtn').click(function(e){
+  var orderID;
+  var checkedCnt = 0;
+  $('.checkBox').each(function(e){
+    if($(this).prop('checked')){
+      checkedCnt++;
+      orderID = $(this).parents('.td').next('.td').next('.td').text();
+    }
+  });
+
+  if(orderID == null){
+    alert("선택된 건이 없습니다.");
+    return false;
+  }
+
+  if(checkedCnt > 1){
+    alert("1건만 선택해주세요.");
+    return false;
+  }
+
+  popupTradingStatement(orderID);
+});
+
+/*********************************************************
     (배송중 관리) 조회 버튼 클릭이벤트
 **********************************************************/
 $('.onDelivery .searchBtn').click(function(e){
@@ -167,13 +193,39 @@ $('.forderConfirm .searchBtn').click(function(e){
   search('forderConfirm');
 });
 
+/*********************************************************
+    (전체주문조회) 거래명세서 출력 버튼 클릭이벤트
+**********************************************************/
+$('.orderAllList .tradingStatementBtn').click(function(e){
+  var orderID;
+  var checkedCnt = 0;
+  $('.checkBox').each(function(e){
+    if($(this).prop('checked')){
+      checkedCnt++;
+      orderID = $(this).parents('.td').next('.td').next('.td').text();
+    }
+  });
+
+  if(orderID == null){
+    alert("선택된 건이 없습니다.");
+    return false;
+  }
+
+  if(checkedCnt > 1){
+    alert("1건만 선택해주세요.");
+    return false;
+  }
+
+  popupTradingStatement(orderID);
+});
+
 
 
 
 /*********************************************************
     (발주품수령) 발주서보기 버튼 클릭이벤트
 **********************************************************/
-$('.writeConfirmedForder .completeFordertBtn, .forderAllList .completeFordertBtn, .forderConfirm .completeFordertBtn').click(function(e){
+$('.writeConfirmedForder .completeFordertBtn, .forderConfirm .completeFordertBtn').click(function(e){
   var rowCnt = 0;
   var checkBoxArray = new Array();
   $('.checkBox').each(function(e){
@@ -192,13 +244,13 @@ $('.writeConfirmedForder .completeFordertBtn, .forderAllList .completeFordertBtn
     alert('발주서보기는 1건 만 선택해서 진행해주세요.');
     return false;
   }
-  popupCompleteForder('init',checkBoxArray[0]);
+  popupCompleteForder('init',checkBoxArray[0],'modify');
 });
 
 /*********************************************************
     (발주품수령) 수정발주서보기 버튼 클릭이벤트
 **********************************************************/
-$('.writeConfirmedForder .modifyFordertBtn, .forderAllList .modifyFordertBtn, .forderConfirm .modifyFordertBtn').click(function(e){
+$('.writeConfirmedForder .modifyFordertBtn, .forderConfirm .modifyFordertBtn').click(function(e){
   var rowCnt = 0;
   var checkBoxArray = new Array();
   $('.checkBox').each(function(e){
@@ -217,10 +269,8 @@ $('.writeConfirmedForder .modifyFordertBtn, .forderAllList .modifyFordertBtn, .f
     alert('1건 만 선택해주세요.');
     return false;
   }
-  popupCompleteForder('30',checkBoxArray[0]);
+  popupCompleteForder('30',checkBoxArray[0],'modify');
 });
-
-
 
 
 /*********************************************************
@@ -264,14 +314,90 @@ $('.writeConfirmedForder .writeConfirmedForderBtn').click(function(e){
     alert("선택된 건이 없습니다.");
     return false;
   }
-  
+
   popupWriteForder(forderID,progress);
 });
 
 /*********************************************************
+    (전체발주내역) 수정발주서보기 버튼 클릭이벤트
+**********************************************************/
+$('.forderAllList .initFordertBtn').click(function(e){
+  var rowCnt = 0;
+  var checkBoxArray = new Array();
+  $('.checkBox').each(function(e){
+    if($(this).prop('checked')){
+      checkBoxArray[rowCnt] = $(this).parents('.td').next('.td').next('.td').text();
+      rowCnt++;
+    }
+  });
+
+  if(rowCnt == 0){
+    alert('선택된 발주가 없습니다.');
+    return false;
+  }
+  console.log(checkBoxArray.length);
+  if(checkBoxArray.length > 1){
+    alert('1건 만 선택해주세요.');
+    return false;
+  }
+  popupCompleteForder('10',checkBoxArray[0],'noneModify');
+});
+
+/*********************************************************
+    (전체발주내역) 수정발주서보기 버튼 클릭이벤트
+**********************************************************/
+$('.forderAllList .modifiedFordertBtn').click(function(e){
+  var rowCnt = 0;
+  var checkBoxArray = new Array();
+  $('.checkBox').each(function(e){
+    if($(this).prop('checked')){
+      checkBoxArray[rowCnt] = $(this).parents('.td').next('.td').next('.td').text();
+      rowCnt++;
+    }
+  });
+
+  if(rowCnt == 0){
+    alert('선택된 발주가 없습니다.');
+    return false;
+  }
+  console.log(checkBoxArray.length);
+  if(checkBoxArray.length > 1){
+    alert('1건 만 선택해주세요.');
+    return false;
+  }
+  popupCompleteForder('20',checkBoxArray[0],'noneModify');
+});
+
+/*********************************************************
+    (전체발주내역) 확정발주서보기 버튼 클릭이벤트
+**********************************************************/
+$('.forderAllList .confirmedFordertBtn').click(function(e){
+  var rowCnt = 0;
+  var checkBoxArray = new Array();
+  $('.checkBox').each(function(e){
+    if($(this).prop('checked')){
+      checkBoxArray[rowCnt] = $(this).parents('.td').next('.td').next('.td').text();
+      rowCnt++;
+    }
+  });
+
+  if(rowCnt == 0){
+    alert('선택된 발주가 없습니다.');
+    return false;
+  }
+  console.log(checkBoxArray.length);
+  if(checkBoxArray.length > 1){
+    alert('1건 만 선택해주세요.');
+    return false;
+  }
+  popupCompleteForder('30',checkBoxArray[0],'noneModify');
+});
+
+
+/*********************************************************
     발주서 이전 상태로 되돌리기 (발주서반송)
 **********************************************************/
-$('.writeConfirmedForder .forderReturnBtn, .writeModifiedForder .forderReturnBtn').click(function(e){
+$('.writeConfirmedForder .forderReturnBtn, .writeModifiedForder .forderReturnBtn, .forderAllList .forderReturnBtn').click(function(e){
   var forderID;
   var progress;
   $('.checkBox').each(function(e){
@@ -307,8 +433,17 @@ $('.writeConfirmedForder .forderReturnBtn, .writeModifiedForder .forderReturnBtn
 
 //##################################################################################################//
 
-
-
+/*********************************************************
+    거래명세서 팝업 로직
+**********************************************************/
+function popupTradingStatement(orderID){
+  var windowW = 675;  // 창의 가로 길이
+  var windowH = 900;  // 창의 세로 길이
+  var left = Math.ceil((window.screen.width - windowW)/2);
+  var top = Math.ceil((window.screen.height - windowH)/2-50);
+  var popUrl = "/mypage/popupTradingStatement/"+orderID;
+  window.open(popUrl,"","height="+windowH+", width="+windowW);
+}
 
 /*********************************************************
     주문상태변경 로직
@@ -551,7 +686,7 @@ function popupWriteForder(forderID,progress){
 /*********************************************************
     (발주품수령) 발주서/수정발주서 팝업 열기
 **********************************************************/
-function popupCompleteForder(mode,id){
+function popupCompleteForder(mode,id,modify){
   var windowH = 850;
   var windowW = 1200;
   var left = Math.ceil((window.screen.width - windowW)/2);
@@ -560,7 +695,11 @@ function popupCompleteForder(mode,id){
   if(mode=='init'){
     popUrl = "/admin/popupWriteForder?FODID="+id+"&MODE="+mode;
   }
-  console.log("top="+top+", left="+left+", height="+windowH+", width="+windowW);
+  if(modify=='modify'){
+    popUrl = popUrl + '&MODIFY=true';
+  }else{
+    popUrl = popUrl + '&MODIFY=false';
+  }
   window.open(popUrl,"pop_01","top="+top+", left="+left+", height="+windowH+", width="+windowW);
 }
 

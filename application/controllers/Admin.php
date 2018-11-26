@@ -550,6 +550,10 @@ class Admin extends CI_Controller
     function popupWriteForder(){//------------------------------------------------------------------------------- 발주서작성2 -> 팝업 VIEW
       $FODID = $this->input->get('FODID');
       $MODE = $this->input->get('MODE');
+      $MODIFY = $this->input->get('MODIFY');
+      if(empty($MODIFY)){
+        $MODIFY = 'true';
+      }
       $ClassData = $this->admin_model->getOrderIDByFODID($FODID);
       $dataArray = array();
       $arrayCnt = 0;
@@ -565,13 +569,13 @@ class Admin extends CI_Controller
       }else{
         $gridData = $this->admin_model->getForderDetailByOrderId($dataArray);
         if($MODE=='10'){
-          $this->load->view('admin/order/popWriteForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID));
+          $this->load->view('admin/order/popWriteForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
         }else if($MODE=='20'){
-          $this->load->view('admin/order/popWriteModifiedForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID));
+          $this->load->view('admin/order/popWriteModifiedForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
         }else if($MODE=='30'){
-          $this->load->view('admin/order/popWriteConfirmedForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID));
+          $this->load->view('admin/order/popWriteConfirmedForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
         }else if($MODE=='init'){
-          $this->load->view('admin/order/popInitForderWrite', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID));
+          $this->load->view('admin/order/popInitForderWrite', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
         }
       }
     }
@@ -615,9 +619,20 @@ class Admin extends CI_Controller
     }
 
     function completeForderServ(){
-      $FODID = $this->input->get('FODID');
+      $FODID = $this->input->post('FODID');
+      $MEMO1 = $this->input->post('fmemo1');
+      $MEMO2 = $this->input->post('fmemo2');
+      $hashMap = array(
+        'FODID'=>$FODID ,
+        'MEMO1'=>$MEMO1 ,
+        'MEMO2'=>$MEMO2
+      );
+      $this->admin_model->updateForderMemo($hashMap);
       $this->admin_model->updateForderProgress($FODID, '20');
-      echo "<script>location.href='/admin/writeForder';</script>";
+      echo "<script>opener.parent.location.reload();</script>";
+      echo "<script>window.close();</script>";
+
+
     }
 
     function ajaxUpdateForderPRG(){
@@ -653,7 +668,7 @@ class Admin extends CI_Controller
         $result1 = ($result1 && $this->admin_model->updateFORDER_DETAIL1($FODID,$item,$submitMode));
       }
       if($result1){
-        $result2 = $this->admin_model->updateFORDER_BASE1($FODID,$deliveryFee,$submitMode,$postData['fmemo']);
+        $result2 = $this->admin_model->updateFORDER_BASE1($FODID,$deliveryFee,$submitMode,$postData['fmemo1'],$postData['fmemo2']);
         $result2 = true;
         if($result2){
           if($submitMode==1){
@@ -697,7 +712,7 @@ class Admin extends CI_Controller
         $result1 = ($result1 && $this->admin_model->updateFORDER_DETAIL2($FODID,$item,$submitMode));
       }
       if($result1){
-        $result2 = $this->admin_model->updateFORDER_BASE1($FODID,$deliveryFee,$submitMode,$postData['fmemo']);
+        $result2 = $this->admin_model->updateFORDER_BASE1($FODID,$deliveryFee,$submitMode,$postData['fmemo1'],$postData['fmemo2']);
         $result2 = true;
         if($result2){
           if($submitMode==1){

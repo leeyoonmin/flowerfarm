@@ -11,23 +11,17 @@
     <?php
       foreach($orderList as $item){
         echo "
-          <div class=\"divOrderItem\">
-            <table>
-              <tr>
-                <td class=\"orderDate\">".$item->ORDER_DATE."</td>
-              </tr>
-              <tr>
-                <td class=\"productName\">".$item->PRODUCT_NM."　[".$item->ORDER_STAT."]</td>
-              </tr>
-              <tr>
-                <td class=\"price\">".number_format($item->SUM_PRICE+$item->DELIVERY_FEE)." 원</td>
-              </tr>
-            </table>
-          </div>
-          <div class=\"divButton\">
-            <input class=\"orderID\" type=\"hidden\" value=\"".$item->ORDER_ID."\">
-            <input class=\"orderCancelBtn\" type=\"hidden\" value=\"주문취소\"><input class=\"orderReturnBtn\" type=\"hidden\" value=\"반품신청\"><input class=\"orderDetailBtn\" type=\"button\" value=\"상세조회\">
-          </div>
+          <table>
+            <tr class=\"divOrderItem\">
+              <td>".$item->ORDER_DATE."</td>
+              <td>".$item->PRODUCT_NM."</td>
+              <td class=\"price\">".number_format($item->SUM_PRICE+$item->DELIVERY_FEE)." 원</td>
+              <td>
+                <input class=\"orderID\" type=\"hidden\" value=\"".$item->ORDER_ID."\">
+                <input class=\"orderDetailBtn\" type=\"button\" value=\"상세조회\">
+              </td>
+            </tr>
+          </table>
         ";
       }
       if(empty($orderList)){

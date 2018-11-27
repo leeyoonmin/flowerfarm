@@ -446,8 +446,6 @@ $('.divSection.joinBiz .joinBtn').click(function(e){
     $('.errMsg').text("! 사업자번호를 입력해주세요.");
   }else if($('.inputBizNum').val().length < 10){
     $('.errMsg').text("! 사업자번호는 10자리입니다.");
-  }else if(!reqBizNum($('.inputBizNum').val())){
-    $('.errMsg').text("! 올바른 사업자번호가 아닙니다.");
   }else if($('.is_duplicated').val() == "true"){
     $('.errMsg').text("! 중복이나 사용할 수 없는 아이디입니다.");
   }else{

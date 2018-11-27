@@ -277,7 +277,6 @@ $(window).scroll(function() {
     $('.divButton').css('position','static').css('left','').css('transform','translateX(0%)').css('margin-top','4px').css('padding','0px').css('box-shadow','0px 0px 0px rgba(0,0,0,0.3)');
     isDivButtonFixed = false;
   }
-  console.log(scrollTop,isDivButtonFixed);
 });
 
 /***********************************************
@@ -290,9 +289,8 @@ $('#viewCnt').change(function(e){
 /***********************************************************
    이미지 클릭 이벤트
 ***********************************************************/
-$('.productList .divGrid .productImg img').click(function(e){
+$('.productList .divGrid .productImg img, .productPriceMng .divGrid .productImg img').click(function(e){
   var img_path = $(this).attr('src');
-  console.log(img_path);
   $('.divPopupImgViewer .product_img').attr('src',img_path);
   $('.divPopupImgViewer').fadeIn('fast');
   $('.divPopupImgViewerBG').fadeIn('fast');
@@ -302,4 +300,47 @@ $('.productList .divGrid .productImg img').click(function(e){
 $('.divPopupImgViewerBG, .divPopupImgViewer .closeBtn, .divPopupImgViewer img').click(function(e){
   $('.divPopupImgViewerBG').fadeOut('fast');
   $('.divPopupImgViewer').fadeOut('fast');
+});
+
+/***********************************************************
+   [상품가격관리] 저장버튼 클릭이벤트
+***********************************************************/
+$('.productPriceMng .divGrid .saveBtn').click(function(e){
+  var PRODUCT_ID = $(this).prev().val();
+  var PRODUCT_PRICE_SUPPLY = $(this).parents('td').prev().prev().prev().prev().children().val();
+  var PRODUCT_PRICE_WHOLESALE = $(this).parents('td').prev().prev().prev().children().val();
+  var PRODUCT_PRICE_CUNSUMER = $(this).parents('td').prev().prev().children().val();
+  var IS_DISPLAY = $(this).parents('td').prev().children().val();
+  var PRODUCT_TIME = $(this).parents('td').prev().prev().prev().prev().prev();
+
+  console.log(PRODUCT_ID , PRODUCT_PRICE_SUPPLY , PRODUCT_PRICE_WHOLESALE , PRODUCT_PRICE_CUNSUMER, IS_DISPLAY);
+
+  $.ajax({
+    type:"POST",
+    url:"/admin/ajaxUpdateProduct",
+    data : {
+      PRODUCT_ID : PRODUCT_ID,
+      PRODUCT_PRICE_SUPPLY : PRODUCT_PRICE_SUPPLY.replace(',',''),
+      PRODUCT_PRICE_WHOLESALE : PRODUCT_PRICE_WHOLESALE.replace(',',''),
+      PRODUCT_PRICE_CUNSUMER : PRODUCT_PRICE_CUNSUMER.replace(',',''),
+      IS_DISPLAY : IS_DISPLAY
+    },
+    dataType : "json",
+    success: function(res){
+      PRODUCT_TIME.text(res['today']);
+      alert('저장완료');
+    },
+    error: function(xhr, status, error) {
+      alert('저장실패');
+      console.log(error);
+    }
+  });
+});
+
+/***********************************************************
+   [상품가격관리] 가격변경 이벤트
+***********************************************************/
+$('.PRODUCT_PRICE').keyup(function() {
+    var INPUT_VAL = $(this).val().replace(',','');
+    $(this).val(commas(INPUT_VAL));
 });

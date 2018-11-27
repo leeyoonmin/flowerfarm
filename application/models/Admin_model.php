@@ -519,6 +519,50 @@ class Admin_model extends CI_Model {
       return $this->db->query($sql);
     }
 
+    function updateProductPriceByID($param){
+      $sql = "
+        SELECT CASE WHEN COUNT(1)>0 THEN 'Y' ELSE 'N' END IS_TODAY
+          FROM PRODUCT_PRICE_TB
+          WHERE PRODUCT_ID = '".$param['PRODUCT_ID']."'
+            AND PRODUCT_TIME = SUBSTR(NOW()+0,1,8)
+      ";
+      custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+      $IS_TODAY = $this->db->query($sql)->row()->IS_TODAY;
+      if($IS_TODAY == "Y"){
+        $sql = "
+          UPDATE PRODUCT_PRICE_TB
+          SET PRODUCT_PRICE_SUPPLY    = '".$param['PRODUCT_PRICE_SUPPLY']."'
+            , PRODUCT_PRICE_WHOLESALE = '".$param['PRODUCT_PRICE_WHOLESALE']."'
+            , PRODUCT_PRICE_CUNSUMER  = '".$param['PRODUCT_PRICE_CUNSUMER']."'
+          WHERE PRODUCT_ID = '".$param['PRODUCT_ID']."'
+            AND PRODUCT_TIME = SUBSTR(NOW()+0,1,8)
+        ";
+      }else{
+        $sql = "
+          INSERT INTO PRODUCT_PRICE_TB
+          VALUES(
+              '".$param['PRODUCT_ID']."'
+            , SUBSTR(NOW()+0,1,8)
+            , '".$param['PRODUCT_PRICE_SUPPLY']."'
+            , '".$param['PRODUCT_PRICE_WHOLESALE']."'
+            , '".$param['PRODUCT_PRICE_CUNSUMER']."'
+          )
+        ";
+      }
+      custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+      return $this->db->query($sql);
+    }
+
+    function updateProductDisplay($param){
+      $sql = "
+        UPDATE PRODUCT_TB
+           SET IS_DISPLAY = '".$param['IS_DISPLAY']."'
+         WHERE PRODUCT_ID = '".$param['PRODUCT_ID']."'
+      ";
+      custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+      return $this->db->query($sql);
+    }
+
     function deleteProductByID($id){
       $sql = "
         DELETE FROM PRODUCT_TB

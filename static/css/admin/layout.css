@@ -6,6 +6,8 @@ input:focus{outline-color:#9661E2}
 input[type="button"]:focus{outline:none}
 select:focus{outline:none}
 
+
+
 .lds-dual-ring {display: inline-block; width: 64px; height: 64px;}
 .lds-dual-ring:after {content: " "; display: block; width: 46px; height: 46px; margin: 1px; border-radius: 50%;
   border: 5px solid #fff; border-color: #fff transparent #fff transparent; animation: lds-dual-ring 1.2s linear infinite; }
@@ -50,7 +52,7 @@ select:focus{outline:none}
 .divFixedLeftMenu .divMenu li.sub img{height:20px; vertical-align:middle; margin-right:16px; line-height:18px;}
 .divFixedLeftMenu .divMenu li.sub span{display:inline-block;font-size:14px; line-height:20px;}
 
-.wrap{min-height:100%; background-color:#F8F9FD; padding-top:114px; color:#4c4c4c; padding-bottom:32px;}
+.wrap{min-height:100%; background-color:#F8F9FD; padding-top:114px; color:#4c4c4c; padding-bottom:32px; padding-left:232px;}
 .divPageTitle{width:1200px; min-width:1200px; margin:auto; margin-bottom:32px;}
 .divPageTitle .engTitle{font-size:32px; font-weight:bold; padding-bottom:16px; padding-right:8px;}
 .divPageTitle .hanTitle{font-size:14px; font-weight:bold; color:#999;}

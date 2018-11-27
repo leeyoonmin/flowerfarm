@@ -8,6 +8,14 @@
 .productList .divGrid .wd150{width:150px;}
 .productList .divGrid .wd300{width:300px;}
 
+.productPriceMng .divGrid td{padding:8px;}
+.productPriceMng .divGrid .body td{background-color:#fff; border-bottom:1px solid #eee;}
+.productPriceMng .divGrid .body td.productImg img{height:50px; width:50px;}
+.productPriceMng .divGrid .wd50{width:50px;}
+.productPriceMng .divGrid .wd100{width:100px;}
+.productPriceMng .divGrid .wd150{width:150px;}
+.productPriceMng .divGrid .wd300{width:300px;}
+
 .divPopupProduct{position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:998; width:900px; font-size:0; border-radius:5px; display:none;}
 .divPopupProduct table{width:100%;}
 .divPopupProduct td{border:1px solid #eee; background-color:#fff; padding:16px; font-size:16px;}

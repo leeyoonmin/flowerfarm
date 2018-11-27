@@ -3,6 +3,18 @@
   foreach($orderInfo as $item){
     $TT_ORDER_PRICE += $item->ORDER_AMOUNT * $item->ORDER_PRICE;
   }
+  $bankName;
+  $AccountHolder;
+  $bankAccount;
+  foreach($shopData as $item){
+    if($item->CODE_NM == "입금은행"){
+      $bankName = $item->CODE;
+    }else if($item->CODE_NM == "예금주명"){
+      $AccountHolder = $item->CODE;
+    }if($item->CODE_NM == "입금계좌"){
+      $bankAccount = $item->CODE;
+    }
+  }
 ?>
 <div class="wrap orderDetail">
 
@@ -15,13 +27,13 @@
         <td>결제방법</td><td><?=$orderInfo[0]->PAY_TYPE_NM?></td>
       </tr>
       <tr>
-        <td>입금은행</td><td>농협</td>
+        <td>입금은행</td><td><?=$bankName?></td>
       </tr>
       <tr>
-        <td>예금주</td><td>김성수(플랑)</td>
+        <td>예금주</td><td><?=$AccountHolder?></td>
       </tr>
       <tr>
-        <td>계좌번호</td><td>0365-3650-09</td>
+        <td>계좌번호</td><td><?=$bankAccount?></td>
       </tr>
       <tr>
         <td>입금금액</td><td><?=number_format($TT_ORDER_PRICE+$orderInfo[0]->DELIVERY_FEE)?> 원</td>

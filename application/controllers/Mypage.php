@@ -191,8 +191,9 @@ class mypage extends CI_Controller
 
       $this->load->model('order_model');
       $prev = $this->input->get('prev');
+      $shopData = $this->order_model->getPaymentInfo();
       $orderInfo = $this->order_model->getOrderDetailByID($id);
-      $this->load->view('M_mypage/orderDetail', array('orderInfo'=>$orderInfo, 'prev'=>$prev));
+      $this->load->view('M_mypage/orderDetail', array('shopData'=>$shopData, 'orderInfo'=>$orderInfo, 'prev'=>$prev));
 
       $this->importFooter(array('mypage'));//------------------ 레이아웃 종료
     }

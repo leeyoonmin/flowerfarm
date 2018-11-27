@@ -286,7 +286,7 @@ $(document).ready(function(){
   }else if(location.pathname == '/admin/inquiryUserInfo' || location.pathname == '/admin/userGradeMng'){
     $('.divFixedLeftMenu .divMenu .mainMenu.user').addClass('selected');
     $('.divFixedLeftMenu .divMenu .mainMenu.user').next('ul').css('display','block');
-  }else if(location.pathname == '/admin/productList'){
+  }else if(location.pathname == '/admin/productList' || location.pathname == '/admin/productPriceMng'){
     $('.divFixedLeftMenu .divMenu .mainMenu.product').addClass('selected');
     $('.divFixedLeftMenu .divMenu .mainMenu.product').next('ul').css('display','block');
   }else if(location.pathname == '/admin/paymentList' || location.pathname == '/admin/readyProduct' || location.pathname == '/admin/onDelivery' || location.pathname == '/admin/orderAllList'){

@@ -15,6 +15,7 @@
 .productPriceMng .divGrid .wd100{width:100px;}
 .productPriceMng .divGrid .wd150{width:150px;}
 .productPriceMng .divGrid .wd300{width:300px;}
+.productPriceMng .divGrid .old{color:red;}
 
 .divPopupProduct{position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:998; width:900px; font-size:0; border-radius:5px; display:none;}
 .divPopupProduct table{width:100%;}

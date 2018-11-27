@@ -375,11 +375,8 @@ class Admin extends CI_Controller
       $combo2 = $this->admin_model->getProductCateColor();
       $combo3 = $this->admin_model->getProductCateShape();
       $combo4 = $this->admin_model->getProductCateArea();
-      if(empty($get_data['VIEW_CNT'])){
-        $get_data['VIEW_CNT'] = 'false';
-      }
       $rowCount = $this->admin_model->getProductList($get_data,'COUNT');
-      $this->load->view('admin/product/productPriceMng', array('gridData'=>$rowCount->result(), 'getData'=>$rowCount->result(), 'rowCount'=>$rowCount->num_rows(), 'combo1'=>$combo1, 'combo2'=>$combo2, 'combo3'=>$combo3, 'combo4'=>$combo4));
+      $this->load->view('admin/product/productPriceMng', array('gridData'=>$rowCount->result(), 'getData'=>$get_data, 'rowCount'=>$rowCount->num_rows(), 'combo1'=>$combo1, 'combo2'=>$combo2, 'combo3'=>$combo3, 'combo4'=>$combo4));
       $this->importFooter(array('product'=>'product'));//------------------ 레이아웃 종료
     }
 

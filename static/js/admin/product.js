@@ -193,6 +193,9 @@ function search(mode){
   var Param='';
 
   PAGE = $('.selectPage').val();
+  if(PAGE == null || PAGE == ""){
+    PAGE = 1;
+  }
   if(mode=='productList'){
     PRD_AREA = $('.divSearch .PRD_AREA').val();
     PRD_NM = $('.divSearch .PRD_NM').val();
@@ -204,6 +207,16 @@ function search(mode){
     PRD_DISPLAY = $('.divSearch .PRD_DISPLAY').val();
     IS_DISPLAY = $('.divSearch .IS_DISPLAY').val();
     VIEW_CNT = $('#viewCnt').prop('checked');
+  }else if(mode == 'productPriceMng'){
+    PRD_AREA = $('.divSearch .PRD_AREA').val();
+    PRD_NM = $('.divSearch .PRD_NM').val();
+    PRD_DV = $('.divSearch .PRD_DV').val();
+    PRD_COLOR = $('.divSearch .PRD_COLOR').val();
+    PRD_SHAPE = $('.divSearch .PRD_SHAPE').val();
+    LOW_PRICE = $('.divSearch .LOW_PRICE').val();
+    HIGH_PRICE = $('.divSearch .HIGH_PRICE').val();
+    PRD_DISPLAY = $('.divSearch .PRD_DISPLAY').val();
+    IS_DISPLAY = $('.divSearch .IS_DISPLAY').val();
   }
 
   if(PRD_NM != ''){
@@ -271,10 +284,10 @@ $(window).scroll(function() {
   var scrollTop = $(this).scrollTop();
 
   if(scrollTop>302 && isDivButtonFixed==false){
-    $('.divButton').css('position','fixed').css('top','0').css('left','50%').css('transform','translateX(-50%)').css('margin-top','0px').css('padding','16px').css('z-index','999').css('box-shadow','5px 10px 10px rgba(0,0,0,.05)');
+    $('.productList .divButton').css('position','fixed').css('top','0').css('left','50%').css('transform','translateX(-50%)').css('margin-top','0px').css('padding','16px').css('z-index','999').css('box-shadow','5px 10px 10px rgba(0,0,0,.05)');
     isDivButtonFixed = true;
   }else if(scrollTop<302){
-    $('.divButton').css('position','static').css('left','').css('transform','translateX(0%)').css('margin-top','4px').css('padding','0px').css('box-shadow','0px 0px 0px rgba(0,0,0,0.3)');
+    $('.productList .divButton').css('position','static').css('left','').css('transform','translateX(0%)').css('margin-top','4px').css('padding','0px').css('box-shadow','0px 0px 0px rgba(0,0,0,0.3)');
     isDivButtonFixed = false;
   }
 });
@@ -328,6 +341,7 @@ $('.productPriceMng .divGrid .saveBtn').click(function(e){
     dataType : "json",
     success: function(res){
       PRODUCT_TIME.text(res['today']);
+      PRODUCT_TIME.removeClass('old');
       alert('저장완료');
     },
     error: function(xhr, status, error) {
@@ -340,7 +354,14 @@ $('.productPriceMng .divGrid .saveBtn').click(function(e){
 /***********************************************************
    [상품가격관리] 가격변경 이벤트
 ***********************************************************/
-$('.PRODUCT_PRICE').keyup(function() {
+$('.productPriceMng .PRODUCT_PRICE').keyup(function() {
     var INPUT_VAL = $(this).val().replace(',','');
     $(this).val(commas(INPUT_VAL));
+});
+
+/*********************************************************
+    [상품가격관리] 조회버튼 클릭 이벤트
+**********************************************************/
+$('.productPriceMng .searchBtn').click(function(e){
+  search('productPriceMng');
 });

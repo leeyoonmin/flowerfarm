@@ -122,7 +122,13 @@
     <table>
       <tr class="tr">
         <td class="isOneCheck td wd100"></td>
-        <td class="td wd100">상품코드</td><td class="td wd100">상품사진</td><td class="td wd300">상품명</td><td class="td wd150">공급가</td><td td class="td wd150">도매가</td><td td class="td wd150">소매가</td><td td class="td wd150">가격수정일자</td>
+        <td class="td wd100">상품코드</td>
+        <td class="td wd100">상품사진</td>
+        <td class="td wd300">상품명</td>
+        <td class="td wd150">공급가</td>
+        <td td class="td wd150">사업자가</td>
+        <td td class="td wd150">일반가</td>
+        <td td class="td wd150">가격수정일자</td>
       </tr>
     <?php
     $rowCnt = 0;

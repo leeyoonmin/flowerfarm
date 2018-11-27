@@ -40,7 +40,7 @@ class mypage extends CI_Controller
     			$this->load->view('module/redirect', array('url'=>'/M_auth/login'));
     		}
         $this->importHead(array('mypage'));//-------------------- 레이아웃 시작
-        $this->load->view('M_layout/page_title',array('page_title'=>'mypage'));
+        //$this->load->view('M_layout/page_title',array('page_title'=>'mypage'));
 
         $this->load->model('user_model');
         if(!empty($this->session->userdata('user_id'))){
@@ -63,7 +63,7 @@ class mypage extends CI_Controller
         $this->load->view('module/redirect', array('url'=>'/M_auth/login'));
       }
       $this->importHead(array('mypage'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'myInfo'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'myInfo'));
 
       $this->load->model('user_model');
       $userData = $this->user_model->getUserDataByID($this->session->userdata('user_id'));
@@ -81,7 +81,7 @@ class mypage extends CI_Controller
         $this->load->view('module/redirect', array('url'=>'/M_auth/login'));
       }
       $this->importHead(array('mypage'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'myInfo'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'myInfo'));
 
       $this->load->view('M_mypage/myInfoLogin');
 
@@ -117,7 +117,7 @@ class mypage extends CI_Controller
         $this->load->view('module/redirect', array('url'=>'/M_auth/login'));
       }
       $this->importHead(array('mypage'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'myInfo'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'myInfo'));
 
       $this->load->model('user_model');
       $userData = $this->user_model->getUserDataByID($this->session->userdata('user_id'));
@@ -160,7 +160,7 @@ class mypage extends CI_Controller
         $this->load->view('module/redirect', array('url'=>'/M_auth/login'));
       }
       $this->importHead(array('mypage'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'order_info'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'order_info'));
 
       $getDate = $this->input->get();
       $this->load->model('order_model');
@@ -187,7 +187,7 @@ class mypage extends CI_Controller
         $this->load->view('module/redirect', array('url'=>'/M_auth/login'));
       }
       $this->importHead(array('mypage'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'order_info'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'order_info'));
 
       $this->load->model('order_model');
       $prev = $this->input->get('prev');
@@ -204,7 +204,7 @@ class mypage extends CI_Controller
         $this->load->view('module/redirect', array('url'=>'/M_auth/login'));
       }
       $this->importHead(array('mypage'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'order_info'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'order_info'));
 
       $getDate = $this->input->get();
       $this->load->model('order_model');
@@ -228,7 +228,7 @@ class mypage extends CI_Controller
 
     function support($type){
       $this->importHead(array('mypage','board'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'support'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'support'));
 
       $get_data = $this->input->get();
       $this->load->model('mypage_model');
@@ -248,7 +248,7 @@ class mypage extends CI_Controller
 
     function writeBoard(){
       $this->importHead(array('mypage','board'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'support'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'support'));
 
       $this->load->view('M_mypage/writeBoard');
 
@@ -267,7 +267,7 @@ class mypage extends CI_Controller
 
     function modifyBoard(){
       $this->importHead(array('mypage','board'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'support'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'support'));
       $idxkey = $this->input->post('idxkey');
       $board = $this->mypage_model->getBoardByID($idxkey);
       $this->load->view('M_mypage/modifyBoard',array('board'=>$board));
@@ -299,7 +299,7 @@ class mypage extends CI_Controller
 
     function transBiz(){//----------------------------------------------------------------------- 마이페이지 - 사업자회원전환신청 페이지 VIEW
       $this->importHead(array('mypage','board'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'mypage'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'mypage'));
 
       $this->load->view('M_mypage/transBiz');
 

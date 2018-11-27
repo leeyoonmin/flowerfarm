@@ -29,7 +29,7 @@ class M_menu extends CI_Controller {
 			$this->load->view('module/redirect', array('url'=>'/M_main'));
 		}
 		$this->importHead(array('menu'));//-------------------- 레이아웃 시작
-		$this->load->view('M_layout/page_title',array('page_title'=>'mart01'));
+		//$this->load->view('M_layout/page_title',array('page_title'=>'mart01'));
     $getData = $this->input->get();
 		if(empty($getData['page'])){
 			$getData['page'] = 1;
@@ -60,7 +60,7 @@ class M_menu extends CI_Controller {
 			$this->load->view('module/redirect', array('url'=>'/M_auth/login'));
 		}
 		$this->importHead(array('cart'));//-------------------- 레이아웃 시작
-		$this->load->view('M_layout/page_title',array('page_title'=>'cart'));
+		//$this->load->view('M_layout/page_title',array('page_title'=>'cart'));
 
 		$this->load->model('cart_model');
 		$delivery_info = $this->cart_model->getDeliveryInfo();

@@ -32,7 +32,7 @@ class M_auth extends CI_Controller {
 			$this->load->view('module/redirect',array('url'=>'/'));
 		}
     $this->importHead(array('join'));//-------------------- 레이아웃 시작
-		$this->load->view('M_layout/page_title',array('page_title'=>'login'));
+		//$this->load->view('M_layout/page_title',array('page_title'=>'login'));
 		$this->load->view('M_auth/login');
 		$this->importFooter(array('join'));//------------------ 레이아웃 종료
 	}

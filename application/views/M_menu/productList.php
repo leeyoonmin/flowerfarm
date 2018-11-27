@@ -1,6 +1,9 @@
 
 <div class="m divSearch flower close">
   <table>
+    <tr class="pc title">
+      <td colspan="3" style="background:#FE8200; color:#fff; padding:8px;">편하게 검색하세요</td>
+    </tr>
     <tr>
       <td>
         원산지

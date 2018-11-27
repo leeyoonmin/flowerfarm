@@ -31,7 +31,7 @@ class Ledger extends CI_Controller
 
     function month(){//--------------------------------------------------------- 가계부 메인 VIEW
       $this->importHead(array('ledger'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
 
       $year = $this->input->get('year');
       $month = $this->input->get('month');
@@ -51,7 +51,7 @@ class Ledger extends CI_Controller
 
     function daily(){//--------------------------------------------------------- 가계부 메인 VIEW
       $this->importHead(array('ledger'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
 
       $year = $this->input->get('year');
       $month = $this->input->get('month');
@@ -75,7 +75,7 @@ class Ledger extends CI_Controller
 
     function calendar(){//--------------------------------------------------------- 가계부 메인 VIEW
       $this->importHead(array('ledger'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
 
       $year = $this->input->get('year');
       $month = $this->input->get('month');
@@ -95,7 +95,7 @@ class Ledger extends CI_Controller
 
     function writeLedger(){
       $this->importHead(array('ledger'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
 
       $cateType1 = $this->ledger_model->getCateByType('01');
       $cateType2 = $this->ledger_model->getCateByType('02');
@@ -158,7 +158,7 @@ class Ledger extends CI_Controller
 
     function updateLedger($IDXKEY){
       $this->importHead(array('ledger'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
       $ledger = $this->ledger_model->getLedgerByIDXKEY($IDXKEY,'Y');
       $cateType1 = $this->ledger_model->getCateByType('01');
       $cateType2 = $this->ledger_model->getCateByType('02');
@@ -175,7 +175,7 @@ class Ledger extends CI_Controller
 
     function editCate(){
       $this->importHead(array('ledger'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
       $cateType1 = $this->ledger_model->getCateByType('01');
       $cateType2 = $this->ledger_model->getCateByType('02');
       $this->load->view('M_ledger/editCate', array('cateType1'=>$cateType1, 'cateType2'=>$cateType2));
@@ -219,7 +219,7 @@ class Ledger extends CI_Controller
 
     function dashboard(){//--------------------------------------------------------- 가계부 메인 VIEW
       $this->importHead(array('ledger'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
 
       $year = $this->input->get('year');
       $month = $this->input->get('month');
@@ -246,7 +246,7 @@ class Ledger extends CI_Controller
 
     function dashboardDetail(){//--------------------------------------------------------- 가계부 메인 VIEW
       $this->importHead(array('ledger'));//-------------------- 레이아웃 시작
-      $this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
+      //$this->load->view('M_layout/page_title',array('page_title'=>'ledger'));
 
       $year = $this->input->get('year');
       $type = $this->input->get('type');

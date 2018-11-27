@@ -111,23 +111,39 @@
   .divNewStickerBox .divNewSticker li span{font-weight:bold; margin-right:8px; color:#FE8200;}
   .divNewSticker ul{width:1200px; margin:auto;}
   .ui.active.dimmer.divLoader.productList{transition:300ms; position:fixed;}
-  .divSearch{width:1200px; min-width:1200px; background:#fff; margin:auto; margin}
-  .divSearch td{border:1px solid #ccc; padding:4px; font-size:16px;}
-  .divSearch td.title{width:100px; text-align:center; background:#eee; color:#000; font-weight:400;}
-  .divSearch td.body{text-align:center;}
-  .divSearch tr:nth-of-type(1) td:nth-of-type(2){width:150px;}
-  .divSearch tr:nth-of-type(1) td:nth-of-type(4){width:150px;}
-  .divSearch tr:nth-of-type(1) td:nth-of-type(6){width:150px;}
-  .divSearch tr:nth-of-type(2) td:last-of-type{border-left:0; text-align:right;}
-  .divSearch tr:nth-of-type(2) td:nth-of-type(2){border-right:0;}
 
-  .divSearch input{width:100%; border:0; font-size:16px; padding:8px;}
-  .divSearch img{height:30px; padding:0px; cursor:pointer; margin:-8px; margin-right:0px;}
-  .divSearch select{width:100%; border:0px; background-color:#fff; font-size:16px; height:34px; color:#262525;}
-  .divSearch .colorSelector{display:inline-block; padding:13px; margin-right:4px; border:1px solid #eee; border-radius:2px;}
-  .divSearch .colorSelector:last-of-type{margin-right:0;}
-  .divSearch .colorSelector.all{background-image:url('/static/img/icon/ic_color_select_bg.png'); background-size:cover;}
-  .divSearch .colorSelector.selected{box-shadow:0px 2px 5px rgba(0,0,0,0.5)}
+  .pc.divSearch{width:1200px; min-width:1200px; background:#fff; margin:auto; margin}
+  .pc.divSearch td{border:1px solid #ccc; padding:4px; font-size:16px;}
+  .pc.divSearch td.title{width:100px; text-align:center; background:#eee; color:#000; font-weight:400;}
+  .pc.divSearch td.body{text-align:center;}
+  .pc.divSearch tr:nth-of-type(1) td:nth-of-type(2){width:150px;}
+  .pc.divSearch tr:nth-of-type(1) td:nth-of-type(4){width:150px;}
+  .pc.divSearch tr:nth-of-type(1) td:nth-of-type(6){width:150px;}
+  .pc.divSearch tr:nth-of-type(2) td:last-of-type{border-left:0; text-align:right;}
+  .pc.divSearch tr:nth-of-type(2) td:nth-of-type(2){border-right:0;}
+
+  .pc.divSearch input{width:100%; border:0; font-size:16px; padding:8px;}
+  .pc.divSearch img{height:30px; padding:0px; cursor:pointer; margin:-8px; margin-right:0px;}
+  .pc.divSearch select{width:100%; border:0px; background-color:#fff; font-size:16px; height:34px; color:#262525;}
+  .pc.divSearch .colorSelector{display:inline-block; padding:13px; margin-right:4px; border:1px solid #eee; border-radius:2px;}
+  .pc.divSearch .colorSelector:last-of-type{margin-right:0;}
+  .pc.divSearch .colorSelector.all{background-image:url('/static/img/icon/ic_color_select_bg.png'); background-size:cover;}
+  .pc.divSearch .colorSelector.selected{box-shadow:0px 2px 5px rgba(0,0,0,0.5)}
+
+  .m.divSearch{position:fixed; width:300px;top:138px; z-index:995; right:32px;}
+  .m.divSearch td{border-bottom:1px solid #eee; padding:4px; font-size:14px; background-color:#fff;}
+  .m.divSearch td:first-of-type{border-right:1px solid #eee; text-align:center; width:60px;}
+  .m.divSearch input{width:100%; border:1px solid #eee; font-size:14px; padding:8px;}
+  .m.divSearch img{height:30px; cursor:pointer;}
+  .m.divSearch select{width:100%; border:1px solid #eee; background-color:#fff; font-size:14px; height:34px; color:#262525;}
+  .m.divSearch tr:last-of-type td:last-of-type{width:38px;}
+  .m.divSearch .colorSelector{display:inline-block; padding: 10.5px; margin-right:2px; border:1px solid #eee;}
+  .m.divSearch .colorSelector:last-of-type{margin-right:0;}
+  .m.divSearch .colorSelector.all{background-image:url('/static/img/icon/ic_color_select_bg.png'); background-size:cover;}
+  .m.divSearch .colorSelector.selected{box-shadow:0px 2px 5px rgba(0,0,0,0.5)}
+  .divControlbox{display:none;}
+  .m.divSearchBG{position:fixed; width:100%; height:100%; top:0; left:0; background-color:rgba(0,0,0,0.5); z-index:994; display:none;}
+  .m.divSearchBG2{width:100%; height:26px}
 
   .divControlbox{text-align:center; background-color:#ccc; padding:4px;}
   .divControlbox img{height:20px; width:15px;}

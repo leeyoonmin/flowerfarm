@@ -2,6 +2,7 @@
         전역변수
 ***********************************************************/
 var isAjaxCall = true;
+var scrollT=0;
 /***********************************************************
         화면 로드온 이벤트
 ***********************************************************/
@@ -11,7 +12,7 @@ $(document).ready(function(){
           스크롤 이벤트
   ***********************************************************/
   $(window).scroll(function(){
-    var scrollT = $(this).scrollTop();
+    scrollT = $(this).scrollTop();
     var listOffset = 0;
     var listTop = 0;
     var listHeight = 0;
@@ -39,6 +40,11 @@ $(document).ready(function(){
       }
     }
 
+    if(scrollT>240 && document.body.scrollWidth>1024 && window.innerWidth>1900){
+      $('.m.divSearch').fadeIn('fast');
+    }else if(scrollT<240 && document.body.scrollWidth>1024){
+      $('.m.divSearch').fadeOut('fast');
+    }
   });
 });
 
@@ -361,7 +367,7 @@ function insertCart(target){
         카테고리창 셀렉터 변경 이벤트
 ***********************************************************/
 $('.divSearch select').change(function(e){
-  if(document.body.scrollWidth>1024){
+  if(scrollT < 250){
     var keyword = $('.pc.divSearch .inputKeyword').val();
   }else{
     var keyword = $('.m.divSearch .inputKeyword').val();
@@ -380,7 +386,7 @@ function itemViewControl(keyword, mode){
   var color = "";
   var area = "";
   var keyword = "";
-  if(document.body.scrollWidth>1024){
+  if(scrollT < 250){
     kind = $('.pc.divSearch select.selectKind').val();
     shape = $('.pc.divSearch select.selectShape').val();
     color = $('.pc.divSearch .selectColor').val();

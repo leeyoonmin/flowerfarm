@@ -663,8 +663,8 @@ function popupForderWrite(orderIDArray){
   for(var rowCnt=0; orderIDArray.length > rowCnt; rowCnt++){
     idList = idList + orderIDArray[rowCnt];
   }
-  var windowW = 641;  // 창의 가로 길이
-  var windowH = 900;  // 창의 세로 길이
+  var windowW = 1200;  // 창의 가로 길이
+  var windowH = 850;  // 창의 세로 길이
   var left = Math.ceil((window.screen.width - windowW)/2);
   var top = Math.ceil((window.screen.height - windowH)/2-50);
   var popUrl = "/admin/popupForderPreview?IDA="+idList;

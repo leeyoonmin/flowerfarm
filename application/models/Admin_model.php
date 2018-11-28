@@ -1014,6 +1014,7 @@ class Admin_model extends CI_Model {
         , SUM(B.ORDER_AMOUNT) AS QTY
         , B.ORDER_PRICE AS PRODUCT_PRICE
         , (SUM(B.ORDER_AMOUNT)*B.ORDER_PRICE) AS BUY_PRICE
+        , E.FORDER_DETAIL_DV AS FORDER_TYPE
         , E.IS_PURCHASED
         , E.PURCHASED_AMOUNT
         , E.PURCHASED_PRICE
@@ -1234,8 +1235,8 @@ class Admin_model extends CI_Model {
 
     function insertFORDER_BASE($HashMap){
       $sql ="
-        INSERT INTO FORDER_BASE_TB(id,forder_dv,memo,created)
-        VALUES('".$HashMap['id']."','".$HashMap['forder_dv']."','".$HashMap['memo']."','".$HashMap['created']."')
+        INSERT INTO FORDER_BASE_TB(id,forder_dv,created)
+        VALUES('".$HashMap['id']."','".$HashMap['forder_dv']."','".$HashMap['created']."')
       ";
       return $this->db->query($sql);
     }

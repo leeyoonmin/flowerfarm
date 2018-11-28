@@ -65,7 +65,7 @@
               }
               echo "<td>".$item->NAME."</td>
               <td class=\"checkBox\"><input type=\"checkbox\" onclick=\"return false;\"><input name=\"".$rowCnt."_isPurchased\" class=\"inputCheckBox\" type=\"hidden\" value=\"".$item->IS_PURCHASED."\" readonly></td>
-              <td class=\"documentInput qty variable\"><input type=\"text\" name=\"".$rowCnt."_qty\" value=\"".$item->QTY."\"  readonly></td>
+              <td class=\"documentInput request_qty variable\"><input type=\"text\" name=\"".$rowCnt."_qty\" value=\"".number_format($item->QTY)."\" readonly></td>
               <td class=\"documentInput qty variable\"><input type=\"text\" name=\"".$rowCnt."_qty\" value=\"\"  readonly></td>
               <td class=\"documentInput price variable\"><input type=\"text\" name=\"".$rowCnt."_price\" value=\"\"  readonly></td>
               <td class=\"documentInput purchasePrice\"><input type=\"text\" value=\"\" readonly></td>
@@ -108,11 +108,11 @@
         <tr>
           <td rowspan="2" colspan="2">메모</td>
           <td>부산메모</td>
-          <td colspan="7"><textarea class="inputMemo" name="fmemo1"></textarea></td>
+          <td colspan="7"><textarea class="inputMemo" name="fmemo1"><?=($gridData[0]->FMEMO1)?></textarea></td>
         </tr>
         <tr>
           <td>서울메모</td>
-          <td colspan="7"><textarea class="inputMemo" name="fmemo2"></textarea></td>
+          <td colspan="7"><textarea class="inputMemo" name="fmemo2"><?=($gridData[0]->FMEMO2)?></textarea></td>
         </tr>
       </table>
 
@@ -143,7 +143,7 @@
       $('.completeForderBtn').click(function(){
         $('.saveFrm').submit();
       });
-      
+
       $('.grid .body img').click(function(e){
         var img_path = $(this).attr('src');
         console.log(img_path);

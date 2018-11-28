@@ -36,7 +36,7 @@
       </table>
       <table class="body">
         <tr>
-          <td>No</td><td>사진</td><td>상품명</td><td>수량</td><td>단가</td><td>금액</td><td>구매처</td><td>비고</td>
+          <td>No</td><td>사진</td><td>상품명</td><td>구입</br>여부</td><td>요청수량</td><td>구입수량</td><td>단가</td><td>금액</td><td>구매처</td><td>비고</td>
         </tr>
         <?php
           $rowCnt = 1;
@@ -51,9 +51,11 @@
                 echo "<td><img src=\"/static/uploads/product/".$item->ID.".".$item->IMG_EXTENSION."\"></td>";
               }
               echo "<td>".$item->NAME."</td>
+              <td class=\"checkBox\"><input type=\"checkbox\" onclick=\"return false;\"></td>
               <td>".number_format($item->QTY)."</td>
-              <td class=\"blur\">".number_format($item->PRODUCT_PRICE)."</td>
-              <td class=\"blur\">".number_format($item->QTY*$item->PRODUCT_PRICE)."</td>
+              <td></td>
+              <td class=\"blur\"></td>
+              <td class=\"blur\"></td>
               <td></td>
               <td></td>
             </tr>";
@@ -62,21 +64,38 @@
             $TT_PRICE += ($item->PRODUCT_PRICE*$item->QTY);
           }
         ?>
-      </table>
-      <table class="sum">
         <tr>
-          <td rowspan="3">소계</td><td rowspan="4"><?=$TT_CNT?></td><td style="text-align:left; padding-left:16px">구매금액</td><td class="price">￦</td><td class="blur" style="text-align:left; padding-left:16px"><?=number_format($TT_PRICE)?></td>
+          <td colspan="11" style="border:0px;"></td>
+        </tr>
+        <tr class="sum">
+          <td rowspan="3" colspan="4">소계</td>
+          <td rowspan="3"><?=$TT_CNT?></td>
+          <td rowspan="3"></td>
+          <td rowspan="3" colspan="2"></td>
+          <td style="text-align:left; padding-left:16px">구매금액</td>
+          <td style="text-align:right; padding:4px 8px;">
+            <?=number_format($TT_PRICE)." 원"?>
+          </td>
+        </tr>
+        <tr class="sum">
+          <td style="text-align:left; padding-left:16px">운임비</td>
+          <td style="text-align:right; padding:4px 8px;" ></td>
+        </tr>
+        <tr class="sum">
+          <td style="text-align:left; padding-left:16px">총액</td>
+          <td style="text-align:right; padding:4px 8px;"></td>
         </tr>
         <tr>
-          <td style="text-align:left; padding-left:16px">운임비</td><td class="price">￦</td><td style="text-align:left; padding-left:16px"></td>
+          <td colspan="11" style="border:0px;"></td>
         </tr>
         <tr>
-          <td style="text-align:left; padding-left:16px">총액</td><td class="price">￦</td><td style="text-align:left; padding-left:16px"></td>
+          <td rowspan="2" colspan="2">메모</td>
+          <td>부산메모</td>
+          <td colspan="7"><textarea readonly></textarea></td>
         </tr>
-      </table>
-      <table class="memo">
         <tr>
-          <td>메모</td><td><textarea class="inputMemo" name="memo"></textarea></td>
+          <td>서울메모</td>
+          <td colspan="7"><textarea readonly></textarea></td>
         </tr>
       </table>
     </div>

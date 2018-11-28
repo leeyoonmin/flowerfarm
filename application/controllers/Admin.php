@@ -499,7 +499,6 @@ class Admin extends CI_Controller
 
     function createForderServ(){//------------------------------------------------------------------------------ 발주신청 SERVICE
       $getData = $this->input->post('IDA');
-      $MEMO = $this->input->post('MEMO');
       $dataArray = array();
       for($arrCnt=0;strlen($getData)/20>$arrCnt;$arrCnt++){
         $dataArray[$arrCnt] = substr($getData,$arrCnt*20,20);
@@ -509,7 +508,6 @@ class Admin extends CI_Controller
       $hashMap = array(
         'id'=>$ID,
         'forder_dv'=>'01',
-        'memo'=>$MEMO,
         'created'=>date('YmdHis',time())
       );
       $result1 = $this->admin_model->insertFORDER_BASE($hashMap);
@@ -587,14 +585,18 @@ class Admin extends CI_Controller
         echo "<script>window.close();</script>";
       }else{
         $gridData = $this->admin_model->getForderDetailByOrderId($dataArray);
-        if($MODE=='10'){
-          $this->load->view('admin/order/popWriteForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
-        }else if($MODE=='20'){
-          $this->load->view('admin/order/popWriteModifiedForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
-        }else if($MODE=='30'){
-          $this->load->view('admin/order/popWriteConfirmedForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
-        }else if($MODE=='init'){
-          $this->load->view('admin/order/popInitForderWrite', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
+        if($MODIFY=='true'){
+          if($MODE=='10'){
+            $this->load->view('admin/order/popWriteForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
+          }else if($MODE=='20'){
+            $this->load->view('admin/order/popWriteModifiedForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
+          }else if($MODE=='30'){
+            $this->load->view('admin/order/popWriteConfirmedForder', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
+          }else if($MODE=='init'){
+            $this->load->view('admin/order/popInitForderWrite', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODIFY'=>$MODIFY));
+          }
+        }else{
+          $this->load->view('admin/order/popWriteForderComplete', array('gridData'=>$gridData,'dataArray'=>$dataArray, 'FODID'=>$FODID, 'MODE'=>$MODE));
         }
       }
     }

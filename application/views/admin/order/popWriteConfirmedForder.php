@@ -115,7 +115,7 @@
         </tr>
         <tr>
           <td>서울메모</td>
-          <td colspan="7"><textarea class="inputMemo" name="fmemo2"><?=($gridData[0]->FMEMO1)?></textarea></td>
+          <td colspan="7"><textarea class="inputMemo" name="fmemo2"><?=($gridData[0]->FMEMO2)?></textarea></td>
         </tr>
       </table>
       <input class="submit_mode" type="hidden" name="mode" value="">

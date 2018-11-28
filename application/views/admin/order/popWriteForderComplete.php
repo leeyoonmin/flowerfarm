@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8">
-    <title>꽃팜 - 관리자페이지</title>
+    <title>발주서</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -13,28 +13,29 @@
     <script src="/static/semantic/semantic.min.js"></script>
     <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <style type="text/css" media="print">
-       @page Section1
-        {size:11 8.5in;
-        margin:.5in 13.6pt 0in 13.6pt;
-        mso-header-margin:.5in;
-        mso-footer-margin:.5in;
-        mso-paper-source:4;}
-        body{page:Section1;}
+       @page{margin:0;}
+       .header button{display:none;}
     </style>
   </head>
   <body id="printBody">
-    <div class="popup">
+    <div class="popup writeConfirmedForder">
       <div class="header">
         <button class="printBtn" type="button" name="button">출력</button>
-        <!--button class="saveBtn" type="button" name="button">임시저장</button>
-        <button class="completeBtn" type="button" name="button">발주완료</button-->
       </div>
       <table class="title">
         <tr>
           <td colspan="2"><?=date('Y년 m월 d일',time())?></td>
         </tr>
         <tr>
-          <td colspan="2">수정발주서</td>
+          <?php if($MODE=='10'){?>
+            <td colspan="2">발주서</td>
+          <?php }?>
+          <?php if($MODE=='20'){?>
+            <td colspan="2">수정발주서</td>
+          <?php }?>
+          <?php if($MODE=='30'){?>
+            <td colspan="2">확정발주서</td>
+          <?php }?>
         </tr>
         <tr>
           <td></td><td>발주자 : 황선민</td>
@@ -45,18 +46,18 @@
         </tr>
       </table>
 
-      <form class="saveFrm" action="/admin/writeOrderSaveServ" method="post">
-
-      <table class="body">
+      <form class="saveFrm" action="/admin/writeConfirmedForderSaveServ" method="post">
+      <table class="grid">
         <tr class="header">
-          <td>No</td><td>사진</td><td>상품명</td><td>구입</br>여부</td><td>수량</td><td>단가</td><td>금액</td><td>구매처</td><td>비고</td>
+          <td>No</td><td>사진</td><td>상품명</td><td>구입</br>여부</td><td>요청수량</td><td>구입수량</td><td>단가</td><td>금액</td><td>구매처</td><td>비고</td>
         </tr>
         <?php
           $rowCnt = 1;
           $TT_CNT = 0;
           $TT_PRICE = 0;
+          $TT_PURCHASE_CNT = 0;
           foreach($gridData as $item){
-            echo "<tr>
+            echo "<tr class=\"body\">
               <td>".$rowCnt."<input type=\"hidden\" name=\"".$rowCnt."_id\" value=\"".$item->ID."\"></td>
               ";
               if($item->IMG_EXTENSION==""){
@@ -65,54 +66,125 @@
                 echo "<td><img src=\"/static/uploads/product/".$item->ID.".".$item->IMG_EXTENSION."\"></td>";
               }
               echo "
-              <td>".$item->NAME."</td>
-              <td class=\"checkBox\"><input type=\"checkbox\" onclick=\"return false;\" "; if($item->IS_PURCHASED == 'Y'){echo "checked";} echo "><input name=\"".$rowCnt."_isPurchased\" class=\"inputCheckBox\" type=\"hidden\" value=\"".$item->IS_PURCHASED."\" readonly></td>
-              <td class=\"documentInput qty variable\"><input type=\"text\" name=\"".$rowCnt."_qty\" value=\""; if($item->PURCHASED_AMOUNT != 0) echo number_format($item->PURCHASED_AMOUNT);{echo "";} echo"\" placeholder=\"".number_format($item->QTY)."\" readonly></td>
-              <td class=\"documentInput price variable\"><input type=\"text\" name=\"".$rowCnt."_price\" value=\""; if($item->PURCHASED_PRICE != 0) echo number_format($item->PURCHASED_PRICE); echo"\" placeholder=\"".$item->PURCHASED_PRICE."\"  readonly></td>
-              <td class=\"documentInput purchasePrice\"><input type=\"text\" value=\""; if($item->PURCHASED_AMOUNT*$item->PURCHASED_PRICE != 0) echo number_format($item->PURCHASED_AMOUNT*$item->PURCHASED_PRICE); else{echo 0;} echo"\" readonly></td>
-              <td class=\"documentInput purchaseShop\"><input type=\"text\" name=\"".$rowCnt."_purchaseShop\" value=\"".$item->PURCHASED_SHOP."\"  readonly></td>
-              <td class=\"documentInput memo\"><input type=\"text\" name=\"".$rowCnt."_memo\" value=\"".$item->MEMO."\"  readonly></td>
+              <td>".$item->NAME."</td>";
+
+              if($MODE == 10){
+                echo "<td class=\"checkBox\"><input type=\"checkbox\" onclick=\"return false;\"></td>";
+              }else if($MODE == 20){
+                echo "<td class=\"checkBox\"><input type=\"checkbox\" onclick=\"return false;\" "; if($item->IS_PURCHASED == 'Y' && $item->FORDER_TYPE == '01'){echo "checked";} echo "></td>";
+              }else if($MODE == 30){
+                echo "<td class=\"checkBox\"><input type=\"checkbox\" onclick=\"return false;\" "; if($item->IS_PURCHASED == 'Y'){echo "checked";} echo "></td>";
+              }
+
+              if($MODE == '10'){
+                echo "
+                <td>".number_format($item->QTY)."</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>";
+              }else if($MODE == '20'){
+                echo "
+                <td>".number_format($item->QTY)."</td>
+                <td>"; if($item->FORDER_TYPE == '01'){echo number_format($item->PURCHASED_AMOUNT);} echo "</td>
+                <td>"; if($item->FORDER_TYPE == '01'){echo number_format($item->PURCHASED_PRICE);} echo "</td>
+                <td>"; if($item->FORDER_TYPE == '01'){echo number_format($item->PURCHASED_AMOUNT*$item->PURCHASED_PRICE);} echo "</td>
+                <td>"; if($item->FORDER_TYPE == '01'){echo $item->PURCHASED_SHOP;} echo "</td>
+                <td>"; if($item->FORDER_TYPE == '01'){echo $item->MEMO;} echo "</td>";
+              }else if($MODE == '30'){
+                echo "
+                <td>"; echo number_format($item->QTY); echo "</td>
+                <td>"; echo number_format($item->PURCHASED_AMOUNT); echo "</td>
+                <td>"; echo number_format($item->PURCHASED_PRICE); echo "</td>
+                <td>"; echo number_format($item->PURCHASED_AMOUNT*$item->PURCHASED_PRICE); echo "</td>
+                <td>"; echo $item->PURCHASED_SHOP; echo "</td>
+                <td>"; echo $item->MEMO; echo "</td>";
+              }
+
+            echo "
             </tr>";
+
             $rowCnt++;
-            $TT_CNT += $item->QTY;
-            $TT_PRICE += ($item->PURCHASED_PRICE*$item->PURCHASED_AMOUNT);
+            if($MODE=='10'){
+                $TT_CNT += $item->QTY;
+            }else if($MODE=='20'){
+              $TT_CNT += $item->QTY;
+              if($item->FORDER_TYPE == '01'){
+                $TT_PURCHASE_CNT += $item->PURCHASED_AMOUNT;
+                $TT_PRICE += ($item->PURCHASED_AMOUNT * $item->PURCHASED_PRICE);
+              }
+            }else if($MODE=='30'){
+              $TT_CNT += $item->QTY;
+              $TT_PURCHASE_CNT += $item->PURCHASED_AMOUNT;
+              $TT_PRICE += ($item->PURCHASED_AMOUNT * $item->PURCHASED_PRICE);
+            }
           }
         ?>
-      </table>
-      <table class="sum">
         <tr>
-          <td rowspan="3"><input type="hidden" name="FODID" value="<?=$FODID?>">소계</td>
-          <td class="totalCnt" rowspan="3"><?=$TT_CNT?></td>
-          <td class="td3" rowspan="3"></td>
-          <td class="td4" style="text-align:left; padding-left:16px">구매금액</td>
-          <td class="price">￦</td>
-          <td class="td6 documentInput totalPrice" style="text-align:left; padding-left:16px">
-            <input type="text" value="<?=number_format($TT_PRICE)?>"  readonly>
+          <td colspan="11" style="border:0px;"></td>
+        </tr>
+        <tr class="sum">
+          <td rowspan="3" colspan="4">소계</td>
+          <td rowspan="3"><?=$TT_CNT?></td>
+          <td rowspan="3"><?php if($MODE=='10'){}else{ echo $TT_PURCHASE_CNT;}?></td>
+          <td rowspan="3" colspan="2"></td>
+          <td style="text-align:left; padding-left:16px">구매금액</td>
+          <td style="text-align:right; padding:4px 8px;">
+            <?php
+              if($MODE == '10'){
+
+              }else{
+                echo number_format($TT_PRICE)." 원";
+              }
+            ?>
+          </td>
+        </tr>
+        <tr class="sum">
+          <td style="text-align:left; padding-left:16px">운임비</td>
+          <td style="text-align:right; padding:4px 8px;" >
+            <?php
+              if($MODE == '10'){
+
+              }else{
+                echo number_format($gridData[0]->DELIVERY_FEE)." 원";
+              }
+            ?>
+          </td>
+        </tr>
+        <tr class="sum">
+          <td style="text-align:left; padding-left:16px">총액</td>
+          <td style="text-align:right; padding:4px 8px;">
+            <?php
+              if($MODE == '10'){
+
+              }else{
+                echo number_format($TT_PRICE+$gridData[0]->DELIVERY_FEE)." 원";
+              }
+            ?>
           </td>
         </tr>
         <tr>
-          <td class="td4" style="text-align:left; padding-left:16px">운임비</td>
-          <td class="price">￦</td>
-          <td class="td6 documentInput" style="text-align:left; padding-left:16px;" >
-            <input class="deliveryFee" type="text" name="delivery_fee" value="<?=number_format($gridData[0]->DELIVERY_FEE)?>"  readonly>
-          </td>
+          <td colspan="11" style="border:0px;"></td>
         </tr>
         <tr>
-          <td class="td4" style="text-align:left; padding-left:16px">총액</td>
-          <td class="price">￦</td>
-          <td class="td6 documentInput" style="text-align:left; padding-left:16px;" >
-            <input class="ForderTotalPrice" type="text" value="<?=number_format($TT_PRICE+$gridData[0]->DELIVERY_FEE)?>" readonly>
-          </td>
+          <td rowspan="2" colspan="2">메모</td>
+          <td>부산메모</td>
+          <td colspan="7"><textarea readonly><?php echo $gridData[0]->FMEMO1;?></textarea></td>
         </tr>
-      </table>
-      <table class="memo">
         <tr>
-          <td>메모</td><td><textarea class="inputMemo" name="fmemo" readonly><?=($gridData[0]->FMEMO)?></textarea></td>
+          <td>서울메모</td>
+          <td colspan="7"><textarea readonly><?php if($MODE == '10'){}else{echo $gridData[0]->FMEMO2;}?></textarea></td>
         </tr>
       </table>
       <input class="submit_mode" type="hidden" name="mode" value="">
     </form>
     </div>
+    <div class="divPopupImgViewer">
+      <img class="closeBtn" src="/static/img/icon/ic_close_white.png">
+      <img class="product_img" src="">
+    </div>
+    <div class="divPopupImgViewerBG"></div>
     <?php
       $getData="";
       foreach($dataArray as $id){
@@ -120,7 +192,6 @@
       }
     ?>
     <script type="text/javascript">
-    console.log('<?=$gridData[0]->FMEMO?>');
       $('.header .printBtn').click(function(){
         window.print();
       });
@@ -163,11 +234,18 @@
 
       function checkTotalPurchasePrice(){
         var totalPrice = 0;
+        var totalPurchaseCnt = 0;
         $('.checkBox input').each(function(e){
           if($(this).prop('checked')){
             totalPrice += Number(uncomma($(this).parents('td').parents('tr').children('.purchasePrice').children('input').val()));
           }
         });
+        $('.checkBox input').each(function(e){
+          if($(this).prop('checked')){
+            totalPurchaseCnt += Number(uncomma($(this).parents('td').parents('tr').children('.qty').children('input').val()));
+          }
+        });
+        $('.sum .totalPurchaseCnt').text(comma(totalPurchaseCnt));
         $('.sum .totalPrice input').val(comma(totalPrice));
         setTotalPrice();
       }
@@ -185,11 +263,25 @@
       }
 
       function setTotalPrice(){
-        $('.ForderTotalPrice').val(comma(Number(uncomma($('.deliveryFee').val())) + Number(uncomma($('.sum .totalPrice input').val()) ));
+        $('.ForderTotalPrice').val(comma(Number(uncomma($('.deliveryFee').val())) + Number(uncomma($('.sum .totalPrice input').val()))));
       }
 
       $(document).ready(function(){
         checkTotalPurchasePrice();
+      });
+
+      $('.grid .body img').click(function(e){
+        var img_path = $(this).attr('src');
+        console.log(img_path);
+        $('.divPopupImgViewer .product_img').attr('src',img_path);
+        $('.divPopupImgViewer').fadeIn('fast');
+        $('.divPopupImgViewerBG').fadeIn('fast');
+        $('.divPopupImgViewer .closeBtn').css('left',Number($('.divPopupImgViewer').css('width').replace(/[^0-9]/g,''))-50+'px');
+      });
+
+      $('.divPopupImgViewerBG, .divPopupImgViewer .closeBtn, .divPopupImgViewer img').click(function(e){
+        $('.divPopupImgViewerBG').fadeOut('fast');
+        $('.divPopupImgViewer').fadeOut('fast');
       });
     </script>
   </body>

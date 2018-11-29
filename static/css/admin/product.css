@@ -17,6 +17,20 @@
 .productPriceMng .divGrid .wd300{width:300px;}
 .productPriceMng .divGrid .old{color:red;}
 
+.productCateMng .divGrid td{padding:8px;}
+.productCateMng .divGrid .body td{background-color:#fff; border-bottom:1px solid #eee;}
+.productCateMng .divGrid .body td.productImg img{height:50px; width:50px;}
+.productCateMng .divGrid .body td.selected{background-color:#f3ddfc;}
+.productCateMng .divGrid .wd50{width:50px;}
+.productCateMng .divGrid .wd100{width:100px;}
+.productCateMng .divGrid .wd150{width:150px;}
+.productCateMng .divGrid .wd300{width:300px;}
+.productCateMng .divGrid .old{color:red;}
+
+.divAddProductCate{position:fixed; top:50%; left:50%; background-color:#fff; z-index:999; transform:translate(-50%,-50%); padding:16px; border-radius:4px; display:none;}
+.divAddProductCateBG{position:fixed; width:100%; height:100%; top:0px; left:0px; background-color:rgba(0,0,0,0.8); z-index:998; display:none;}
+
+
 .divPopupProduct{position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:998; width:900px; font-size:0; border-radius:5px; display:none;}
 .divPopupProduct table{width:100%;}
 .divPopupProduct td{border:1px solid #eee; background-color:#fff; padding:16px; font-size:16px;}

@@ -409,6 +409,67 @@ class Admin_model extends CI_Model {
       return $this->db->query($sql);
     }
 
+    function getProductCateAll(){
+      $sql = "
+      SELECT
+         IDXKEY
+        , CODE_NM
+        , CODE
+        FROM COMMON_CODE_TB
+        WHERE WORK_DV = '상품정보'
+          AND CODE_DV = '상품상세구분코드'
+        ORDER BY CODE
+      ";
+      custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+      return $this->db->query($sql);
+    }
+
+    function getProductCateCodeByID($IDXKEY){
+      $sql = "
+      SELECT
+        CODE
+        FROM COMMON_CODE_TB
+        WHERE IDXKEY = '".$IDXKEY."'
+      ";
+      custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+      return $this->db->query($sql)->row()->CODE;
+    }
+
+    function findNextProductCate($NEXT_CODE){
+      $sql = "
+      SELECT
+        CASE WHEN COUNT(1)>0 THEN 'Y'
+             ELSE 'N'
+        END AS IS_CODE
+        FROM COMMON_CODE_TB
+        WHERE WORK_DV = '상품정보'
+          AND CODE_DV = '상품상세구분코드'
+          AND CODE = '".$NEXT_CODE."'
+      ";
+      custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+      return $this->db->query($sql)->row()->IS_CODE;
+    }
+
+    function updateProductCate($PREV_CODE, $NEXT_CODE){
+      $sql = "
+        UPDATE PRODUCT_TB
+        SET PRODUCT_CATE_KIND = '".$NEXT_CODE."'
+        WHERE PRODUCT_CATE_KIND = '".$PREV_CODE."'
+      ";
+      custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+      $this->db->query($sql);
+
+      $sql = "
+        UPDATE COMMON_CODE_TB
+        SET CODE = '".$NEXT_CODE."'
+        WHERE WORK_DV = '상품정보'
+          AND CODE_DV = '상품상세구분코드'
+          AND CODE = '".$PREV_CODE."'
+      ";
+      custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+      return $this->db->query($sql);
+    }
+
     function getProductID(){
       $sql = "
       SELECT

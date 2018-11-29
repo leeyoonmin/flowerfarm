@@ -32,8 +32,8 @@
       <li class="mainMenu product"><img src="/static/img/icon/ic_flower_white.png"><span>상품관리</span></li>
       <ul class="subMenu menuUp">
         <a href="/admin/productList"><li class="sub"><span>∞　상품관리</span></li></a>
-        <a href="/admin/productImgMng"><li class="sub"><span>∞　상품이미지관리</span></li></a>
         <a href="/admin/productPriceMng"><li class="sub"><span>∞　상품가격관리</span></li></a>
+        <a href="/admin/productCateMng"><li class="sub"><span>∞　상품카테고리관리</span></li></a>
       </ul>
       <li class="mainMenu order"><img src="/static/img/icon/ic_box_white.png"><span>주문관리</span></li>
       <ul class="subMenu menuUp">

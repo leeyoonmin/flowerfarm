@@ -245,6 +245,85 @@ class Admin extends CI_Controller
       $this->importFooter(array('product'=>'product'));//------------------ 레이아웃 종료
     }
 
+    function productCateMng(){
+      $this->importHead(array('product'=>'product'));//-------------------- 레이아웃 시작
+
+      $DATA = $this->admin_model->getProductCateAll();
+      $this->load->view('admin/product/productCateMng', array('gridData'=>$DATA->result(), 'rowCount'=>$DATA->num_rows()));
+
+      $this->importFooter(array('product'=>'product'));//------------------ 레이아웃 종료
+    }
+
+    function ajaxUpdateProductCate(){
+      $IDXKEY = $this->input->post('idxkey');
+      $MODE = $this->input->post('mode');
+      if($MODE=='up'){
+        $CURRENT_CODE = $this->admin_model->getProductCateCodeByID($IDXKEY);
+        if($CURRENT_CODE=='01'){
+          echo json_encode(array('result'=>false, 'err_msg'=>'첫번째 카테고리입니다.'));
+        }else{
+          $NEXT_CODE = str_pad(($CURRENT_CODE),2,0,STR_PAD_LEFT);
+
+          $IS_CODE = 'N';
+          while($IS_CODE=='N'){
+            $NEXT_CODE = str_pad(($NEXT_CODE-1),2,0,STR_PAD_LEFT);
+            $IS_CODE = $this->admin_model->findNextProductCate($NEXT_CODE);
+          }
+          $this->admin_model->updateProductCate($NEXT_CODE, '00');
+          $this->admin_model->updateProductCate($CURRENT_CODE, $NEXT_CODE);
+          $this->admin_model->updateProductCate('00', $CURRENT_CODE);
+          echo json_encode(array('result'=>true));
+        }
+      }else if($MODE=='down'){
+        $CURRENT_CODE = $this->admin_model->getProductCateCodeByID($IDXKEY);
+        if($CURRENT_CODE=='99'){
+          echo json_encode(array('result'=>false, 'err_msg'=>'마지막 카테고리입니다.'));
+        }else{
+          $NEXT_CODE = str_pad(($CURRENT_CODE),2,0,STR_PAD_LEFT);
+
+          $IS_CODE = 'N';
+          while($IS_CODE=='N'){
+            $NEXT_CODE = str_pad(($NEXT_CODE+1),2,0,STR_PAD_LEFT);
+            $IS_CODE = $this->admin_model->findNextProductCate($NEXT_CODE);
+          }
+          $this->admin_model->updateProductCate($NEXT_CODE, '00');
+          $this->admin_model->updateProductCate($CURRENT_CODE, $NEXT_CODE);
+          $this->admin_model->updateProductCate('00', $CURRENT_CODE);
+          echo json_encode(array('result'=>true));
+        }
+      }
+    }
+
+    function ajaxAddProductCate(){
+      $cateName = $this->input->post('cateName');
+      $NEXT_CODE = '01';
+      $IS_CODE = 'Y';
+      while($IS_CODE=='Y'){
+        $NEXT_CODE = str_pad(($NEXT_CODE+1),2,0,STR_PAD_LEFT);
+        $IS_CODE = $this->admin_model->findNextProductCate($NEXT_CODE);
+      }
+
+      $IDXKEY = $this->makeID('01');
+
+      $Param = array(
+        'IDX'=>$IDXKEY,
+        'WORK_DV'=>'상품정보',
+        'CODE_DV'=>'상품상세구분코드',
+        'CODE_NM'=>$cateName,
+        'CODE'=>$NEXT_CODE,
+        'IS_USE'=>'Y',
+
+      );
+      $this->admin_model->insertCommonCode($Param);
+      echo json_encode(array('result'=>true));
+    }
+
+    function ajaxDeleteProductCate(){
+      $IDXKEY = $this->input->post('idxkey');
+      $this->admin_model->deleteCommonCOde(array('IDX'=>$IDXKEY));
+      echo json_encode(array('result'=>true));
+    }
+
     function ajaxGetProductByID(){
         $id = $this->input->post('id');
         $ajaxData = $this->admin_model->getProductList(array('ID'=>$id),'IQT');

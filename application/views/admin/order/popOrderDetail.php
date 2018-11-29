@@ -90,9 +90,27 @@
           </tr>
         </table>
       </div>
+      <div class="divPopupImgViewer">
+        <img class="closeBtn" src="/static/img/icon/ic_close_white.png">
+        <img class="product_img" src="">
+      </div>
+      <div class="divPopupImgViewerBG"></div>
       <script type="text/javascript">
         $('.header button').click(function(){
           window.print();
+        });
+
+        $('.productInfo .body img').click(function(e){
+          var img_path = $(this).attr('src');
+          $('.divPopupImgViewer .product_img').attr('src',img_path);
+          $('.divPopupImgViewer').fadeIn('fast');
+          $('.divPopupImgViewerBG').fadeIn('fast');
+          $('.divPopupImgViewer .closeBtn').css('left',Number($('.divPopupImgViewer').css('width').replace(/[^0-9]/g,''))-50+'px');
+        });
+
+        $('.divPopupImgViewerBG, .divPopupImgViewer .closeBtn, .divPopupImgViewer img').click(function(e){
+          $('.divPopupImgViewerBG').fadeOut('fast');
+          $('.divPopupImgViewer').fadeOut('fast');
         });
       </script>
     </div>

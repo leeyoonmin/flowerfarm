@@ -646,7 +646,11 @@ function popupDetail(orderID){
   var left = Math.ceil((window.screen.width - windowW)/2);
   var top = Math.ceil((window.screen.height - windowH)/2-50);
   var popUrl = "/admin/popupOrderDetail/"+orderID;
-  window.open(popUrl,"pop_01","l top="+top+", left="+left+", height="+windowH+", width="+windowW);
+  //window.open(popUrl,"pop_01"," top="+top+", left="+left+", height="+windowH+", width="+windowW);
+
+  var popupX = (window.screen.width / 2) - (641 / 2);
+  var popupY= (window.screen.height /2) - (900 / 2);
+  window.open(popUrl, '', 'status=no, height='+windowH+', width='+windowW+', left='+left+', top='+top);
 }
 
 /*********************************************************

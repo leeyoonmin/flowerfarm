@@ -17,9 +17,14 @@ table td{vertical-align:middle;}
 .popup .box.orderInfo table tr:nth-of-type(3){border-left:1px solid #eee; border-right:1px solid #eee;}
 .popup .box.orderInfo table tr:last-of-type{border-radius:0px 0px 5px 5px; border:1px solid #eee; border-top  :0px;}
 
-.popup .box.productInfo table img{height:50px; width:auto;}
+.popup .box.productInfo table img{height:80px; width:80px;}
 .popup .box.productInfo table td{text-align:center;}
 .popup .box.productInfo table tr:first-of-type td{text-align:left;}
 .popup .box.productInfo table tr.head td{background-color:#fafafa;}
 
 .popup .box.paymentInfo table tr.body td{background-color:#fff; border:1px solid #eee;}
+
+.divPopupImgViewer{position:fixed; z-index:999; background-color:#fff; top:50%; left:50%; transform:translate(-50%, -50%); display:none;}
+.divPopupImgViewer .product_img{width:90vw; height:90vw;}
+.divPopupImgViewer .closeBtn{position:absolute; width:50px; height:50px; padding:8px; background-color:#d53030; float:right; cursor:pointer;}
+.divPopupImgViewerBG{position:fixed; z-index:998; background-color:rgba(0,0,0,0.6); width:100vw; height:100vh; top:0; left:0; display:none;}

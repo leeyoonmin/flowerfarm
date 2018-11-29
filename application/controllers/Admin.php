@@ -473,7 +473,8 @@ class Admin extends CI_Controller
 
     function popupOrderDetail($id){ //-------------------------------------------------------------------------- 주문조회 -> 상세팝업 VIEW
       $gridData = $this->admin_model->getOrderDetailById($id);
-      $this->load->view('admin/order/popOrderDetail', array('gridData'=>$gridData));
+      $paymentInfo = $this->admin_model->getPaymentInfo();
+      $this->load->view('admin/order/popOrderDetail', array('gridData'=>$gridData, 'paymentInfo'=>$paymentInfo));
     }
 
     function popupForderPreview(){//------------------------------------------------------------------------------- 발주조회 -> 상세팝업 VIEW

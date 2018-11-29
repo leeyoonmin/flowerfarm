@@ -1982,6 +1982,39 @@ class Admin_model extends CI_Model {
     ";
     return $this->db->query($sql);
   }
+
+  function getPaymentInfo(){
+    $sql = "
+    SELECT
+    (
+  	SELECT
+  	    CODE
+  	  FROM COMMON_CODE_TB
+  	 WHERE WORK_DV = '상점정보'
+  	   AND CODE_DV = '결제정보'
+  	   AND CODE_NM = '예금주명'
+    ) AS HOLDER_NM
+    , (
+  	SELECT
+  	   CODE
+  	  FROM COMMON_CODE_TB
+  	 WHERE WORK_DV = '상점정보'
+  	   AND CODE_DV = '결제정보'
+  	   AND CODE_NM = '입금계좌'
+    ) AS BANK_ACCOUNTS
+    , (
+  	SELECT
+  	    CODE
+  	  FROM COMMON_CODE_TB
+  	 WHERE WORK_DV = '상점정보'
+  	   AND CODE_DV = '결제정보'
+  	   AND CODE_NM = '입금은행'
+    ) AS BANK_NM
+    FROM DUAL
+    ";
+    custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+    return $this->db->query($sql)->row();
+  }
 }
 
 ?>

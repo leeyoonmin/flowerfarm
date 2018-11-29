@@ -83,7 +83,7 @@
             <td>입금상태</td><td><?php switch($gridData[0]->IS_PAID){ case 0:echo "입금전";break; case 1:echo "입금완료";break;}?></td>
           </tr>
           <tr class="body">
-            <td>입금계좌</td><td>OO은행 123-24-4458-4884</td>
+            <td>입금계좌</td><td>(<?=$paymentInfo->BANK_NM?>) <?=$paymentInfo->BANK_ACCOUNTS?> <?=$paymentInfo->HOLDER_NM?> </td>
           </tr>
           <tr class="body">
             <td>입금예정금액</td><td>￦<?=number_format($TT_PRICE)?></td>

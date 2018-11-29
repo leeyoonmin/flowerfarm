@@ -74,16 +74,17 @@
           <td rowspan="3" colspan="2"></td>
           <td style="text-align:left; padding-left:16px">구매금액</td>
           <td style="text-align:right; padding:4px 8px;">
-            <?=number_format($TT_PRICE)." 원"?>
           </td>
         </tr>
         <tr class="sum">
           <td style="text-align:left; padding-left:16px">운임비</td>
-          <td style="text-align:right; padding:4px 8px;" ></td>
+          <td style="text-align:right; padding:4px 8px;" >
+          </td>
         </tr>
         <tr class="sum">
           <td style="text-align:left; padding-left:16px">총액</td>
-          <td style="text-align:right; padding:4px 8px;"></td>
+          <td style="text-align:right; padding:4px 8px;">
+          </td>
         </tr>
         <tr>
           <td colspan="11" style="border:0px;"></td>

@@ -55,6 +55,14 @@ $('.writeForder .searchBtn').click(function(e){
 });
 
 /*********************************************************
+    (발주서생성) 자세히 보기 버튼 클릭이벤트
+**********************************************************/
+$('.createForder .divGrid .orderDetailBtn').click(function(e){
+  var orderID = $(this).parents('.td').parents('.tr').children('.orderID').text();
+  popupDetail(orderID);
+});
+
+/*********************************************************
     (발주서작성) 발주서작성 버튼 클릭이벤트
 **********************************************************/
 $('.writeForder .writeForderBtn').click(function(e){
@@ -218,7 +226,6 @@ $('.orderAllList .tradingStatementBtn').click(function(e){
 
   popupTradingStatement(orderID);
 });
-
 
 
 

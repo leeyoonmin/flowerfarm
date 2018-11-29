@@ -28,6 +28,7 @@
       <ul class="subMenu menuUp">
         <a href="/admin/inquiryUserInfo"><li class="sub"><span>∞　회원정보조회</span></li></a>
         <a href="/admin/userGradeMng"><li class="sub"><span>∞　회원등급관리</span></li></a>
+        <a href="/admin/setUserNick"><li class="sub"><span>∞　회원별칭지정</span></li></a>
       </ul>
       <li class="mainMenu product"><img src="/static/img/icon/ic_flower_white.png"><span>상품관리</span></li>
       <ul class="subMenu menuUp">

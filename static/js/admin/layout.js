@@ -283,7 +283,7 @@ $(document).ready(function(){
   if(location.pathname == '/admin/slideBanner'){
     $('.divFixedLeftMenu .divMenu .mainMenu.shop').addClass('selected');
     $('.divFixedLeftMenu .divMenu .mainMenu.shop').next('ul').css('display','block');
-  }else if(location.pathname == '/admin/inquiryUserInfo' || location.pathname == '/admin/userGradeMng'){
+  }else if(location.pathname == '/admin/inquiryUserInfo' || location.pathname == '/admin/userGradeMng' || location.pathname == '/admin/setUserNick'){
     $('.divFixedLeftMenu .divMenu .mainMenu.user').addClass('selected');
     $('.divFixedLeftMenu .divMenu .mainMenu.user').next('ul').css('display','block');
   }else if(location.pathname == '/admin/productList' || location.pathname == '/admin/productPriceMng' || location.pathname == '/admin/productCateMng'){

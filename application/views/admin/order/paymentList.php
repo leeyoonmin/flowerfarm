@@ -101,7 +101,9 @@
           <div class=\"td isCheck wd50\">
             <input type=\"checkbox\" class=\"checkBox\" id=\"checkBox".$rowCnt."\" class=\"checkbox-style\"/><label for=\"checkBox".$rowCnt."\"></label>
           </div>
-          <div class=\"td wd150\">".date('Y-m-d H:i',strtotime($row->ORDER_TIME))."</div><div class=\"td wd150 orderID\">".$row->ORDER_ID."</div><div class=\"td wd300\">".$row->PRODUCT."</div><div class=\"td wd150\">".$row->USER_ID."</div><div class=\"td wd150\">".number_format($row->PAY_PRICE)." 원</div><div class=\"td wd100\">".$row->IS_PAID."</div><div class=\"td wd100\">".$row->IS_FORDER."</div>
+          <div class=\"td wd150\">".date('Y-m-d H:i',strtotime($row->ORDER_TIME))."</div><div class=\"td wd150 orderID\">".$row->ORDER_ID."</div><div class=\"td wd300\">".$row->PRODUCT."</div><div class=\"td wd150\">".$row->USER_ID;
+          if(!empty($row->USER_NICK)) echo "(".$row->USER_NICK.")";
+          echo "</div><div class=\"td wd150\">".number_format($row->PAY_PRICE)." 원</div><div class=\"td wd100\">".$row->IS_PAID."</div><div class=\"td wd100\">".$row->IS_FORDER."</div>
         </div>";
         $rowCnt++;
       }

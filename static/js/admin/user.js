@@ -45,6 +45,26 @@ $('.divPopupChangeGrade .popupChangeGradeBtn').click(function(e){
 });
 
 /*********************************************************
+    (회원별칭지정) 저장버튼 클릭 이벤트
+**********************************************************/
+$('.setUserNick .saveNickBtn').click(function(e){
+  var userID = $(this).parents('.td').parents('.tr').children('.userID').text();
+  var nickName = $(this).parents('.td').prev().children().val();
+  $.ajax({
+      url:"/admin/updateUserNickName",
+      type: "POST",
+      datatype: 'JSON',
+      data: {'userID':userID, 'nickName':nickName},
+      error:function(request,status,error){
+        console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+      },
+      success: function(data){
+        console.log('success');
+      }
+  });
+});
+
+/*********************************************************
     (회원등급관리) 버튼 조작 검증 로직
 **********************************************************/
 function clickLogic(logic,grade){

@@ -199,6 +199,23 @@ class Admin extends CI_Controller
       echo json_encode(array('result'=>true));
     }
 
+    function setUserNick(){
+      $get_data = $this->input->get();
+      $this->importHead(array('user'=>'user'));//-------------------- 레이아웃 시작
+
+      $gridData = $this->admin_model->getUserInfoBase($get_data,'IQY','inquiryUserInfo');
+      $rowCount = $this->admin_model->getUserInfoBase($get_data,'COUNT','inquiryUserInfo');
+      $this->load->view('admin/user/setUserNick', array('gridData'=>$gridData->result(), 'getData'=>$get_data, 'rowCount'=>$rowCount->num_rows()));
+      $this->load->view('admin/layout/importCalendar');
+      $this->importFooter(array('user'=>'user'));//------------------ 레이아웃 종료
+    }
+
+    function updateUserNickName(){
+      $param = $this->input->post();
+      $this->admin_model->updateUserNickName($param);
+      echo json_encode(array('result'=>true));
+    }
+
     function productList(){
       $get_data = $this->input->get();
       $this->importHead(array('product'=>'product'));//-------------------- 레이아웃 시작
@@ -320,8 +337,14 @@ class Admin extends CI_Controller
 
     function ajaxDeleteProductCate(){
       $IDXKEY = $this->input->post('idxkey');
-      $this->admin_model->deleteCommonCOde(array('IDX'=>$IDXKEY));
-      echo json_encode(array('result'=>true));
+      $CURRENT_CODE = $this->admin_model->getProductCateCodeByID($IDXKEY);
+      $KIND_COUNT = $this->admin_model->countProductCateKindByCode($CURRENT_CODE);
+      if($KIND_COUNT == 0){
+        $this->admin_model->deleteCommonCOde(array('IDX'=>$IDXKEY));
+        echo json_encode(array('result'=>true));
+      }else{
+        echo json_encode(array('result'=>false, 'err_msg'=>'해당 카테고리에 상품이 할당되어 있어 삭제가 불가능합니다.'));
+      }
     }
 
     function ajaxGetProductByID(){

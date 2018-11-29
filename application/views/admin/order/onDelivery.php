@@ -79,7 +79,9 @@
           <div class=\"td isCheck wd50\">
             <input type=\"checkbox\" class=\"checkBox\" id=\"checkBox".$rowCnt."\" class=\"checkbox-style\"/><label for=\"checkBox".$rowCnt."\"></label>
           </div>
-          <div class=\"td wd150\">".$row->ORDER_TIME."</div><div class=\"td wd200 orderID\">".$row->ORDER_ID."</div><div class=\"td wd200\">".$row->PRODUCT."</div><div class=\"td wd150\">".$row->USER_ID."</div><div class=\"td wd100\">".number_format($row->PAY_PRICE)." 원</div><div class=\"td wd100\">".$row->IS_PAID."</div><div class=\"td wd100 orderStat\"><input type=\"hidden\" value=\"".$row->ORDER_STAT."\">".$row->ORDER_STAT_NM."</div><div class=\"td wd100 forderStat\"><input type=\"hidden\" value=\"".$row->FORDER_STAT."\">".$row->FORDER_STAT_NM."</div>
+          <div class=\"td wd150\">".$row->ORDER_TIME."</div><div class=\"td wd200 orderID\">".$row->ORDER_ID."</div><div class=\"td wd200\">".$row->PRODUCT."</div><div class=\"td wd150\">".$row->USER_ID;
+          if(!empty($row->USER_NICK)) echo "(".$row->USER_NICK.")";
+          echo "</div><div class=\"td wd100\">".number_format($row->PAY_PRICE)." 원</div><div class=\"td wd100\">".$row->IS_PAID."</div><div class=\"td wd100 orderStat\"><input type=\"hidden\" value=\"".$row->ORDER_STAT."\">".$row->ORDER_STAT_NM."</div><div class=\"td wd100 forderStat\"><input type=\"hidden\" value=\"".$row->FORDER_STAT."\">".$row->FORDER_STAT_NM."</div>
         </div>";
         $rowCnt++;
       }

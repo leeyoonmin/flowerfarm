@@ -84,6 +84,7 @@ class Admin_model extends CI_Model {
       , A.USER_TYPE AS USER_TYPE_CD
       , (SELECT CODE_NM FROM COMMON_CODE_TB WHERE CODE_DV = '회원구분' AND CODE = A.USER_TYPE) AS USER_TYPE_NM
       , USER_NAME
+      , USER_NICK
       , CONCAT('(',USER_POSTCODE,')',USER_ADDR,USER_DETAIL_ADDR) AS USER_ADDR
       , CONCAT(USER_TEL_H, '-', USER_TEL_B, '-', USER_TEL_T) AS USER_CELLPHONE
       , (CASE WHEN A.USER_TYPE IN('2','3','4') THEN 'Y' ELSE 'N' END) AS IS_BIZ
@@ -131,6 +132,15 @@ class Admin_model extends CI_Model {
         UPDATE USER_TB
            SET USER_TYPE = '".$grade."'
          WHERE USER_ID = '".$id."'
+      ";
+      return $this->db->query($sql);
+    }
+
+    function updateUserNickName($param){
+      $sql = "
+        UPDATE USER_TB
+           SET USER_NICK = '".$param['nickName']."'
+         WHERE USER_ID = '".$param['userID']."'
       ";
       return $this->db->query($sql);
     }
@@ -644,6 +654,7 @@ class Admin_model extends CI_Model {
         , A.ORDER_TIME
         , CONCAT(C.PRODUCT_NAME,' 포함 ', COUNT(1),'품종') AS PRODUCT
         , A.USER_ID
+        , E.USER_NICK
         , A.IS_PAID
         , A.IS_FORDER
         , A.ORDER_STAT
@@ -735,6 +746,7 @@ class Admin_model extends CI_Model {
         , CONCAT(SUBSTR(A.ORDER_TIME,1,4),'.',SUBSTR(A.ORDER_TIME,5,2),'.',SUBSTR(A.ORDER_TIME,7,2)) AS ORDER_TIME
         , CONCAT(C.PRODUCT_NAME,' 포함 ', COUNT(1),'품종') AS PRODUCT
         , A.USER_ID
+        , E.USER_NICK
         , A.IS_PAID
         , A.IS_FORDER
         , A.ORDER_STAT
@@ -838,6 +850,7 @@ class Admin_model extends CI_Model {
         , CONCAT(SUBSTR(AA.ORDER_TIME,1,4),'.',SUBSTR(AA.ORDER_TIME,5,2),'.',SUBSTR(AA.ORDER_TIME,7,2)) AS ORDER_TIME
         , AA.PRODUCT
         , AA.USER_ID
+        , AA.USER_NICK
         , AA.IS_PAID
         , AA.IS_FORDER
         , AA.ORDER_STAT
@@ -853,6 +866,7 @@ class Admin_model extends CI_Model {
               , A.ORDER_TIME
               , CONCAT(C.PRODUCT_NAME,' 포함 ', COUNT(1),'품종') AS PRODUCT
               , A.USER_ID
+              , E.USER_NICK
               , A.IS_PAID
               , A.IS_FORDER
               , A.ORDER_STAT
@@ -1735,6 +1749,15 @@ class Admin_model extends CI_Model {
     function getSQL($sql){
       custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
       return $this->db->query($sql);
+    }
+
+    function countProductCateKindByCode($KIND){
+      $sql = "
+        SELECT COUNT(1) AS CNT FROM PRODUCT_TB
+        WHERE PRODUCT_CATE_KIND = '".$KIND."'
+      ";
+      custlog('sql',__class__,__function__,$this->session->userdata('user_id'),$sql);
+      return $this->db->query($sql)->row()->CNT;
     }
 
     function getBoardByType($getData,$mode,$type){

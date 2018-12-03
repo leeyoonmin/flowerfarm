@@ -1,0 +1,75 @@
+.popup{width:100%; min-height:100%; padding-bottom:66px;}
+.popup table{width:100%;}
+table td{vertical-align:middle;}
+table tr td.blur{color:#ccc;}
+
+.header{width:100%; text-align:right; padding:8px;}
+.header .btn{padding:4px 8px; border:1px solid #666; background-color:#ddd;}
+
+table.title tr:nth-of-type(1) td{padding:16px;}
+table.title tr:nth-of-type(2) td{font-size:36px; height:80px; text-align:center;}
+table.title tr:nth-of-type(4) td:first-of-type{padding-left:16px; width:70%;}
+
+table .header{background-color:#ddd}
+table .header .btn{}
+
+table.body{width:100%; margin-top: 16px;}
+table.body td{border:1px solid #4c4c4c; height:50px;}
+table.body tr:first-of-type td{height:25px;}
+table.body td{text-align:center;}
+table.body td:nth-of-type(2) img{height:50px;width:50px;}
+/*
+table.body td:nth-of-type(1){width:50px;}
+table.body td:nth-of-type(2){width:50px; padding:2px;}
+table.body td:nth-of-type(2) img{height:50px;width:50px;}
+table.body td:nth-of-type(3){}
+table.body td:nth-of-type(4){width:40px;}
+table.body td:nth-of-type(5){width:80px;}
+table.body td:nth-of-type(6){width:80px;}
+table.body td:nth-of-type(7){width:80px;}
+table.body td:nth-of-type(8){width:80px;}
+table.body td:nth-of-type(9){width:80px;}
+table.body td:nth-of-type(10){width:80px;}
+
+#printBody table.body td:nth-of-type(1){width:50px;}
+#printBody table.body td:nth-of-type(2){width:50px; padding:2px;}
+#printBody table.body td:nth-of-type(3){}
+#printBody table.body td:nth-of-type(4){width:40px;}
+#printBody table.body td:nth-of-type(5){width:80px;}
+#printBody table.body td:nth-of-type(6){width:80px;}
+#printBody table.body td:nth-of-type(7){width:80px;}
+#printBody table.body td:nth-of-type(8){width:80px;}
+#printBody table.body td:nth-of-type(9){width:80px;}
+*/
+table.body td.checkBox input{width:18px; height:18px}
+
+table.body td.documentInput input{border:1px solid #fff; text-align:center; width:100px; padding:16px}
+table.body td.documentInput input::placeholder{color:#ccc; text-align:center;}
+table.body td.documentInput input:focus{outline:0;}
+table.body td.documentInput.qty input{width:60px}
+table.body td.documentInput.purchaseShop input{width:200px}
+table.body td.documentInput.purchasePrice input{width:100px;}
+table.body td.documentInput.memo input{width:300px}
+
+table.sum td{border:1px solid #4c4c4c; height:30px; text-align:center;}
+table.sum td:nth-of-type(1){}
+table.sum td:nth-of-type(2){width:40px;}
+table.sum td:nth-of-type(3){width:120px;}
+table.sum td:nth-of-type(4){width:30px;}
+table.sum td:nth-of-type(5){width:160px;}
+table.sum td.price{border-right:0px;}
+table.sum td.documentInput input{border:1px solid #fff; text-align:center; width:100px; padding:8px}
+table.sum td.documentInput input::placeholder{color:#ccc; text-align:center;}
+table.sum td.documentInput input:focus{outline:0;}
+table.memo{margin-top:16px;}
+table.memo td{border:1px solid #4c4c4c; text-align:center;}
+table.memo td:nth-of-type(1){width:80px;}
+table.memo td textarea{width:100%; border:0; padding:8px; min-height:100px;}
+#printBody .totalCnt{width:101px}
+#printBody.writeModifiedForder .totalCnt{width:80px}
+#printBody.writeConfirmedForder .totalCnt{width:80px}
+#printBody .totalPurchaseCnt{width:80px}
+#printBody .td3{width:403px;}
+#printBody .td4{width:100px;}
+#printBody .price{width:30px;}
+#printBody .td6{width:171px;}

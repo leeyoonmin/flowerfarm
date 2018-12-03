@@ -136,10 +136,17 @@ function loadMoreList(){
                     template = template + '</table></td></tr><tr>';
 
                     if($('.user_level').val()!="0"){
-                      template = template + '<td class="cartTD"><input class="HD_EXTENSION" type="hidden" value="'+item['IMG_EXTENSION']
-                      +'"><input class="HD_KIND" type="hidden" value="'+item['PRODUCT_CATE_KIND_NM']+'"><input class="HD_ID" type="hidden" value="'+item['PRODUCT_ID']
-                      +'"><input class="HD_NM" type="hidden" value="'+item['PRODUCT_NAME']+'"><input class="HD_PRICE" type="hidden" value="'
-                      +item['PRODUCT_PRICE_CUNSUMER']+'"><img src="/static/img/icon/ic_cart_white.png"></td>';
+                      if($('.user_level').val() > 0 && $('.user_level').val() < 5){ // 도매가표시
+                        template = template + '<td class="cartTD"><input class="HD_EXTENSION" type="hidden" value="'+item['IMG_EXTENSION']
+                        +'"><input class="HD_KIND" type="hidden" value="'+item['PRODUCT_CATE_KIND_NM']+'"><input class="HD_ID" type="hidden" value="'+item['PRODUCT_ID']
+                        +'"><input class="HD_NM" type="hidden" value="'+item['PRODUCT_NAME']+'"><input class="HD_PRICE" type="hidden" value="'
+                        +item['PRODUCT_PRICE_WHOLESALE']+'"><img src="/static/img/icon/ic_cart_white.png"></td>';
+                      }else if($('.user_level').val() > 4){ // 소매가표시
+                        template = template + '<td class="cartTD"><input class="HD_EXTENSION" type="hidden" value="'+item['IMG_EXTENSION']
+                        +'"><input class="HD_KIND" type="hidden" value="'+item['PRODUCT_CATE_KIND_NM']+'"><input class="HD_ID" type="hidden" value="'+item['PRODUCT_ID']
+                        +'"><input class="HD_NM" type="hidden" value="'+item['PRODUCT_NAME']+'"><input class="HD_PRICE" type="hidden" value="'
+                        +item['PRODUCT_PRICE_CUNSUMER']+'"><img src="/static/img/icon/ic_cart_white.png"></td>';
+                      }
                     }else{
                       template = template + '<td></td>';
                     }
@@ -159,10 +166,18 @@ function loadMoreList(){
                     }
                     template = template + '</table></td>';
                     if($('.user_level').val()!="0"){
-                      template = template + '<td class="cartTD"><input class="HD_EXTENSION" type="hidden" value="'
-                      +item['IMG_EXTENSION']+'"><input class="HD_KIND" type="hidden" value="'+item['PRODUCT_CATE_KIND_NM']
-                      +'"><input class="HD_ID" type="hidden" value="'+item['PRODUCT_ID']+'"><input class="HD_NM" type="hidden" value="'+item['PRODUCT_NAME']
-                      +'"><input class="HD_PRICE" type="hidden" value="'+item['PRODUCT_PRICE_CUNSUMER']+'"><img src="/static/img/icon/ic_cart.png"></td>';
+                      if($('.user_level').val() > 0 && $('.user_level').val() < 5){ // 도매가표시
+                        template = template + '<td class="cartTD"><input class="HD_EXTENSION" type="hidden" value="'
+                        +item['IMG_EXTENSION']+'"><input class="HD_KIND" type="hidden" value="'+item['PRODUCT_CATE_KIND_NM']
+                        +'"><input class="HD_ID" type="hidden" value="'+item['PRODUCT_ID']+'"><input class="HD_NM" type="hidden" value="'+item['PRODUCT_NAME']
+                        +'"><input class="HD_PRICE" type="hidden" value="'+item['PRODUCT_PRICE_WHOLESALE']+'"><img src="/static/img/icon/ic_cart.png"></td>';
+                      }else if($('.user_level').val() > 4){ // 소매가표시
+                        template = template + '<td class="cartTD"><input class="HD_EXTENSION" type="hidden" value="'
+                        +item['IMG_EXTENSION']+'"><input class="HD_KIND" type="hidden" value="'+item['PRODUCT_CATE_KIND_NM']
+                        +'"><input class="HD_ID" type="hidden" value="'+item['PRODUCT_ID']+'"><input class="HD_NM" type="hidden" value="'+item['PRODUCT_NAME']
+                        +'"><input class="HD_PRICE" type="hidden" value="'+item['PRODUCT_PRICE_CUNSUMER']+'"><img src="/static/img/icon/ic_cart.png"></td>';
+                      }
+
                     }else{
                       template = template + '<td></td>';
                     }

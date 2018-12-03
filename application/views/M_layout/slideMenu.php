@@ -22,7 +22,7 @@
     }
   ?>
   <tr>
-    <td class="menu gray" colspan="2"><a href="/M_menu/productList/01">꽃 보러가기</a></td>
+    <td class="menu gray" colspan="2"><a href="/M_menu/productList/01?ver=1.0">꽃 보러가기</a></td>
   </tr>
   <!--tr>
     <td class="menu" colspan="2"><a href="/M_menu/productList/02">부자재</a></td>

@@ -22,7 +22,7 @@
       <tr>
         <td class="divLogo"><a href="/">FLOWER FARM</a></td>
         <td></td>
-        <td class="menu strong color"><a href="/M_menu/productList/01">꽃보러가기</a></td>
+        <td class="menu strong color"><a href="/M_menu/productList/01?ver=1.0">꽃보러가기</a></td>
         <td class="menu"><a href="/ledger/calendar">가계부</a></td>
         <td class="menu"><a href="/M_menu/cart">장바구니</a></td>
         <?php if($this->session->userdata('is_login')){?>

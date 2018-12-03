@@ -5,7 +5,7 @@
       <div class="swiper-wrapper">
         <?php
           foreach($slideBanner1 as $slide){
-            echo "<div class=\"swiper-slide\"><img src=\"/static/img/slide/".$slide->CODE."\"></div>";
+            echo "<div class=\"swiper-slide\"><a href=\"".$slide->CODE."\"><img src=\"/static/img/slide/".$slide->CODE."\"></a></div>";
           }
         ?>
       </div>

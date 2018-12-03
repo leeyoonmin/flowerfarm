@@ -28,5 +28,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 .ftpconfig
 phpMyAdmin/
 static/uploads/
+resource/img/
 log/
 application/config/database.php

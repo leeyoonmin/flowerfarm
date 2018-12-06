@@ -100,6 +100,19 @@
       $productCnt++;
     }
   ?>
+  <div class="m divHashTagContainer">
+    <div class="divHashTag">
+      <?php
+
+        foreach($cateKind as $option){
+          if($option->CODE == '01' || $option->CODE == '11' || $option->CODE == '12' || $option->CODE == '15'){
+            echo "<input CODE=\"".$option->CODE."\" class=\"hashTag\" type=\"button\" value=\"#".$option->CODE_NM."\">";
+          }
+        }
+      ?>
+    </div>
+  </div>
+
   <div class="divNewStickerContainer">
     <div class="divNewStickerBox">
     <div class="divNewSticker newsticker">

@@ -241,7 +241,7 @@ $('.divSearch .divControlbox').click(function(e){
   if($('.divSearch').hasClass('open')){
     $('.divSearch').removeClass('open');
     $('.divSearch').addClass('close');
-    $('.divSearch').animate({'top':'-163px'},200);
+    $('.divSearch').animate({'top':'-158px'},200);
     $('.divControlbox img').prop('src','/static/img/icon/ic_arrow_down.png');
     $('.divSearchBG').fadeOut('fast');
   }else if($('.divSearch').hasClass('close')){
@@ -258,7 +258,7 @@ $('.divSearch .divControlbox').click(function(e){
 $('.divSearchBG').click(function(e){
   $('.divSearch').removeClass('open');
   $('.divSearch').addClass('close');
-  $('.divSearch').animate({'top':'-163px'},200);
+  $('.divSearch').animate({'top':'-158px'},200);
   $('.divControlbox img').prop('src','/static/img/icon/ic_arrow_down.png');
   $('.divSearchBG').fadeOut('fast');
 });
@@ -383,11 +383,26 @@ function insertCart(target){
 ***********************************************************/
 $('.divSearch select').change(function(e){
   if(scrollT < 250){
-    var keyword = $('.pc.divSearch .inputKeyword').val();
+    if(document.body.scrollWidth>1024){
+      var keyword = $('.pc.divSearch .inputKeyword').val();
+    }else{
+      var keyword = $('.m.divSearch .inputKeyword').val();
+    }
   }else{
     var keyword = $('.m.divSearch .inputKeyword').val();
   }
+
   itemViewControl(keyword,'selectChange');
+});
+
+/***********************************************************
+        HashTag 클릭 이벤트
+***********************************************************/
+$('.divHashTagContainer .divHashTag .hashTag').click(function(e){
+  var CODE = $(this).attr('CODE');
+  var is_img = $('.toggleValue').val();
+  var orderBy = $('.divOrder .orderSelect').val();
+  location.href="/M_menu/productList/01?kind="+CODE+"&color=&is_img="+is_img+"&orderBy="+orderBy;
 });
 
 
@@ -402,11 +417,19 @@ function itemViewControl(keyword, mode){
   var area = "";
   var keyword = "";
   if(scrollT < 250){
-    kind = $('.pc.divSearch select.selectKind').val();
-    shape = $('.pc.divSearch select.selectShape').val();
-    color = $('.pc.divSearch .selectColor').val();
-    area = $('.pc.divSearch .selectArea').val();
-    keyword = $('.pc.divSearch .inputKeyword').val();
+    if(document.body.scrollWidth>1024){
+      kind = $('.pc.divSearch select.selectKind').val();
+      shape = $('.pc.divSearch select.selectShape').val();
+      color = $('.pc.divSearch .selectColor').val();
+      area = $('.pc.divSearch .selectArea').val();
+      keyword = $('.pc.divSearch .inputKeyword').val();
+    }else{
+      kind = $('.m.divSearch select.selectKind').val();
+      shape = $('.m.divSearch select.selectShape').val();
+      color = $('.m.divSearch .selectColor').val();
+      area = $('.m.divSearch .selectArea').val();
+      keyword = $('.m.divSearch .inputKeyword').val();
+    }
   }else{
     kind = $('.m.divSearch select.selectKind').val();
     shape = $('.m.divSearch select.selectShape').val();
@@ -594,10 +617,10 @@ function comma(x) {
 })(jQuery);
 
 $('.divNewSticker').Vnewsticker({
-			speed: 1000,         //스크롤 스피드
-			pause: 5000,        //잠시 대기 시간
+			speed: 2000,         //스크롤 스피드
+			pause: 0,        //잠시 대기 시간
 			mousePause: true,   //마우스 오버시 일시정지(true=일시정지)
-			showItems: 2,       //스크롤 목록 갯수 지정(1=한줄만 보임)
+			showItems: 1,       //스크롤 목록 갯수 지정(1=한줄만 보임)
 			direction : "up"    //left=옆으로스크롤, up=위로스크롤, 공란=아래로 스크롤
 });
 

@@ -1,21 +1,26 @@
 @media screen and (max-width:1024px) {
+  .wrap{padding-top:28px;}
+
+  .divHashTag{padding:8px;}
+  .divHashTag .hashTag{border:0; background-color:#ffffff; color:#0b31f9; padding:4px 8px; border-radius:12px; margin:4px;}
+
 
   .divNewStickerContainer{width:100%; background-color:#f5f5f5; margin-bottom:16px;}
-  .divNewStickerBox{width:100%; margin:auto; border:1px solid #ccc; border-top:0;padding:8px; background-color:#fff}
+  .divNewStickerBox{width:100%; margin:auto; border:1px solid #ccc; padding:8px; background-color:#fff}
   .divNewStickerBox .divNewSticker li{color:#262525; line-height:28px; font-size:16px;}
   .divNewStickerBox .divNewSticker li span{font-weight:bold; margin-right:8px; color:#FE8200;}
   .divNewSticker ul{width:100%; margin:auto;}
 
   #materialbox-overlay{position:fixed; width:100%; height:100%; top:0; left:0; background-color:rgba(0,0,0,0.8); z-index:999;}
   .materialbox-caption{position:fixed; top:50%; left:50%; transform:translate(-50%,-800%); background-color:#666; width:90%; text-align:center; color:#fff; padding:4px; z-index:999;}
-  .divSearch{position:fixed; width:100%;top:-163px; z-index:995}
+  .divSearch{position:fixed; width:100%;top:-158px; z-index:995}
   .divSearch td{border-bottom:1px solid #eee; padding:4px; font-size:14px; background-color:#fff;}
   .divSearch td:first-of-type{border-right:1px solid #eee; text-align:center; width:60px;}
   .divSearch input{width:100%; border:1px solid #eee; font-size:14px; padding:8px;}
   .divSearch img{height:30px; cursor:pointer;}
   .divSearch select{width:100%; border:1px solid #eee; background-color:#fff; font-size:14px; height:34px; color:#262525;}
   .divSearch tr:last-of-type td:last-of-type{width:38px;}
-  .divSearch .colorSelector{display:inline-block; padding:13px; margin-right:4px; border:1px solid #eee; border-radius:100%;}
+  .divSearch .colorSelector{display:inline-block; padding:11px; margin-right:2px; border:1px solid #eee; border-radius:100%;}
   .divSearch .colorSelector:last-of-type{margin-right:0;}
   .divSearch .colorSelector.all{background-image:url('/static/img/icon/ic_color_select_bg.png'); background-size:cover;}
   .divSearch .colorSelector.selected{box-shadow:0px 2px 5px rgba(0,0,0,0.5)}
@@ -125,19 +130,19 @@
   .pc.divSearch input{width:100%; border:0; font-size:16px; padding:8px;}
   .pc.divSearch img{height:30px; padding:0px; cursor:pointer; margin:-8px; margin-right:0px;}
   .pc.divSearch select{width:100%; border:0px; background-color:#fff; font-size:16px; height:34px; color:#262525;}
-  .pc.divSearch .colorSelector{display:inline-block; padding:13px; margin-right:4px; border:1px solid #eee; border-radius:2px;}
+  .pc.divSearch .colorSelector{display:inline-block; padding:12px; margin-right:3px; border:1px solid #eee; border-radius:2px;}
   .pc.divSearch .colorSelector:last-of-type{margin-right:0;}
   .pc.divSearch .colorSelector.all{background-image:url('/static/img/icon/ic_color_select_bg.png'); background-size:cover;}
   .pc.divSearch .colorSelector.selected{box-shadow:0px 2px 5px rgba(0,0,0,0.5)}
 
-  .m.divSearch{position:fixed; width:300px;top:138px; z-index:995; right:32px;}
+  .m.divSearch{position:fixed; width:340px;top:138px; z-index:995; right:16px;}
   .m.divSearch td{border-bottom:1px solid #eee; padding:4px; font-size:14px; background-color:#fff;}
   .m.divSearch td:first-of-type{border-right:1px solid #eee; text-align:center; width:60px;}
   .m.divSearch input{width:100%; border:1px solid #eee; font-size:14px; padding:8px;}
   .m.divSearch img{height:30px; cursor:pointer;}
   .m.divSearch select{width:100%; border:1px solid #eee; background-color:#fff; font-size:14px; height:34px; color:#262525;}
   .m.divSearch tr:last-of-type td:last-of-type{width:38px;}
-  .m.divSearch .colorSelector{display:inline-block; padding: 10.5px; margin-right:2px; border:1px solid #eee;}
+  .m.divSearch .colorSelector{display:inline-block; padding:10.5px; margin-right:1px; border:1px solid #eee;}
   .m.divSearch .colorSelector:last-of-type{margin-right:0;}
   .m.divSearch .colorSelector.all{background-image:url('/static/img/icon/ic_color_select_bg.png'); background-size:cover;}
   .m.divSearch .colorSelector.selected{box-shadow:0px 2px 5px rgba(0,0,0,0.5)}
